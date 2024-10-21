@@ -1,1 +1,2 @@
 # Definição dos Parâmetros de Funcionamento da Estação de Recarga
+Esta seção do projeto tem como objetivo descrever os parâmetros e o funcionamento de uma estação de recarga de veículos elétricos de forma detalhada, facilitando o entendimento do desenvolvimento do porjeto. A definição adequada desses parâmetros é essencial para garantir que o projeto atenda às especificações técnicas e funcionais necessárias para operar de maneira eficiente e segura.
