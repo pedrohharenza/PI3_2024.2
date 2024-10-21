@@ -13,7 +13,7 @@ Este projeto tem como objetivo desenvolver e implementar um carregador portátil
 Para garantir a confiabilidade e o desempenho do carregador, será desenvolvido um **Testador de Estação de Recarga**. Este dispositivo simulará condições reais de carregamento e verificará o correto funcionamento da estação, analisando parâmetros como corrente, tensão e comportamento sob carga.
 
 ## Etapas do Projeto
-1. **Etapa 1**: Definir os parâmetros de funcionamento da estação de recarga e apresentar uma simulação simplificada para validação dos circuitos da estação de recarga.
+1. **Etapa 1**: Definição dos parâmetros de funcionamento da estação de recarga e apresentar uma simulação simplificada para validação dos circuitos que serão utilizados.
 2. **Etapa 2**: Desenvolvimento do esquemático de cada circuito que abrange os funcionamentos do carregador.
 3. **Etapa 3**: Defeinição dos componentes que serão utilizados e desenvolvimento do layout da PCB.
 4. **Etapa 4**: Implementação dos circuitos em PCB, implementação do código, e implementação do case em impressão 3D.
