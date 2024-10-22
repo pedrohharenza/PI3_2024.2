@@ -43,11 +43,18 @@ A comunicação entre a estação de recarga e o veículo é realizada por meio 
 
 Do ponto de vista do Control Pilot, o veículo elétrico pode ser simplificado a um conjunto de resistências, onde o carro controla quais resistências estão ativadas. Essa configuração permite ajustar a tensão no sinal do Control Pilot (CP) e consequentemente alterar os estados da estação de recarga.
 
+
 <p align="center">
     <img src="Imagens/EVSE%20esquemático.png" alt="Conector Tipo 2">
 </p>
 
+Em relação ao consumo de corrente, a estação de recarga informa ao veículo qual é a corrente máxima que pode ser fornecida, utilizando a razão cíclica do sinal do Control Pilot (CP). Essa comunicação permite que o veículo ajuste sua demanda de carga de acordo com as capacidades da estação.
 
+A relação entre a corrente máxima (I) fornecida pela estação de recarga e a razão cíclica (D) do sinal do Control Pilot (CP) pode ser expressa pela seguinte equação:
+
+$$
+I = I_{max} \times D
+$$
 
 ## Protocolo de comunicação - Proximity Pilot
 O Proximity Pilot (PP) funciona como um sistema de detecção da conexão do cabo da estação de recarga ao veículo e também determina o limite de corrente que esse cabo suporta. A comunicação entre o PP e o veículo é realizada através de uma resistência que se estabelece entre o PP e o Protective Earth (PE), podendo variar de acordo com a corrente máxima que o cabo é capaz de conduzir. Normalmente, essa resistência está integrada diretamente no cabo de alimentação.
