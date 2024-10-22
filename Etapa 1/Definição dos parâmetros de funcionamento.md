@@ -11,3 +11,5 @@ As estações de recarga são classificadas em Nível 1, Nível 2 e Nível 3. As
 | Nível 3    | >100A        | 400V-800V  | 50 a 350kW    | <30 minutos           | Estações de carregamento público    |
 
 Os carregadores de Nível 1 e Nível 2 devem passar pelo On-board Charger, que está instalado dentro do veículo, antes de transferirem efetivamente a energia para a bateria do carro. O On-board Charger (carregador a bordo) é um componente essencial em veículos elétricos que gerencia o processo de carregamento da bateria. Quando um veículo é conectado a uma estação de carregamento de Nível 1 ou Nível 2, a corrente elétrica da rede elétrica passa primeiro pelo On-board Charger, que converte a corrente alternada (AC) em corrente contínua (DC), adequada para a bateria do veículo. Esse processo inclui a regulação da tensão e da corrente, garantindo que a bateria seja carregada de forma segura e eficiente. Assim, o On-board Charger atua como um intermediário entre a fonte de energia externa e a bateria do carro, permitindo a transferência de energia necessária para o carregamento.
+
+## Conector
