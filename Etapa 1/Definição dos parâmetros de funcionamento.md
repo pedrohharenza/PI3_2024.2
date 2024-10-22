@@ -29,3 +29,17 @@ Existem diversos tipos de padrões de conectores para estações de veículos el
 | 6    | CP   | Control Pilot - Utilizado para comunicação entre o veículo e a estação de carregamento |
 | 7    | PP   | Proximity Pilot - Detector de presnça e identificação do limite de corrente do cabo conectado ao carro         |
 
+
+## Protocolo de Comunicação - Control Pilot
+A comunicação entre a estação de recarga e o veículo é realizada por meio do Control Pilot (CP). O sinal do CP determina os estados da estação de recarga, podendo ser um sinal estático ou um sinal PWM de 1 kHz. A razão cíclica desse sinal PWM determina a corrente máxima que a estação de recarga pode fornecer ao veículo.
+
+| Estado  CP          | Descrição                                                                                  |
+|---------------------|--------------------------------------------------------------------------------------------|
+| +12V DC                 | A estação está pronta para iniciar o processo de carregamento (IDLE).                     |
+| +9V DC                  | Estação de recarga está conectada preparando para o carregamento.                         |
+| PWM 1kHz +9V a -12V     | A estação de recarga está pronta e aguardando a conexão do veículo para iniciar o processo de carregamento."   |
+| PWM 1kHz +6V a -12V     | Veículo em estado de carregamento.                                                        |
+| 0V ou -12V DC           | O veículo foi desconectado da estação e o processo de carregamento foi finalizado.        |
+
+
+
