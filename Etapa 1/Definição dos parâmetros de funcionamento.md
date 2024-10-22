@@ -72,7 +72,7 @@ Como o foco do projeto é desenvlvimento de uma estação de recarga portátil N
 
 ## Sistemas de Proteções
 
-### IDR Tipo B em Estações de Recarga de Veículos Elétricos
+### IDR Tipo B
 O IDR tipo B é um dispositivo de proteção essencial em estações de recarga de veículos elétricos, projetado para detectar correntes de fuga em circuitos que operam tanto com corrente alternada quanto contínua. Ele monitora a diferença entre a corrente que entra e a que sai do circuito, desarmando automaticamente quando identifica uma discrepância significativa. Isso é crucial em ambientes de recarga, onde falhas de isolamento ou contato com água podem ocorrer. Ao interromper o fornecimento de eletricidade em caso de fuga, o IDR tipo B protege os usuários contra choques elétricos e previne danos aos equipamentos, garantindo um ambiente de recarga seguro e confiável. Pela norma esse tipo de proteção é obrigatório em estações de recargas de veículos elétricos. Esse tipo de proteção pode ser instalado diretamente na estção de recarga ou no quadro de distribuição de energia.
 
 
