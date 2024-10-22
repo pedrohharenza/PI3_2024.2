@@ -21,11 +21,11 @@ Existem diversos tipos de padrões de conectores para estações de veículos el
 
 | Pino | Nome             | Função                                                   |
 |------|------------------|----------------------------------------------------------|
-| 1    | L1               | Fase 1 da alimentação AC (220V)                          |
-| 2    | L2               | Fase 2 da alimentação AC (220V) apenas para trifásico    |
-| 3    | L3               | Fase 3 da alimentação AC (220V) apenas para trifásico    |
-| 4    | N (Neutro)       | Neutro da alimentação AC                                 |
-| 5    | PE (Terra)       | Protective earth - Terra                                 |
-| 6    | CP (Comunicação)  | Control Pilot - Utilizado para comunicação entre o veículo e a estação de carregamento |
-| 7    | PP                | Proximity Pilot - Detector de presnça e identificação do limite de corrente do cabo conectado ao carro         |
+| 1    | L1   | Fase 1 da alimentação AC (220V)                          |
+| 2    | L2   | Fase 2 da alimentação AC (220V) apenas para trifásico    |
+| 3    | L3   | Fase 3 da alimentação AC (220V) apenas para trifásico    |
+| 4    | N    | Neutro da alimentação AC                                 |
+| 5    | PE   | Protective Earth - Terra                                 |
+| 6    | CP   | Control Pilot - Utilizado para comunicação entre o veículo e a estação de carregamento |
+| 7    | PP   | Proximity Pilot - Detector de presnça e identificação do limite de corrente do cabo conectado ao carro         |
 
