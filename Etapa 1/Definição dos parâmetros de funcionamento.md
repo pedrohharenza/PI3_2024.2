@@ -31,7 +31,7 @@ Existem diversos tipos de padrões de conectores para estações de veículos el
 
 
 ## Protocolo de Comunicação - Control Pilot
-A comunicação entre a estação de recarga e o veículo é realizada por meio do Control Pilot (CP). O sinal do CP determina os estados da estação de recarga, podendo ser um sinal estático ou um sinal PWM de 1 kHz. A razão cíclica desse sinal PWM determina a corrente máxima que a estação de recarga pode fornecer ao veículo.
+A comunicação entre a estação de recarga e o veículo é realizada por meio do Control Pilot (CP). O sinal do CP determina os estados da estação de recarga, podendo ser um sinal estático ou um sinal PWM de 1 kHz. A razão cíclica desse sinal PWM comunica ao veículo a corrente máxima que a estação de recarga pode fornecer.
 
 | Estado  CP          | Descrição                                                                                  |
 |---------------------|--------------------------------------------------------------------------------------------|
