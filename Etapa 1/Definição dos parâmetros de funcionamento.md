@@ -82,7 +82,7 @@ Sensores de corrente em estações de recarga atuam como um sistema de proteçã
 Sensores de tensão podem ser utilizados como sistema de proteção em estações de recarga de veículos elétricos ao monitorar continuamente a tensão elétrica fornecida ao sistema. Eles detectam desvios dos níveis de tensão esperados, como sobrecargas ou quedas abruptas. Quando uma anomalia é identificada, o sensor pode acionar automaticamente um desligamento da estação de recarga, prevenindo danos ao veículo e à infraestrutura. Essa proteção é crucial, pois tensões inadequadas podem resultar em falhas elétricas, danos à bateria do veículo ou até riscos de incêndio.
 
 ### Proteção Contra Surto de Tensão
-m estações de recarga, a proteção de surto de tensão geralmente é realizada por dispositivos de proteção contra surtos (DPS). Esses dispositivos são projetados para proteger os equipamentos contra picos de tensão transitórios, como os causados por raios ou manobras na rede elétrica.
+Em estações de recarga, a proteção de surto de tensão geralmente é realizada por dispositivos de proteção contra surtos (DPS). Esses dispositivos são projetados para proteger os equipamentos contra picos de tensão transitórios, como os causados por raios ou manobras na rede elétrica.
 Quando um surto é detectado, o DPS desvia a energia excessiva para a terra ou a absorve, evitando que essa tensão alta chegue aos componentes sensíveis da estação de recarga e do veículo elétrico. Isso ajuda a prevenir danos que poderiam comprometer a operação dos sistemas. A instalação de DPS é essencial para garantir a segurança e a longevidade das estações de recarga, especialmente em áreas propensas a surtos elétricos
 
 
