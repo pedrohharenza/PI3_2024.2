@@ -18,3 +18,14 @@ Existem diversos tipos de padrões de conectores para estações de veículos el
 <p align="center">
     <img src="Imagens/Conector%20tipo%202.png" alt="Conector Tipo 2">
 </p>
+
+| Pino | Nome             | Função                                                   |
+|------|------------------|----------------------------------------------------------|
+| 1    | L1               | Fase 1 da alimentação AC (220V)                         |
+| 2    | L2               | Fase 2 da alimentação AC (220V)                          |
+| 3    | N (Neutro)       | Neutro da alimentação AC                                 |
+| 4    | PE (Terra)       | Pino de proteção, conectado ao aterramento              |
+| 5    | CP (Controle)    | Pino de controle para comunicação entre o veículo e a estação de carregamento |
+| 6    | PP (Protetor)    | Pino de presença que detecta a conexão do veículo        |
+| 7    | V+               | Pino opcional que pode ser usado para comunicação adicional (não é sempre utilizado) |
+
