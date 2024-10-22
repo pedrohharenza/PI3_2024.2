@@ -70,6 +70,12 @@ O Proximity Pilot (PP) funciona como um sistema de detecção da conexão do cab
 
 Como o foco do projeto é desenvlvimento de uma estação de recarga portátil Nível 1, será utilizado um cabo como a resistência de 680 Ohm entre PP e PE.
 
+## Sistemas de Proteções
+IDR tipo B
+Proteção contra surto de tensão
+Sensores de corrente
+Sensores de tensão
+
 ## Resumo
 Baicamente a estação de recarga AC é apenas uma ponte entre o carro elétrico e a distribuição de energia da rede elétrica. Os sinais de comunicação funcionam de forma que seja possível de garantir a segurança do usuário
 
