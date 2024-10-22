@@ -39,7 +39,7 @@ A comunicação entre a estação de recarga e o veículo é realizada por meio 
 | +9V DC                  | Estação de recarga está conectada preparando para o carregamento.                         |
 | PWM 1kHz +9V a -12V     | A estação de recarga está pronta e aguardando a conexão do veículo para iniciar o processo de carregamento."   |
 | PWM 1kHz +6V a -12V     | Veículo em estado de carregamento.                                                        |
-| 0V ou -12V DC           | O veículo foi desconectado da estação e o processo de carregamento foi finalizado.        |
+| 0V ou -12V DC           | Erro                                                                                      |
 
 
 
