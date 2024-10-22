@@ -51,7 +51,7 @@ O Proximity Pilot (PP) funciona como um sistema de detecção da conexão do cab
 | 220 Ohm               |   32 A     |
 | 100 Ohm               |   63 A     |
 
-Como o foco do projeto é um carregador portátil Nível 1, será utilizado um cabo como a resistência de 680 Ohm entre PP e PE.
+Como o foco do projeto é desenvlvimento de uma estação de recarga portátil Nível 1, será utilizado um cabo como a resistência de 680 Ohm entre PP e PE.
 
 
 
