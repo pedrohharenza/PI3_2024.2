@@ -5,3 +5,4 @@ Como detalhado na seção [Definição dos parâmetros de funcionamento](Etapa%2
 
 ## Simulação
 
+O desenvolvimento do projeto será realizado com a utilização de um microcontrolador, que será encarregado de gerar o sinal PWM e processar os diferentes estados da estação de recarga. Com objetivo de simplificar a simulação será apenas considerado o sinla PWM que seria gerado pelo mircocontroladro. Também será considerado as resistências que controlam os estados de carregamento para simular o comportamento do carro elétrico do ponto de vista do sinal CP.
