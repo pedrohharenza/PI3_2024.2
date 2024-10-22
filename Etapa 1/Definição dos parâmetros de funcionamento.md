@@ -71,10 +71,10 @@ O Proximity Pilot (PP) funciona como um sistema de detecção da conexão do cab
 Como o foco do projeto é desenvlvimento de uma estação de recarga portátil Nível 1, será utilizado um cabo como a resistência de 680 Ohm entre PP e PE.
 
 ## Sistemas de Proteções
-IDR tipo B
-Proteção contra surto de tensão
-Sensores de corrente
-Sensores de tensão
+
+###IDR Tipo B em Estações de Recarga de Veículos Elétricos
+O IDR tipo B é um dispositivo de proteção essencial em estações de recarga de veículos elétricos, projetado para detectar correntes de fuga em circuitos que operam tanto com corrente alternada quanto contínua. Ele monitora a diferença entre a corrente que entra e a que sai do circuito, desarmando automaticamente quando identifica uma discrepância significativa. Isso é crucial em ambientes de recarga, onde falhas de isolamento ou contato com água podem ocorrer. Ao interromper o fornecimento de eletricidade em caso de fuga, o IDR tipo B protege os usuários contra choques elétricos e previne danos aos equipamentos, garantindo um ambiente de recarga seguro e confiável. Pela norma esse tipo de proteção é obrigatório em estações de recargas de veículos elétricos. Esse tipo de proteção pode ser instalado diretamente na estção de recarga ou no quadro de distribuição de energia.
+
 
 ## Resumo
 Baicamente a estação de recarga AC é apenas uma ponte entre o carro elétrico e a distribuição de energia da rede elétrica. Os sinais de comunicação funcionam de forma que seja possível de garantir a segurança do usuário
