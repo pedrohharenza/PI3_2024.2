@@ -73,7 +73,18 @@ Como o foco do projeto é desenvlvimento de uma estação de recarga portátil N
 ## Sistemas de Proteções
 
 ### IDR Tipo B
-O IDR tipo B é um dispositivo de proteção essencial em estações de recarga de veículos elétricos, projetado para detectar correntes de fuga em circuitos que operam tanto com corrente alternada quanto contínua. Ele monitora a diferença entre a corrente que entra e a que sai do circuito, desarmando automaticamente quando identifica uma discrepância significativa. Isso é crucial em ambientes de recarga, onde falhas de isolamento ou contato com água podem ocorrer. Ao interromper o fornecimento de eletricidade em caso de fuga, o IDR tipo B protege os usuários contra choques elétricos e previne danos aos equipamentos, garantindo um ambiente de recarga seguro e confiável. Pela norma esse tipo de proteção é obrigatório em estações de recargas de veículos elétricos. Esse tipo de proteção pode ser instalado diretamente na estção de recarga ou no quadro de distribuição de energia.
+O IDR tipo B é um dispositivo de proteção essencial em estações de recarga de veículos elétricos, projetado para detectar correntes de fuga em circuitos que operam tanto com corrente alternada quanto contínua. Ele monitora a diferença entre a corrente que entra e a que sai do circuito, desarmando automaticamente quando identifica uma discrepância significativa. Isso é crucial em ambientes de recarga, onde falhas de isolamento ou contato com água podem ocorrer. Ao interromper o fornecimento de eletricidade em caso de fuga, o IDR tipo B protege os usuários contra choques elétricos e previne danos aos equipamentos, garantindo um ambiente de recarga seguro e confiável. De acordo com as norma de segurança  elétrica NBR 16825, a instalação de IDR tipo B é obrigatória em estações de recarga de veículos elétricos. Essa proteção pode ser instalada diretamente na estação de recarga ou no quadro de distribuição de energia.
+
+### Sensores de Corrente
+Sensores de corrente em estações de recarga atuam como um sistema de proteção ao monitorar continuamente a corrente elétrica que flui para o veículo. Eles podem detectar anomalias, como correntes de fuga ou sobrecargas, e acionar medidas de proteção em tempo real. Quando um sensor identifica uma corrente que diverge do esperado, como uma sobrecarga, ele pode desativar automaticamente a estação de recarga, prevenindo danos ao veículo ou à infraestrutura.
+
+### Sensores de Tensão
+Sensores de tensão podem ser utilizados como sistema de proteção em estações de recarga de veículos elétricos ao monitorar continuamente a tensão elétrica fornecida ao sistema. Eles detectam desvios dos níveis de tensão esperados, como sobrecargas ou quedas abruptas. Quando uma anomalia é identificada, o sensor pode acionar automaticamente um desligamento da estação de recarga, prevenindo danos ao veículo e à infraestrutura. Essa proteção é crucial, pois tensões inadequadas podem resultar em falhas elétricas, danos à bateria do veículo ou até riscos de incêndio.
+
+### Proteção Contra Surto de Tensão
+m estações de recarga, a proteção de surto de tensão geralmente é realizada por dispositivos de proteção contra surtos (DPS). Esses dispositivos são projetados para proteger os equipamentos contra picos de tensão transitórios, como os causados por raios ou manobras na rede elétrica.
+Quando um surto é detectado, o DPS desvia a energia excessiva para a terra ou a absorve, evitando que essa tensão alta chegue aos componentes sensíveis da estação de recarga e do veículo elétrico. Isso ajuda a prevenir danos que poderiam comprometer a operação dos sistemas. A instalação de DPS é essencial para garantir a segurança e a longevidade das estações de recarga, especialmente em áreas propensas a surtos elétricos
+
 
 
 ## Resumo
