@@ -7,7 +7,7 @@ Este projeto tem como objetivo desenvolver e implementar uma estação de recarg
 - **Case**: Produzido com impressora 3D.
 - **Interface de Usuário**: LEDs RGB para indicar estados (Idle, Pronto, Carregando, Erro).
 - **Microcontrolador**: STM32 para controle e monitoramento.
-- **Proteções**: Circuito de protesão de pico de tensão e filtro EMI
+- **Proteções**: Circuito de proteção de pico de tensão e filtro EMI
 
 ## Testador de Estação de Recarga
 Para garantir a confiabilidade e o desempenho do carregador, será desenvolvido um **Testador de Estação de Recarga**. Este dispositivo simulará condições reais de carregamento e verificará o correto funcionamento da estação.
