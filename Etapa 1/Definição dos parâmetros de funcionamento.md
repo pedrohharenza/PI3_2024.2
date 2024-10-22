@@ -44,7 +44,7 @@ A comunicação entre a estação de recarga e o veículo é realizada por meio 
 ## Protocolo de comunicação - Proximity Pilot
 O Proximity Pilot (PP) funciona como um sistema de detecção da conexão do cabo de alimentação da estação de recarga e do limite de corrente que esse cabo suporta. A comunicação entre o PP e o veículo é realizada através de uma resistência que se estabelece entre o PP e o Protective Earth (PE), podendo variar de acordo com a corrente máxima que o cabo é capaz de conduzir. Normalmente, essa resistência está integrada diretamente no cabo de alimentação.
 
-| Resistência do PP (Ω) | Corrente Máxima (A) |
+| Resistência do PP (Ω) | Corrente Máxima Suportada Pelo Cabo (A) |
 |-----------------------|---------------------|
 | 100 Ohm               |   10 A     |
 | 220 Ohm               |   20 A     |
