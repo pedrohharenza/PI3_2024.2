@@ -10,7 +10,7 @@ Este projeto tem como objetivo desenvolver e implementar uma estação de recarg
 - **Proteções**: Circuito de proteção de pico de tensão e filtro EMI
 
 ## Testador de Estação de Recarga
-Para garantir a confiabilidade e o desempenho do carregador, será desenvolvido um **Testador de Estação de Recarga**. Este dispositivo simulará condições reais de carregamento e verificará o correto funcionamento da estação.
+Para garantir a confiabilidade e o desempenho do carregador, será desenvolvido um **Testador de Estação de Recarga**. Este dispositivo simulará condições reais de carregamento e verificará o correto funcionamento da estação antes de ser utilizado em um veículo.
 
 ## Etapas do Projeto
 1. [**Etapa 1**](Etapa%201/): [Definição dos parâmetros de funcionamento da estação de recarga](Etapa%201/Definição%20dos%20parâmetros%20de%20funcionamento.md) e apresentar uma simulação simplificada para validação dos circuitos que serão utilizados.
