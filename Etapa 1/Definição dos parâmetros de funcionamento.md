@@ -77,9 +77,14 @@ O IDR tipo B é um dispositivo de proteção essencial em estações de recarga 
 
 ### Sensores de Corrente
 Sensores de corrente em estações de recarga atuam como um sistema de proteção ao monitorar continuamente a corrente elétrica que flui para o veículo. Eles podem detectar anomalias, como correntes de fuga ou sobrecargas, e acionar medidas de proteção em tempo real. Quando um sensor identifica uma corrente que diverge do esperado, como uma sobrecarga, ele pode desativar automaticamente a estação de recarga, prevenindo danos ao veículo ou à infraestrutura.
+ - Sensor de efeito Hall
+ - Sensor de corrente transformador
+ - Resistor Shunt
 
 ### Sensores de Tensão
 Sensores de tensão podem ser utilizados como sistema de proteção em estações de recarga de veículos elétricos ao monitorar continuamente a tensão elétrica fornecida ao sistema. Eles detectam desvios dos níveis de tensão esperados, como sobrecargas ou quedas abruptas. Quando uma anomalia é identificada, o sensor pode acionar automaticamente um desligamento da estação de recarga, prevenindo danos ao veículo e à infraestrutura. Essa proteção é crucial, pois tensões inadequadas podem resultar em falhas elétricas, danos à bateria do veículo ou até riscos de incêndio.
+ - Divisor resistivo (Tolerância dos resistores)
+ - Transformadores (ZHTPT107)
 
 ### Proteção Contra Surto de Tensão
 Em estações de recarga, a proteção de surto de tensão geralmente é realizada por dispositivos de proteção contra surtos (DPS). Esses dispositivos são projetados para proteger os equipamentos contra picos de tensão transitórios, como os causados por raios ou manobras na rede elétrica.
