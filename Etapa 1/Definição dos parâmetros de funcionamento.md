@@ -16,5 +16,5 @@ Os carregadores de Nível 1 e Nível 2 devem passar pelo On-board Charger, que e
 Existem diversos tipos de padrões de conectores para estações de veículos elétricos; no entanto, o conector mais utilizado no Brasil e na Europa é conhecido como Tipo 2. Este conector é amplamente adotado devido à sua versatilidade e compatibilidade com a maioria dos veículos elétricos disponíveis no mercado.
 
 <p align="center">
-    <img src="Etapa%201/Imagens/Conector%20tipo%202.png" alt="Conector Tipo 2">
+    <img src="Imagens/Conector%20tipo%202.png" alt="Conector Tipo 2">
 </p>
