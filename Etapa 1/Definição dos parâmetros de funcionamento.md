@@ -53,7 +53,7 @@ Em relação ao consumo de corrente, a estação de recarga informa ao veículo 
 A relação entre a corrente máxima (I) fornecida pela estação de recarga e a razão cíclica (D) do sinal do Control Pilot (CP) pode ser expressa pela seguinte equação:
 
 $$
-I_{max} = 60 \times D
+I = 60 \times D
 $$
 
 ## Protocolo de comunicação - Proximity Pilot
