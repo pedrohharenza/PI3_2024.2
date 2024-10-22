@@ -46,10 +46,12 @@ O Proximity Pilot (PP) funciona como um sistema de detecção da conexão do cab
 
 | Resistência do PP (Ω) | Corrente Máxima Suportada Pelo Cabo (A) |
 |-----------------------|---------------------|
-| 100 Ohm               |   10 A     |
-| 220 Ohm               |   20 A     |
-| 680 Ohm               |   32 A     |
-| 1500 Ohm              |   63 A     |
+| 1500 Ohm              |   10 A     |
+| 680 Ohm               |   20 A     |
+| 220 Ohm               |   32 A     |
+| 100 Ohm               |   63 A     |
+
+Como o foco do projeto é um carregador portátil Nível 1, será utilizado um cabo como a resistência de 680 Ohm entre PP e PE.
 
 
 
