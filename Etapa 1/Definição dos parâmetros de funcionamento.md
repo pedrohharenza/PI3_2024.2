@@ -85,10 +85,8 @@ Sensores de tensão podem ser utilizados como sistema de proteção em estaçõe
 m estações de recarga, a proteção de surto de tensão geralmente é realizada por dispositivos de proteção contra surtos (DPS). Esses dispositivos são projetados para proteger os equipamentos contra picos de tensão transitórios, como os causados por raios ou manobras na rede elétrica.
 Quando um surto é detectado, o DPS desvia a energia excessiva para a terra ou a absorve, evitando que essa tensão alta chegue aos componentes sensíveis da estação de recarga e do veículo elétrico. Isso ajuda a prevenir danos que poderiam comprometer a operação dos sistemas. A instalação de DPS é essencial para garantir a segurança e a longevidade das estações de recarga, especialmente em áreas propensas a surtos elétricos
 
-
-
 ## Resumo
-Baicamente a estação de recarga AC é apenas uma ponte entre o carro elétrico e a distribuição de energia da rede elétrica. Os sinais de comunicação funcionam de forma que seja possível de garantir a segurança do usuário
+Basicamente, a estação de recarga AC atua como uma interface entre o veículo elétrico e a rede elétrica de distribuição. Os sinais de comunicação são projetados para garantir a segurança do usuário, permitindo que a estação controle e monitore o processo de recarga de forma eficaz. Isso assegura que a energia seja transferida de maneira segura, ajustando parâmetros como corrente e tensão, enquanto protege tanto o veículo quanto a infraestrutura elétrica.
 
 
 
