@@ -35,11 +35,11 @@ A comunicação entre a estação de recarga e o veículo é realizada por meio 
 
 | Sinal  CP          | Estado | Descrição                                                                                  |
 |---------------------|--------|--------------------------------------------------------------------------------------------|
-| +12V DC             | A  | A estação está pronta para iniciar o processo de carregamento (IDLE).                     |
-| +9V DC              | B  | Estação de recarga está conectada preparando para o carregamento.                         |
-| PWM 1kHz +9V a -12V | C  | A estação de recarga está pronta e aguardando a conexão do veículo para iniciar o processo de carregamento."   |
-| PWM 1kHz +6V a -12V | D   | Veículo em estado de carregamento.                                                        |
-| 0V ou -12V DC       | E ou F  | Erro                                                                                      |
+| +12V DC             | A       | A estação está pronta para iniciar o processo de carregamento (IDLE).   |
+| PWM 1kHz +9V a -12V | B       | Estação de recarga está conectada preparando para o carregamento.       |
+| PWM 1kHz +6V a -12V | C       | Veículo em estado de carregamento.                                      |
+| PWM 1kHz +3 a -12   | D       | Veículo em estado de carregamento ventilação becessária (normalmente não utilizada) |
+| 0V ou -12V DC       | E ou F  | Erro                                                                    |
 
 
 
