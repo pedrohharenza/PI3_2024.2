@@ -42,6 +42,8 @@ A comunicação entre a estação de recarga e o veículo é realizada por meio 
 | E      | 0V            | 0                | N/A        |    —        | Erro |
 | F      | N/A           | -12V             | N/A        |    —        | Erro desconhecido |
 
+O estado D não é comumente utilizado nos veículos elétricos disponíveis no Brasil. Portanto, esse estado será suprimido sem que haja qualquer perda no funcionamento da estação de recarga.
+
 Do ponto de vista do Control Pilot, o veículo elétrico pode ser simplificado a um conjunto de resistências, onde o carro controla quais resistências estão ativadas. Essa configuração permite ajustar a tensão no sinal do Control Pilot (CP) e consequentemente alterar os estados da estação de recarga.
 
 
