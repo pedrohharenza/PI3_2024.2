@@ -33,13 +33,14 @@ Existem diversos tipos de padrões de conectores para estações de veículos el
 ## Protocolo de Comunicação - Control Pilot
 A comunicação entre a estação de recarga e o veículo é realizada por meio do Control Pilot (CP). O sinal do CP determina os estados da estação de recarga, podendo ser um sinal estático ou um sinal PWM de 1 kHz. A razão cíclica desse sinal PWM comunica ao veículo a corrente máxima que a estação de recarga pode fornecer.
 
-| Sinal  CP          | Estado | Descrição                                                                                  |
-|---------------------|--------|--------------------------------------------------------------------------------------------|
-| +12V DC             | A       | A estação está pronta para iniciar o processo de carregamento (IDLE).   |
-| PWM 1kHz +9V a -12V | B       | Estação de recarga está conectada preparando para o carregamento.       |
-| PWM 1kHz +6V a -12V | C       | Veículo em estado de carregamento.                                      |
-| PWM 1kHz +3 a -12   | D       | Veículo em estado de carregamento, ventilação necessária (normalmente não utilizada) |
-| 0V ou -12V DC       | E ou F  | Erro                                                                    |
+| Estado | Tensão Alta CP | Tensão Baixa CP | Frequência | Resistência | Descrição |
+|--------|---------------|------------------|------------|-------------|-----------|
+| A      | 12V           | N/A              | DC         |    N/A      | Não conectado |
+| B      | 9V            | -12V             | 1 kHz      |    2.74 kΩ  | Veículo conectado, pronto para recarga |
+| C      | 6V            | -12V             | 1 kHz      |    882 Ω    | Veículo carregadno |
+| D      | 3V            | -12V             | 1 kHz      |    246 Ω    | Veículo carregando, ventilação necessária |
+| E      | 0V            | 0                | N/A        |    —        | Erro |
+| F      | N/A           | -12V             | N/A        |    —        | Erro desconhecido |
 
 Do ponto de vista do Control Pilot, o veículo elétrico pode ser simplificado a um conjunto de resistências, onde o carro controla quais resistências estão ativadas. Essa configuração permite ajustar a tensão no sinal do Control Pilot (CP) e consequentemente alterar os estados da estação de recarga.
 
@@ -63,10 +64,10 @@ O Proximity Pilot (PP) funciona como um sistema de detecção da conexão do cab
 
 | Resistência do PP (Ω) | Corrente Máxima Suportada Pelo Cabo (A) |
 |-----------------------|---------------------|
-| 1500 Ohm              |   10 A     |
-| 680 Ohm               |   20 A     |
-| 220 Ohm               |   32 A     |
-| 100 Ohm               |   63 A     |
+| 1500 Ω              |   10 A     |
+| 680 Ω               |   20 A     |
+| 220 Ω               |   32 A     |
+| 100 Ω               |   63 A     |
 
 Como o foco do projeto é desenvlvimento de uma estação de recarga portátil Nível 1, será utilizado um cabo como a resistência de 680 Ohm entre PP e PE.
 
