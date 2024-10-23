@@ -18,3 +18,17 @@ O microcontrolador precisa medir a amplitude do sinal PWM do CP para identificar
 <p align="center">
     <img src="Imagens/leitura%20do%20sinal%20cp.png">
 </p>
+
+Simulando o circuito temos que a onda quadrada em amarelo é o sinal do CP que vai para o carro e a onda quadrada em azul que será utilizada para determinar a amplitude do sinal do CP. Podemos observar que ao variar os resistores que determinam os estados a amplitude do sinal se altera como esperado e a onda quadrada em azul sem mantem dentro faixa de 0V a 3.3V.
+
+<p align="center">
+    <img src="Imagens/Simulação_A.png">
+</p>
+
+<p align="center">
+    <img src="Imagens/Simulação_B.png">
+</p>
+
+<p align="center">
+    <img src="Imagens/Simulação_C.png">
+</p>
