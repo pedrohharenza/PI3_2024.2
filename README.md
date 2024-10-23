@@ -17,3 +17,8 @@ Para garantir a confiabilidade e o desempenho do carregador, será desenvolvido 
 3. **Etapa 2**: Desenvolvimento do esquemático de cada circuito que abrange os funcionamentos do carregador.
 4. **Etapa 3**: Defeinição dos componentes que serão utilizados e desenvolvimento do layout da PCB.
 5. **Etapa 4**: Implementação dos circuitos em PCB, implementação do código, e implementação do case em impressão 3D.
+
+## Referências
+
+- https://www.ti.com/lit/ug/tiduf04/tiduf04.pdf?ts=1729670182718&ref_url=https%253A%252F%252Fwww.ti.com%252Fsolution%252Fac-charging-pile-station%253Fvariantid%253D14389%2526subsystemid%253D31340
+- https://www.researchgate.net/figure/Typical-control-pilot-circuit-according-to-IEC61851-1_fig1_338287849
