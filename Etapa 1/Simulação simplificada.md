@@ -13,7 +13,7 @@ Como visto na [Definição dos parâmetros de funcionamento](Definição%20dos%2
     <img src="Imagens/simulação%20pwm.png">
 </p>
 
-O microcontrolador deve ser capaz de medir a amplitude do sinal PWM do CP para determinal qual é o estado da estação de recarga. Para isso é necessário reduzir o sinal para que esteja dentro do limite que o microcontrolador aceite, de 0V a 3.3V. para isso é utilizado a alimentação de +3.3V e alguns resistores para elevar o sinal e diminuir sua amplitude. Para que a medição do sinal CP não seja alterado, é utilizado um amplificador operacional como buffer de isolamento da medida. Com isso, o microcontrolador consegue determinar os estados da estação de recarga com base na amplitude do sinal PWM.
+O microcontrolador precisa medir a amplitude do sinal PWM do CP para identificar o estado da estação de recarga. Para isso, é necessário ajustar o sinal para que ele esteja dentro do limite de operação do microcontrolador, que é de 0V a 3.3V. Esse ajuste é feito utilizando a alimentação de +3.3V e um divisor de tensão com resistores, o que permite reduzir a amplitude e eliminar a tensão negativa do sinal. Além disso, para garantir que a medição do sinal CP não seja influenciada, um amplificador operacional é utilizado como buffer, proporcionando isolamento à medida. Dessa forma, o microcontrolador consegue fazer a leitura do sinal e determinar os diferentes estados da estação de recarga com base na amplitude do sinal PWM.
 
 <p align="center">
     <img src="Imagens/leitura%20do%20sinal%20cp.png">
