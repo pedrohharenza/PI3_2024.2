@@ -22,3 +22,4 @@ Para garantir a confiabilidade e o desempenho do carregador, será desenvolvido 
 
 - https://www.ti.com/lit/ug/tiduf04/tiduf04.pdf?ts=1729670182718&ref_url=https%253A%252F%252Fwww.ti.com%252Fsolution%252Fac-charging-pile-station%253Fvariantid%253D14389%2526subsystemid%253D31340
 - https://www.researchgate.net/figure/Typical-control-pilot-circuit-according-to-IEC61851-1_fig1_338287849
+- IEC 61851-1  Sistema de recarga condutiva para veículos elétricos Parte 1: Requisitos gerais
