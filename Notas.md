@@ -6,4 +6,4 @@
 | **Sensor de corrente** | Shunt de alta precisão                        |
 | **Sensor de Tensão**   | Divisor resistivo de alta precisão            |
 | **Comparador PWM**     | TLV1805                                       |
-| **Fonte**              | 2 [HLK-PM12](file:///C:/Users/Pedro.Harenza/Downloads/HLK-PM12_Datasheet.pdf)                                    | 
+| **Fonte**              | 2 [HLK-PM12](https://nettigo.eu/attachments/503)                                    | 
