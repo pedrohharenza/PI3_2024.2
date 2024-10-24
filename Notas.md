@@ -2,7 +2,7 @@
 
 Objetivo: Erro < 1% comparado ao PA-1000
 
-| Componente             | Descrição                                     |
+| Componente             | PART NUMBER                                   |
 |------------------------|-----------------------------------------------|
 | **MCU**                | [STM32F37](https://br.mouser.com/datasheet/2/389/stm32f373cc-1851083.pdf) |
 | **ADC externo**        | Avaliar                                       |
