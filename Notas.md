@@ -15,3 +15,4 @@ Objetivo: Erro < 1% comparado ao PA-1000
 
 
 Documentação sobre medida de corrente com shunt https://br.mouser.com/applications/making-sense-current-sensing/
+https://www.escomponents.com/precision-current-sensing-guide4
