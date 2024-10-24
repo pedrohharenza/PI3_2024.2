@@ -12,3 +12,6 @@ Objetivo: Erro < 1% comparado ao PA-1000
 | **Sensor de Tensão**   | [Divisor resistivo de alta precisão](https://br.mouser.com/datasheet/2/385/sei_css_cssh-3077671.pdf) |
 | **Comparador PWM**     | [TLV1805](https://www.ti.com/lit/ds/symlink/ref3430.pdf?ts=1729769344116&ref_url=https%253A%252F%252Fwww.mouser.at%252F) |
 | **Fonte**              | [HLK-PM12](https://nettigo.eu/attachments/503) | 
+
+
+Documentação sobre medida de corrente com shunt https://br.mouser.com/applications/making-sense-current-sensing/
