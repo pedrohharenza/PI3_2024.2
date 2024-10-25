@@ -17,3 +17,7 @@ Objetivo: Erro < 1% comparado ao PA-1000
 ## Documentação sobre medida de corrente com shunt 
 - https://br.mouser.com/applications/making-sense-current-sensing/
 - https://www.escomponents.com/precision-current-sensing-guide4
+
+# Three-Phase Power Meter Reference Design
+- https://www.nxp.com/design/design-center/development-boards-and-designs/three-phase-power-meter-reference-design:THREE-PHASE-POWER-METER
+- KM3x https://www.nxp.com/docs/en/product-brief/KM3XPB.pdf
