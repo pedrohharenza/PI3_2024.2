@@ -1,6 +1,6 @@
 ## Lista de Possíveis componentes
 
-Objetivo: Erro < 1% comparado ao PA-1000
+Objetivo: Erro < 1% Classe A
 
 | Componente             | PART NUMBER                                   |
 |------------------------|-----------------------------------------------|
@@ -22,7 +22,12 @@ Objetivo: Erro < 1% comparado ao PA-1000
 - https://www.tij.co.jp/jp/lit/ug/tidu455a/tidu455a.pdf
 
 ## Dica do Renan
-- Sigma delta é diferencial. Para medir tensão fase neutro meu microcontrolador precisa estar com a ref no neutro
-- Opto na saída pwm antes do ampop para isolar o sinal
+- Sigma delta é diferencial. Para medir tensão fase neutro o microcontrolador precisa estar com a ref no neutro
+- NÃO CONECTAR O NOTEBOOK NO GRAVADOR QUANDO ESTIVER CONECTADO NA REDE, RISCO DE BOOM!
+- Opto no pwm antes do ampop para isolar o sinal
 - Pesquisar sobre como fazer as contas no software sem fazer fft
-- 
+- Se usar shunt considerar low dise sensing
+- Pesquisar transformador que poderia resolver o problema da ref no neutro
+- pesquisar tranformador de corrente
+- Perguntar pro Joabel sobre a fonte de alimentação do microcontrolador se vale isolar com transformador para ficar neutro como ref dos +12V e dps abaixar pra +3.3V com regulador linear
+- Pra atingir o erro de 1% tem que calibrar para os componentes utilizados em software
