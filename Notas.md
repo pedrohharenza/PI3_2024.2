@@ -18,5 +18,8 @@ Objetivo: Erro < 1% comparado ao PA-1000
 - https://br.mouser.com/applications/making-sense-current-sensing/
 - https://www.escomponents.com/precision-current-sensing-guide4
 
-# Three-Phase Power Meter Reference Design
+## Three-Phase Power Meter Reference Design
 - https://www.nxp.com/design/design-center/development-boards-and-designs/three-phase-power-meter-reference-design:THREE-PHASE-POWER-METER
+
+## Single-Phase Electric Meter With Isolated Energy
+- https://www.tij.co.jp/jp/lit/ug/tidu455a/tidu455a.pdf
