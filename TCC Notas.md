@@ -15,6 +15,9 @@ Objetivo: Erro < 1% Classe A
 - https://br.mouser.com/applications/making-sense-current-sensing/
 - https://www.escomponents.com/precision-current-sensing-guide4
 
+## Single-Phase Power Metering Reference Design
+- https://www.nxp.com/design/design-center/development-boards-and-designs/single-phase-metering:SINGLE-PHASE-METER
+  
 ## Three-Phase Power Meter Reference Design
 - https://www.nxp.com/design/design-center/development-boards-and-designs/three-phase-power-meter-reference-design:THREE-PHASE-POWER-METER
 
