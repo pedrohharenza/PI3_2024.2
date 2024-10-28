@@ -15,13 +15,13 @@ Objetivo: Erro < 1% Classe A
 - https://br.mouser.com/applications/making-sense-current-sensing/
 - https://www.escomponents.com/precision-current-sensing-guide4
 
-## Single-Phase Power Metering Reference Design
+## NXP Single-Phase Power Metering Reference Design
 - https://www.nxp.com/design/design-center/development-boards-and-designs/single-phase-metering:SINGLE-PHASE-METER
   
-## Three-Phase Power Meter Reference Design
+## NXP Three-Phase Power Meter Reference Design
 - https://www.nxp.com/design/design-center/development-boards-and-designs/three-phase-power-meter-reference-design:THREE-PHASE-POWER-METER
 
-## Single-Phase Electric Meter With Isolated Energy
+## TI Single-Phase Electric Meter With Isolated Energy
 - https://www.tij.co.jp/jp/lit/ug/tidu455a/tidu455a.pdf
 
 ## Isolação debug probe
