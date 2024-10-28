@@ -21,6 +21,9 @@ Objetivo: Erro < 1% Classe A
 ## NXP Three-Phase Power Meter Reference Design
 - https://www.nxp.com/design/design-center/development-boards-and-designs/three-phase-power-meter-reference-design:THREE-PHASE-POWER-METER
 
+## Filter-Based Algorithm for Metering Applications
+- https://www.nxp.com/docs/en/application-note/AN4265.pdf
+
 ## TI Single-Phase Electric Meter With Isolated Energy
 - https://www.tij.co.jp/jp/lit/ug/tidu455a/tidu455a.pdf
 
