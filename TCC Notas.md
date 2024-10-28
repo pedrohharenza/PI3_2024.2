@@ -30,7 +30,7 @@ Objetivo: Erro < 1% Classe A
 ## Isolação debug probe
 - https://www.st.com/en/development-tools/st-link-v2.html
 
-## Dica do Renan
+## Dicas do Renan
 - Sigma delta é diferencial. Para medir tensão fase neutro o microcontrolador precisa estar com a ref no neutro
 - NÃO CONECTAR O NOTEBOOK NO GRAVADOR QUANDO ESTIVER CONECTADO NA REDE, RISCO DE BOOM!
 - Opto no pwm antes do ampop para isolar o sinal
