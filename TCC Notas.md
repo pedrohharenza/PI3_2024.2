@@ -33,10 +33,10 @@ Objetivo: Erro < 1% Classe A
 ## Dicas do Renan
 - Sigma delta é diferencial. Para medir tensão fase neutro o microcontrolador precisa estar com a ref no neutro
 - NÃO CONECTAR O NOTEBOOK NO GRAVADOR QUANDO ESTIVER CONECTADO NA REDE, RISCO DE BOOM!
-- Opto no pwm antes do ampop para isolar o sinal
-- Pesquisar sobre como fazer as contas no software sem fazer fft
-- Se usar shunt considerar low dise sensing
-- Pesquisar transformador que poderia resolver o problema da ref no neutro
-- pesquisar tranformador de corrente
-- Perguntar pro Joabel sobre a fonte de alimentação do microcontrolador se vale isolar com transformador para ficar neutro como ref dos +12V e dps abaixar pra +3.3V com regulador linear
+- Opto no pwm antes do ampop comparador do sinal CP para isolar o sinal
+- Pesquisar sobre como fazer as contas sem fazer fft
+- Se usar shunt considerar low side sensing para manter a mesma ref
+- Pesquisar transformador que poderia resolver o problema da ref no neutro e manter as características de harmônicas
+- pesquisar tranformador de corrente com erro baixo que poderia ser utilizado
+- Perguntar pro Joabel sobre a fonte de alimentação do microcontrolador, se uma solução seria isolar com transformador, para ficar neutro como ref dos +12V e dps abaixar pra +3.3V com regulador linear. Teria que utilizar 3 fontes de 12V?
 - Pra atingir o erro de 1% tem que calibrar para os componentes utilizados em software
