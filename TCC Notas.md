@@ -22,7 +22,7 @@ Objetivo: Erro < 1% Classe A
 - https://www.tij.co.jp/jp/lit/ug/tidu455a/tidu455a.pdf
 
 ## Isolação debug probe
-https://www.st.com/en/development-tools/st-link-v2.html
+- https://www.st.com/en/development-tools/st-link-v2.html
 
 ## Dica do Renan
 - Sigma delta é diferencial. Para medir tensão fase neutro o microcontrolador precisa estar com a ref no neutro
