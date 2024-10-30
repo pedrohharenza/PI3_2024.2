@@ -42,7 +42,7 @@ Objetivo: Erro < 1% Classe A
 - Pra atingir o erro de 1% tem que calibrar para os componentes utilizados em software
 
 
-# Calibração de Software vs. Tensão de Referência Precisa para o ADC (NotebookLM)
+# Calibração de Software vs. Tensão de Referência Precisa para o ADC (NotebookLM + Datasheet STM32F373)
 Na sua aplicação, onde você precisa de medidas precisas e acuradas do ADC, tanto a precisão da tensão de referência quanto a calibração do ADC por software são importantes.
 ## Tensão de Referência:
 - A tensão de referência determina a escala de conversão do ADC. Uma tensão de referência mais precisa resulta em medições mais precisas.
