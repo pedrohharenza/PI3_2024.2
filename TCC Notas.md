@@ -46,7 +46,7 @@ Objetivo: Erro < 1% Classe A
 ## Salvar os dados
 - Usar python para ler a porta serial e salvar os dados em um arquivo txt.
 
-## Soluçaão para o isolamento
+## Solução para o isolamento
 - Utilizar o STM32F373 apenas para medida de energia e comunicar via UART isolado por opto para um STM32F030K6T6, que possui a máquina de estados do carregador
 
 
