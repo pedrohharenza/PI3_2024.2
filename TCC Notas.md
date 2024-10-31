@@ -43,6 +43,12 @@ Objetivo: Erro < 1% Classe A
 - Perguntar pro Joabel sobre a fonte de alimentação do microcontrolador, se uma solução seria isolar com transformador, para ficar neutro como ref dos +12V e dps abaixar pra +3.3V com regulador linear. Teria que utilizar 3 fontes de 12V?
 - Pra atingir o erro de 1% tem que calibrar para os componentes utilizados em software
 
+## Salvar os dados
+- Usar python para ler a porta serial e salvar os dados em um arquivo txt.
+
+## Soluçaão para o isolamento
+- Utilizar o STM32F373 apenas para medida de energia e comunicar via UART isolado por opto para um STM32F030K6T6, que possui a máquina de estados do carregador
+
 
 # Calibração de Software vs. Tensão de Referência Precisa para o ADC (NotebookLM + Datasheet STM32F373)
 Na sua aplicação, onde você precisa de medidas precisas e acuradas do ADC, tanto a precisão da tensão de referência quanto a calibração do ADC por software são importantes.
