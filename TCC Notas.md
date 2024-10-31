@@ -1,6 +1,6 @@
 ## Lista de Possíveis componentes
 
-Objetivo: Erro < 1% Classe A
+Objetivo: Erro < 1%
 
 | Componente             | PART NUMBER                                   |
 |------------------------|-----------------------------------------------|
