@@ -12,6 +12,14 @@ Objetivo: Classe 1 Erro < 1%
 | **Comparador PWM**     | [TLV1805](https://www.ti.com/lit/ds/symlink/tlv1805-q1.pdf?ts=1729874561037&ref_url=https%253A%252F%252Fbr.mouser.com%252F) |
 | **Fonte**              | [HLK-PM12](https://nettigo.eu/attachments/503) | 
 
+<p align="center">
+    <img src="Diagrama%20de%20blocos%20Monofásico%20simples.png" alt="Conector Tipo 2">
+</p>
+
+<p align="center">
+    <img src="Diagrama%20de%20blocos%20Triásico%20completo.png" alt="Conector Tipo 2">
+</p>
+
 
 ## Documentação sobre medida de corrente com shunt 
 - https://br.mouser.com/applications/making-sense-current-sensing/
