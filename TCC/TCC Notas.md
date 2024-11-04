@@ -9,7 +9,7 @@ Objetivo: Classe 1 Erro < 1%
 | **Optoacoplador isolamento da UART**      | [6N137](https://br.mouser.com/datasheet/2/427/6n137-7681.pdf)|
 | **Sensor de corrente** | Shunt de alta precisão ou transformador de corrente|
 | **Sensor de Tensão**   | [Divisor resistivo de alta precisão](https://br.mouser.com/datasheet/2/385/sei_css_cssh-3077671.pdf) |
-| **Comparador PWM**     | [TLV1805](https://www.ti.com/lit/ds/symlink/tlv1805-q1.pdf?ts=1729874561037&ref_url=https%253A%252F%252Fbr.mouser.com%252F); [LM2903](https://www.acheicomponentes.com.br/circuitos-integrados/smd/soic-8/circuito-integrado-lm2903dr-smd-soic-8-lm2903) |
+| **Comparador PWM**     | [TLV1805](https://www.ti.com/lit/ds/symlink/tlv1805-q1.pdf?ts=1729874561037&ref_url=https%253A%252F%252Fbr.mouser.com%252F); [LM2903](https://www.acheicomponentes.com.br/circuitos-integrados/smd/soic-8/circuito-integrado-lm2903dr-smd-soic-8-lm2903); [LMC7211AIM5](https://www.acheicomponentes.com.br/circuitos-integrados/smd/ci-amplificador-lmc7211aim5nopb-smd-sot-23-5) |
 | **Fonte**              | [HLK-PM12](https://nettigo.eu/attachments/503) | 
 
 <p align="center">
