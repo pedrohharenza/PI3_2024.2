@@ -12,14 +12,17 @@ Objetivo: Classe 1 Erro < 1%
 | **Comparador PWM**     | [TLV1805](https://www.ti.com/lit/ds/symlink/tlv1805-q1.pdf?ts=1729874561037&ref_url=https%253A%252F%252Fbr.mouser.com%252F); [LM2903](https://www.acheicomponentes.com.br/circuitos-integrados/smd/soic-8/circuito-integrado-lm2903dr-smd-soic-8-lm2903); [LMC7211AIM5](https://www.acheicomponentes.com.br/circuitos-integrados/smd/ci-amplificador-lmc7211aim5nopb-smd-sot-23-5) |
 | **Fonte**              | [HLK-PM12](https://nettigo.eu/attachments/503) | 
 
+## Diagrama de blocos Monofásico
 <p align="center">
-    <img src="Diagrama%20de%20blocos%20Monofásico%20simples.png" alt="teste">
+    <img src="Diagrama%20de%20blocos%20Monofásico%20simples.png">
 </p>
 
+## Diagrama de blocos Trifásico
 <p align="center">
     <img src="Diagrama%20de%20blocos%20Triásico%20completo.png">
 </p>
 
+## Medida de corrente com shunt Pionix
 <p align="center">
     <img src="Medida%20de%20corrente%20Pionix.png">
 </p>
