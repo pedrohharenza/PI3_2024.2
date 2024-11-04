@@ -13,7 +13,7 @@ Objetivo: Classe 1 Erro < 1%
 | **Fonte**              | [HLK-PM12](https://nettigo.eu/attachments/503) | 
 
 <p align="center">
-    <img src="Diagrama%20de%20blocos%20Monofásico%20simples.png">
+    <img src="Diagrama%20de%20blocos%20Monofásico%20simples.png" alt="teste">
 </p>
 
 <p align="center">
