@@ -13,11 +13,15 @@ Objetivo: Classe 1 Erro < 1%
 | **Fonte**              | [HLK-PM12](https://nettigo.eu/attachments/503) | 
 
 <p align="center">
-    <img src="Diagrama%20de%20blocos%20Monofásico%20simples.png" alt="Conector Tipo 2">
+    <img src="Diagrama%20de%20blocos%20Monofásico%20simples.png">
 </p>
 
 <p align="center">
-    <img src="Diagrama%20de%20blocos%20Triásico%20completo.png" alt="Conector Tipo 2">
+    <img src="Diagrama%20de%20blocos%20Triásico%20completo.png">
+</p>
+
+<p align="center">
+    <img src="Medida%20de%20corrente%20Pionix.png">
 </p>
 
 
