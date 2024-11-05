@@ -25,6 +25,11 @@ Objetivo: Classe 1 Erro < 1%
 
 ## Medida de corrente com shunt Pionix
 <p align="center">
+    <img src="medidas_nxp.png">
+</p>
+
+## Medida de corrente com shunt Pionix
+<p align="center">
     <img src="Medida%20de%20corrente%20Pionix.png">
 </p>
 
