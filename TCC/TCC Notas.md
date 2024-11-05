@@ -65,6 +65,24 @@ Objetivo: Classe 1 Erro < 1%
 ## Solução para o isolamento
 - Utilizar o STM32F373 apenas para medida de energia e comunicar via UART isolado por opto para um STM32F030K6T6, que possui a máquina de estados do carregador
 
+## Forum sobre falando sobre medida de tensão para medidor de energia
+https://electronics.stackexchange.com/questions/336037/240v-ac-voltage-measurement-using-voltage-divider
+Yes you can. But things become complicated quickly since there are a few other things to consider.
+
+When you design such circuit you'd want to have as much resistance as possible to limit wasted power in the divider. You'd also want your divider to survive electrical fast transients (EFT) and other surges, thus your divider should be able to withstand those voltages.
+
+But high total resistance makes common mode and noise pickup a problem. Yet low total resistance make dissipated heat a problem.
+You could take 20 resistors to combat this, but then you'd also have the side effects of 20 resistors. (eg: space, inaccuracy and drift)
+
+There several application notes around tackling this issue.
+TI: slaa494a
+Atmel: AVR465
+
+Then you also have the problem of data acquisition, since you'd need to be doing RMS with enough bit depth and sample-rate. Which is quite cpu intensive.
+And then the harmonics show up and your measurement is incorrect...
+
+Notice that whenever you attach anything to live or neutral without high resistance or isolation you can't directly attach anything else anymore. No programmer without isolation, no USB, no oscilloscope.
+Magic smoke will be released if you do.
 
 # Calibração de Software vs. Tensão de Referência Precisa para o ADC (NotebookLM + Datasheet STM32F373)
 Na sua aplicação, onde você precisa de medidas precisas e acuradas do ADC, tanto a precisão da tensão de referência quanto a calibração do ADC por software são importantes.
