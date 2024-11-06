@@ -31,3 +31,14 @@ Os relés selecionados para a construção da estação de recarga são acionado
 # LEDSs
 
 A interface homem máquina selecionada para estação de recarga será LEDs RGB do tipo WS2812 sendo possível determinar cores diferentes para indicar cada estado.
+
+| Estado           | Cor            |
+|------------------|----------------|
+| Estado A         | Branco         |
+| Estado B Pronto  | Branco piscando|
+| Estado B Carregado | Verde         |
+| Estado C         | Verde piscando |
+| Estado E         | Vermelho       |
+| Estado F         | Vermelho       |
+
+
