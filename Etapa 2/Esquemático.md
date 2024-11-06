@@ -7,7 +7,6 @@ O esquemático do projeto será dividio nos seguintes circuitos
 - Proteções
 - Acionamento dos relés
 - LEDs
-- Alimentação
 
 # Control Pilot
 
@@ -19,6 +18,10 @@ O comparador faz a comparação do PWM gerado pelo STM32 de +3V3 a 0V com 3V3/2 
 # Microcontrolador
 
 O circuto do microcontrolador é simples. Precisa apenas das alimentações, capacitores de desacoplamento para reduzir ruido, cristal oscilador e as conexões com os demais circuitos
+
+<p align="center">
+    <img src="MCU.png">
+</p>
 
 # Proteções
 
