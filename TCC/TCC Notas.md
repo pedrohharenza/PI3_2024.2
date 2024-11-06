@@ -33,6 +33,8 @@ Objetivo: Classe 1 Erro < 1%
     <img src="Medida%20de%20corrente%20Pionix.png">
 </p>
 
+##SDACD STM32F373
+- https://www.st.com/resource/en/application_note/an4207-getting-started-with-stm32f3738xxx-sdadc-sigmadelta-adc-stmicroelectronics.pdf
 
 ## Documentação sobre medida de corrente com shunt 
 - https://br.mouser.com/applications/making-sense-current-sensing/
