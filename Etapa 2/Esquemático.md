@@ -41,4 +41,10 @@ A interface homem máquina selecionada para estação de recarga será LEDs RGB 
 | Estado E         | Vermelho       |
 | Estado F         | Vermelho       |
 
+A comunicação do WS2812 é baseada em um protocolo de serial de 1 fio, onde dados de 24 bits (8 bits para cada cor: vermelho, verde e azul) são transmitidos para controlar individualmente a cor de cada LED. O sinal de controle é enviado do microcontrolador para os LEDs em sequência, com cada LED recebendo seus 24 bits e transmitindo os dados para o próximo na cadeia. A comunicação NRZ (Non-Return to Zero) é um tipo de codificação de linha utilizado para distinguir os bits 0 e 1, com pulsos de diferentes durações.
+
+Para o esqumático será considerado alimentação de 5V para os LEDs e a comunicação será feita diretamente pelo microcontrolador.
+
+# Alimentação
+Para alimentação ±12V serão utilizados duas fontes HLK-PM12 para alimentação de 3V3 será utilizado o regulador linar AMS1117-3.3 já para a alimentação dos LEDS de 5V será utilizado AMS1117-5.0
 
