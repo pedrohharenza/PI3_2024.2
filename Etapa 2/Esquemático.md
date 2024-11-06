@@ -62,7 +62,7 @@ A comunicação do WS2812 é baseada em um protocolo de serial de 1 fio, onde da
 Para o esqumático será considerado alimentação de 5V para os LEDs e a comunicação será feita diretamente pelo microcontrolador.
 
 <p align="center">
-    <img src="LEDS_circuito.png">
+    <img src="LEDS.png">
 </p>
 
 Como será utilizado uma fita de LED será necessário apenas um conector com alimentação e o sinal controle das cores, para que os LEDS possam funcionar.
