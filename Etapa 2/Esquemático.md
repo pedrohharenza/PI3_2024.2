@@ -12,12 +12,15 @@ O esquemático do projeto será dividio nos seguintes circuitos
 
 Como já foi discutido antes na [Definição dos parâmetros de funcionamento](Definição%20dos%20parâmetros%20de%20funcionamento.md) o circuito do Control Pilot tem como objetivo gerar o sinal de comunicação com o veículo, podendo ser PWM ±12V 1kHz ou +12V sem PWM. Para isso foi desenhado um circuito semelhante ao apresentado na simulação, utilizando comprardor. Para que seja possível obter as saídas de +12V e -12V foi considerado o comparador [TLV1805](https://www.ti.com/lit/ds/symlink/tlv1805-q1.pdf?ts=1729874561037&ref_url=https%253A%252F%252Fbr.mouser.com%252F) que possui saída Rail-to-Rail, isso significa que as tensões de saída podem ser muito próximas da tensão de alimentação, já que a alimentção do comparador é ±12V
 
+<p align="center">
+    <img src="CP_circuito.png">
+</p>
 
 O comparador faz a comparação do PWM gerado pelo STM32 de +3V3 a 0V com 3V3/2 tendo na sáida o sinal PWM de ±12V que comunica com o carro.
 
 # Microcontrolador
 
-O circuto do microcontrolador é simples. Precisa apenas das alimentações, capacitores de desacoplamento para reduzir ruido, cristal oscilador e as conexões com os demais circuitos
+O circuto do microcontrolador é simples. Precisa apenas das alimentações, capacitores de desacoplamento para reduzir ruido, cristal oscilador, conexões com os demais circuitos e as conexões necessárias para programar o STM32F030.
 
 <p align="center">
     <img src="MCU_circuito.png">
@@ -25,11 +28,21 @@ O circuto do microcontrolador é simples. Precisa apenas das alimentações, cap
 
 # Proteções
 
-O circuito de proteção apresenta um fusível e um varistor para conter surtos de tensão ou curto-circuito. Se um surto de alta tensão ocorrer (por exemplo, um pico causado por um raio), o varistor age para limitar a tensão excessiva, evitando que ela chegue aos componentes sensíveis. Se houver um aumento excessivo de corrente, o fusível será acionado, interrompendo o fluxo de corrente e protegendo o circuito de danos.
+O circuito de proteção apresenta um fusível e um varistor na fase e no noutro para conter surtos de tensão ou curto-circuito. Se um surto de alta tensão ocorrer (por exemplo, um pico causado por um raio), o varistor age para limitar a tensão excessiva, evitando que ela chegue aos componentes sensíveis. Se houver um aumento excessivo de corrente, o fusível será acionado, interrompendo o fluxo de corrente e protegendo o circuito de danos.
+
+<p align="center">
+    <img src="PROTEÇÃO_circuito.png">
+</p>
+
+Também foi utilizado um trnsformador para filtre de modo diferencial. Um transformador de filtro de modo diferencial funciona atenuando ruídos elétricos que aparecem entre as linhas de fase e neutro de um circuito, filtrando interferências que poderiam afetar o funcionamento de dispositivos eletrônicos. Ele é projetado com enrolamentos que criam uma impedância para sinais de alta frequência no caminho diferencial (entre fase e neutro), enquanto permite que a corrente de potência em baixa frequência passe sem ser afetada. Ao bloquear esses ruídos, o transformador ajuda a melhorar a qualidade da energia elétrica no circuito, reduzindo a interferência eletromagnética e o ruído conduzido. 
 
 # Acionamento dos relés
 
 Os relés selecionados para a construção da estação de recarga são acionados por uma tensão de 12V. Para isso, é necessário um driver de acionamento que recebe o sinal de controle do microcontrolador e, a partir da fonte de alimentação de 12V, aciona os relés.
+
+<p align="center">
+    <img src="ACIONAMENTO_circuito.png">
+</p>
 
 # LEDSs
 
@@ -48,6 +61,9 @@ A comunicação do WS2812 é baseada em um protocolo de serial de 1 fio, onde da
 
 Para o esqumático será considerado alimentação de 5V para os LEDs e a comunicação será feita diretamente pelo microcontrolador.
 
-# Alimentação
-Para alimentação ±12V serão utilizados duas fontes HLK-PM12 para alimentação de 3V3 será utilizado o regulador linar AMS1117-3.3 já para a alimentação dos LEDS de 5V será utilizado AMS1117-5.0
+<p align="center">
+    <img src="LEDS_circuito.png">
+</p>
+
+Como será utilizado uma fita de LED será necessário apenas um conector com alimentação e o sinal controle das cores, para que os LEDS possam funcionar.
 
