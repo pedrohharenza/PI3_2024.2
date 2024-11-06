@@ -23,7 +23,7 @@ O comparador faz a comparação do PWM gerado pelo STM32 de +3V3 a 0V com 3V3/2 
 O circuto do microcontrolador é simples. Precisa apenas das alimentações, capacitores de desacoplamento para reduzir ruido, cristal oscilador, conexões com os demais circuitos e as conexões necessárias para programar o STM32F030.
 
 <p align="center">
-    <img src="MCU_circuito.png">
+    <img src="MCU_circuito1.png">
 </p>
 
 # Proteções
