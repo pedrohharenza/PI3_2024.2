@@ -12,6 +12,7 @@ Objetivo: Classe A Erro < 1%
 | **Sensor de Tensão**   | [Divisor resistivo de alta precisão](https://br.mouser.com/datasheet/2/385/sei_css_cssh-3077671.pdf) |
 | **Comparador PWM**     | [TLV1805](https://www.ti.com/lit/ds/symlink/tlv1805-q1.pdf?ts=1729874561037&ref_url=https%253A%252F%252Fbr.mouser.com%252F); [LM2903](https://www.acheicomponentes.com.br/circuitos-integrados/smd/soic-8/circuito-integrado-lm2903dr-smd-soic-8-lm2903); [LMC7211AIM5](https://www.acheicomponentes.com.br/circuitos-integrados/smd/ci-amplificador-lmc7211aim5nopb-smd-sot-23-5) | COMPRADO |
 | **Fonte**              | [HLK-PM12](https://nettigo.eu/attachments/503) | [Achei Componentes](https://www.acheicomponentes.com.br/modulos/modulo-mini-fonte-hi-link-12v-5w-0-42a-hlk-5m12)|
+| **Relé**               |  JQX-15F (T90)  | [Achei Componentes](https://www.acheicomponentes.com.br/rele-12v-20a-6-pinos-jqx-15f-t90-fangke)|
 
 ## Diagrama de blocos Monofásico
 <p align="center">
