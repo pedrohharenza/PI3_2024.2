@@ -34,6 +34,8 @@ Os relés selecionados foram o [HF161F](https://source.hongfa.com//pdf/web/viewe
 
 O layout foi projetado para simplificar o processo de fabricação e também assegurar o funcionamento adequado da estação de recarga. Foi utilizada uma placa de circuito impresso (PCB) de dupla face, priorizando trilhas com larguras de 0,3 mm ou maiores e espaçamento mínimo de 0,3 mm. Para facilitar a montagem, componentes SMD foram priorizados, enquanto componentes PTH e trilhas na parte inferior foram aplicados apenas quando absolutamente necessário. O layout também inclui uma seção destinada a medições de corrente e tensão, que não será detalhada neste documento, pois não é essencial para o funcionamento da estação de recarga e não é o foco desse projeto.
 
+Caso seja preciso fazer alguma alteração foi adicionado um barra pino para facilitar o acesso aos pinos do microcontrolador que não foram conectados a nada.
+
 <p align="center">
     <img src="Imagens/top.jpg">
 </p>
