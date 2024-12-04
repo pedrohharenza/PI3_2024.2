@@ -10,7 +10,7 @@ O esquemático do projeto será dividio nos seguintes circuitos
 
 # Control Pilot (PWM)
 
-Como já foi discutido antes na [Definição dos parâmetros de funcionamento](/PI3_2024.2/Etapa%201/Definição%20dos%20parâmetros%20de%20funcionamento.md) o circuito do Control Pilot tem como objetivo gerar o sinal de comunicação com o veículo, podendo ser PWM ±12V 1kHz ou +12V sem PWM. Para isso foi desenhado um circuito semelhante ao apresentado na simulação, utilizando comprardor. Para que seja possível obter as saídas de +12V e -12V foi considerado o comparador [TLV1805](https://www.ti.com/lit/ds/symlink/tlv1805-q1.pdf?ts=1729874561037&ref_url=https%253A%252F%252Fbr.mouser.com%252F) que possui saída muito próximo da sua alimentação.
+Como já foi discutido antes na [Definição dos parâmetros de funcionamento](../Etapa%201/Definição%20dos%20parâmetros%20de%20funcionamento.md) o circuito do Control Pilot tem como objetivo gerar o sinal de comunicação com o veículo, podendo ser PWM ±12V 1kHz ou +12V sem PWM. Para isso foi desenhado um circuito semelhante ao apresentado na simulação, utilizando comprardor. Para que seja possível obter as saídas de +12V e -12V foi considerado o comparador [TLV1805](https://www.ti.com/lit/ds/symlink/tlv1805-q1.pdf?ts=1729874561037&ref_url=https%253A%252F%252Fbr.mouser.com%252F) que possui saída muito próximo da sua alimentação.
 
 <p align="center">
     <img src="Imagens/CP_circuito.png">
