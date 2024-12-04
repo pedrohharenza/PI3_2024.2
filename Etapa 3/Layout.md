@@ -31,3 +31,10 @@ Os relés selecionados foram o [HF161F](https://source.hongfa.com//pdf/web/viewe
 
 
 # Desenho do Layout
+
+O desenho do layout foi pensado de forma a tornar o processo de fabricação o mais fácil possível e ao mesmo tempo garantir o funcionamento da estação de recarga. Para isso foi considerado uma placa dupla face com a maior parte das trilhas de 0.3mm ou maior, com o menor espaçamento de 0.3mm. Para facilitar a montagem foi dado prioridade para componentes SMD e utilizado PTH apenas quando realmente necessário. O layout apresenta uma parte destinada a medidas de corrente e tensão que não será aprofundado, pois não é necessário para que estação de recarga funcione corretamente.
+
+O layout foi separado na parte onde circula potências mais altas e a parte de baixa potência. Para parte onde circula a tensão de entrada 220VAC foi considerado um espaçamento entre tilhas de 3mm ou maior, seguindo a tabela da norma IPC-2221, para tensões 311V a 500V de pico, para trilhas externas em altitudes menores que 3050m é preciso espaçamento de pelo menos 2.5mm
+
+
+
