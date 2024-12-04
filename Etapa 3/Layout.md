@@ -57,7 +57,7 @@ Para as conexões que transportam correntes elevadas (16A), foram implementadas 
 A magem a seguir é o circuito principal da estação de recarga. Envolve os circuitos apresentado na Etapa 2. Para malhor visualização foi escondido as malhas de GND
 
 <p align="center">
-    <img src="circuito_principal.jpg">
+    <img src="Imagens/circuito_principal.jpg">
 </p>
 
 <p align="center">
