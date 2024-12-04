@@ -32,9 +32,15 @@ Os relés selecionados foram o [HF161F](https://source.hongfa.com//pdf/web/viewe
 
 # Desenho do Layout
 
-O desenho do layout foi pensado de forma a tornar o processo de fabricação o mais fácil possível e ao mesmo tempo garantir o funcionamento da estação de recarga. Para isso foi considerado uma placa dupla face com a maior parte das trilhas de 0.3mm ou maior, com o menor espaçamento de 0.3mm. Para facilitar a montagem foi dado prioridade para componentes SMD e utilizado PTH apenas quando realmente necessário. O layout apresenta uma parte destinada a medidas de corrente e tensão que não será aprofundado, pois não é necessário para que estação de recarga funcione corretamente.
+O layout foi projetado para simplificar o processo de fabricação e também assegurar o funcionamento adequado da estação de recarga. Foi utilizada uma placa de circuito impresso (PCB) de dupla face, priorizando trilhas com larguras de 0,3 mm ou maiores e espaçamento mínimo de 0,3 mm. Para facilitar a montagem, componentes SMD foram priorizados, enquanto componentes PTH e trilhas na parte inferior foram aplicados apenas quando absolutamente necessário. O layout também inclui uma seção destinada a medições de corrente e tensão, que não será detalhada neste documento, pois não é essencial para o funcionamento da estação de recarga e não é o foco desse projeto.
 
-O layout foi separado na parte onde circula potências mais altas e a parte de baixa potência. Para parte onde circula a tensão de entrada 220VAC foi considerado um espaçamento entre tilhas de 3mm ou maior, seguindo a tabela da norma IPC-2221, para tensões 311V a 500V de pico, para trilhas externas em altitudes menores que 3050m é preciso espaçamento de pelo menos 2.5mm
+O layout foi dividido em duas áreas principais:
+- **Circuito de alta potência**: Para as partes onde circula a tensão de entrada de 220VAC, foi considerado um espaçamento mínimo entre trilhas de 3 mm ou maior. Isso segue a tabela da norma **IPC-2221**, que recomenda, para tensões de pico entre 301V e 500V em trilhas externas a altitudes menores que 3050 m, um espaçamento mínimo de 2,5 mm.
+- **Circuito de baixa potência**: Esta parte concentra os sinais de controle e circuitos auxiliares.
+
+Para as conexões que transportam correntes elevadas (16A), foram implementadas malhas de condução em ambos os lados da PCB, aumentando a área de condução. Além disso, foram adicionadas vias para melhorar a condução térmica, reduzindo o aquecimento excessivo das trilhas.
+
+
 
 
 
