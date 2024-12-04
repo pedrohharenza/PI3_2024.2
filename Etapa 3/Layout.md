@@ -14,7 +14,7 @@ Para a alimentação de **3,3V**, será utilizado um regulador linear **AMS1117-
 
 Para o circuito **Control Pilot**, foi selecionado o **TLV1805**, um comparador que aceita alimentação simétrica de **±12V**. Ele possui uma saída **push-pull**, com um **voltage swing máximo** de **300mV** e um **slew rate** de aproximadamente **40V/μs**. Para a aplicação, é necessária uma saída de **±12V** com uma variação máxima de **600mV** e tempo de subida de **-12V até 12V** de no máximo **13μs**.
 
-Para o sinal de **1,65V**, foi utilizado um amplificador operacional (ampop) de uso geral, o **LMV321**, configurado como **buffer**. Essa configuração proporciona uma **baixa impedância de saída**, garantindo que o sinal não seja alterado pela carga conectada.
+Para o sinal de **1,65V**, foi utilizado um amplificador operacional (ampop) de uso geral, o **LMV321**
 
 ## Microcontrolador
 
