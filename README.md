@@ -15,8 +15,8 @@ Para garantir a confiabilidade e o desempenho do carregador, será desenvolvido 
 ## Etapas do Projeto
 1. [**Etapa 1**](Etapa%201/): [Definição dos parâmetros de funcionamento](Etapa%201/Definição%20dos%20parâmetros%20de%20funcionamento.md) e apresentar uma [simulação simplificada](Etapa%201/Simulação%20simplificada.md) para validação dos circuitos que serão utilizados.
 3. [**Etapa 2**](Etapa%202/): Desenvolvimento do [esquemático](Etapa%202/Esquemático.md) de cada circuito que abrange os funcionamentos do carregador.
-4. **Etapa 3**: Defeinição dos componentes que serão utilizados e desenvolvimento do layout da PCB.
-5. **Etapa 4**: Implementação dos circuitos em PCB, implementação do código, e implementação do case em impressão 3D.
+4. [**Etapa 3**](Etapa%203/): Defeinição dos componentes que serão utilizados e desenvolvimento do layout da PCB.
+5. [**Etapa 4**](Etapa%204/): Implementação dos circuitos em PCB, implementação do código, e implementação do case em impressão 3D.
 
 ## Referências
 
