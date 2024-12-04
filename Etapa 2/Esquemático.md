@@ -23,7 +23,7 @@ O comparador faz a comparação do PWM gerado pelo STM32 de +3V3 a 0V com 3V3/2 
 O circuto do microcontrolador é simples. Precisa apenas das alimentações, capacitores de desacoplamento para reduzir ruido, cristal oscilador, conexões com os demais circuitos e as conexões necessárias para programar o STM32F030.
 
 <p align="center">
-    <img src="MCU_circuito1.png">
+    <img src="Imagens/MCU_circuito1.png">
 </p>
 
 # Proteções
@@ -31,7 +31,7 @@ O circuto do microcontrolador é simples. Precisa apenas das alimentações, cap
 O circuito de proteção apresenta um fusível e um varistor, na fase e no neutro para conter surtos de tensão ou curto-circuito. Se um surto de alta tensão ocorrer (por exemplo, um pico causado por um raio), o varistor age para limitar a tensão excessiva, evitando que ela chegue aos componentes sensíveis. Se houver um aumento excessivo de corrente, o fusível será acionado, interrompendo o fluxo de corrente e protegendo o circuito de danos.
 
 <p align="center">
-    <img src="PROTEÇÃO_circuito.png">
+    <img src="Imagens/PROTEÇÃO_circuito.png">
 </p>
 
 Também foi utilizado um trnsformador para filtro de modo diferencial. Um transformador de filtro de modo diferencial funciona atenuando ruídos elétricos que aparecem entre as linhas de fase e neutro de um circuito, filtrando interferências que poderiam afetar o funcionamento de dispositivos eletrônicos. Ele é projetado com enrolamentos que criam uma impedância para sinais de alta frequência no caminho diferencial (entre fase e neutro), enquanto permite que a corrente de potência em baixa frequência passe sem ser afetada. Ao bloquear esses ruídos, o transformador ajuda a melhorar a qualidade da energia elétrica no circuito, reduzindo a interferência eletromagnética e o ruído conduzido. 
@@ -41,7 +41,7 @@ Também foi utilizado um trnsformador para filtro de modo diferencial. Um transf
 Os relés selecionados para a construção da estação de recarga são acionados por uma tensão de 12V. Para isso, é necessário um driver de acionamento que recebe o sinal de controle do microcontrolador e, a partir da fonte de alimentação de 12V, aciona os relés.
 
 <p align="center">
-    <img src="ACIONAMENTO_circuito.png">
+    <img src="Imagens/ACIONAMENTO_circuito.png">
 </p>
 
 # LEDSs
@@ -62,7 +62,7 @@ A comunicação do WS2812 é baseada em um protocolo de serial de 1 fio, onde da
 Para o esqumático será considerado alimentação de 5V para os LEDs e a comunicação será feita diretamente pelo microcontrolador.
 
 <p align="center">
-    <img src="LEDS.png">
+    <img src="Imagens/LEDS.png">
 </p>
 
 Como será utilizado uma fita de LED será necessário apenas um conector com alimentação e o sinal controle das cores, para que os LEDS possam funcionar.
