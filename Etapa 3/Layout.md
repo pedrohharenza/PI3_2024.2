@@ -52,6 +52,13 @@ O layout foi dividido em duas áreas principais:
 
 Para as conexões que transportam correntes elevadas (16A), foram implementadas malhas de condução em ambos os lados da PCB, aumentando a área de condução. Além disso, foram adicionadas vias para melhorar a condução térmica, reduzindo o aquecimento excessivo das trilhas.
 
+<p align="center">
+    <img src="Imagens/3d_top.jpg">
+</p>
+
+<p align="center">
+    <img src="Imagens/3d_bottom.jpg">
+</p>
 
 
 
