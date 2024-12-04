@@ -46,6 +46,10 @@ O layout foi dividido em duas áreas principais:
 - **Circuito de alta potência**: Para as partes onde circula a tensão de entrada de 220VAC, foi considerado um espaçamento mínimo entre trilhas de 3 mm ou maior. Isso segue a tabela da norma **IPC-2221**, que recomenda, para tensões de pico entre 301V e 500V em trilhas externas a altitudes menores que 3050 m, um espaçamento mínimo de 2,5 mm.
 - **Circuito de baixa potência**: Esta parte concentra os sinais de controle e circuitos auxiliares.
 
+<p align="center">
+    <img src="Imagens/Distância%20mínima%20tensão%20elétrica.png">
+</p>
+
 Para as conexões que transportam correntes elevadas (16A), foram implementadas malhas de condução em ambos os lados da PCB, aumentando a área de condução. Além disso, foram adicionadas vias para melhorar a condução térmica, reduzindo o aquecimento excessivo das trilhas.
 
 
