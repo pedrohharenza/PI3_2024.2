@@ -26,7 +26,7 @@ Os conectores de entrada e saída selecionados foram o modelo **691219610002** d
 
 ## Relés
 
-Os relés selecionados foram o **HF161F** da **Hongfa**, que suportam até **20A** em **250VAC** e possuem corrente de acionamento de **75mA**.
+Os relés selecionados foram o HF161F da Hongfa, com capacidade para suportar até 20A em 250VAC e corrente de acionamento de 75mA, atendendo assim a todos os requisitos necessários para a aplicação.
 
 
 
