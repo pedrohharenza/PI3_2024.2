@@ -54,12 +54,13 @@ O layout foi dividido em duas áreas principais:
 
 Para as conexões que transportam correntes elevadas (16A), foram implementadas malhas de condução em ambos os lados da PCB, aumentando a área de condução. Além disso, foram adicionadas vias para melhorar a condução térmica, reduzindo o aquecimento excessivo das trilhas.
 
-A magem a seguir é o circuito principal da estação de recarga. Envolve os circuitos apresentado na Etapa 2. Para malhor visualização foi escondido as malhas de GND
+A imagem a seguir é o circuito principal da estação de recarga. Envolve os circuitos apresentado na Etapa 2. Para malhor visualização foi escondido as malhas de GND
 
 <p align="center">
     <img src="Imagens/circuito_principal.jpg">
 </p>
 
+A imagem a seguir é o modelo 3D de como será a placa com todos os componetes, esse modela será utilizado para montagem do case em impressão 3D.
 <p align="center">
     <img src="Imagens/3d_top.jpg">
 </p>
