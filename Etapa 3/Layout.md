@@ -34,6 +34,10 @@ Os relés selecionados foram o [HF161F](https://source.hongfa.com//pdf/web/viewe
 
 O layout foi projetado para simplificar o processo de fabricação e também assegurar o funcionamento adequado da estação de recarga. Foi utilizada uma placa de circuito impresso (PCB) de dupla face, priorizando trilhas com larguras de 0,3 mm ou maiores e espaçamento mínimo de 0,3 mm. Para facilitar a montagem, componentes SMD foram priorizados, enquanto componentes PTH e trilhas na parte inferior foram aplicados apenas quando absolutamente necessário. O layout também inclui uma seção destinada a medições de corrente e tensão, que não será detalhada neste documento, pois não é essencial para o funcionamento da estação de recarga e não é o foco desse projeto.
 
+<p align="center">
+    <img src="Imagens/top.jpg" alt="Conector Tipo 2">
+</p>
+
 O layout foi dividido em duas áreas principais:
 - **Circuito de alta potência**: Para as partes onde circula a tensão de entrada de 220VAC, foi considerado um espaçamento mínimo entre trilhas de 3 mm ou maior. Isso segue a tabela da norma **IPC-2221**, que recomenda, para tensões de pico entre 301V e 500V em trilhas externas a altitudes menores que 3050 m, um espaçamento mínimo de 2,5 mm.
 - **Circuito de baixa potência**: Esta parte concentra os sinais de controle e circuitos auxiliares.
