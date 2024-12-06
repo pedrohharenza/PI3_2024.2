@@ -17,7 +17,7 @@ Objetivo: Classe A Erro < 1%
 
 ## Diagrama de blocos Monofásico
 <p align="center">
-    <img src="Diagrama%20de%20blocos%20Monofásico%20simples.png">
+    <img src="Imagens/Diagrama%20de%20blocos%20Monofásico%20simples.png">
 </p>
 
 ## Diagrama de blocos Trifásico
