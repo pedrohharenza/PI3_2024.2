@@ -15,6 +15,11 @@ Objetivo: Classe A Erro < 1%
 | **Relé**               |  JQX-15F (T90)  | [Achei Componentes](https://www.acheicomponentes.com.br/rele-12v-20a-6-pinos-jqx-15f-t90-fangke)|
 | **Power Meter IC**     | [ADE7753ARSZ](https://br.mouser.com/datasheet/2/609/ADE7753-1502856.pdf)| [Achei Componentes](https://www.acheicomponentes.com.br/circuitos-integrados/smd/circuito-integrado-ade7753arsz-ssop-20-smd)|
 
+## NXP 3 Phase Power Meter Gerber View
+<p align="center">
+    <img src="Imagens/km34_three_phase_power_meter_gerber.jpg">
+</p>
+
 ## Diagrama de blocos Monofásico
 <p align="center">
     <img src="Imagens/Diagrama%20de%20blocos%20Monofásico%20simples.png">
