@@ -36,6 +36,11 @@ A última etapa para finalizar a fabricação da PCB é a furação, que pode se
 
 Esse processo de fabricação ainda está sendo aprimorado e testado. Por esse motivo, o resultado obtido não foi satisfatório, o que levou à decisão de solicitar a fabricação da PCB na JLCPCB. Com mais testes e ajustes nas configurações, há grande confiança de que será possível fabricar placas de circuito impresso de alta qualidade em pouco tempo, utilizando apenas uma impressora 3D e um módulo a laser. Além disso, será estudado formas de realizar furos metalizados e aplicar serigrafia utilizando esse método de fabricação. A inspiração desse método foi tirada do canal do youtube ForOuerOwnGood.
 
+# Desenvolvimento do Softwarer
+
+<p align="center">
+    <img src="Imagens/evse_fluxograma%20tipo%202.png">
+</p>
 
 
 
