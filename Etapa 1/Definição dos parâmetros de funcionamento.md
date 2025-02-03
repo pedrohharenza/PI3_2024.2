@@ -16,7 +16,7 @@ Os carregadores de Nível 1 e Nível 2 devem passar pelo On-board Charger, que e
 Existem diversos tipos de padrões de conectores para estações de veículos elétricos; no entanto, o conector mais utilizado no Brasil e na Europa é conhecido como Tipo 2, que será o utilizado para o desenvolvimento do projeto. Este conector é amplamente adotado devido à sua versatilidade e compatibilidade com a maioria dos veículos elétricos disponíveis no mercado.
 
 <p align="center">
-    <img src="Imagens/Conector%20tipo%202.png" alt="Conector Tipo 2">
+    <img src="Imagens/Conector%20tipo%202.png">
 </p>
 
 | Pino | Nome             | Função                                                   |
@@ -50,7 +50,7 @@ Do ponto de vista do Control Pilot, o veículo elétrico pode ser simplificado a
 
 
 <p align="center">
-    <img src="Imagens/EVSE%20esquemático.png" alt="Conector Tipo 2">
+    <img src="Imagens/EVSE%20esquemático.png">
 </p>
 
 Em relação ao consumo de corrente, a estação de recarga informa ao veículo qual é a corrente máxima que pode ser fornecida, utilizando a razão cíclica do sinal do Control Pilot (CP). Essa comunicação permite que o veículo ajuste sua demanda de carga de acordo com as capacidades da estação.
