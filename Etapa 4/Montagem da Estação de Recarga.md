@@ -38,6 +38,8 @@ Esse processo de fabricação ainda está sendo aprimorado e testado. Por esse m
 
 # Desenvolvimento do Softwarer
 
+Para o funcionamento da estação de recarga, os estados D e E foram desconsiderados, pois não são comumente utilizados. A lógica da mudança de estados pode ser representada pelo fluxograma abaixo:
+
 <p align="center">
     <img src="Imagens/evse_fluxograma.jpg">
 </p>
