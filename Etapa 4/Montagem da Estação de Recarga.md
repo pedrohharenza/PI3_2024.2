@@ -39,7 +39,7 @@ Esse processo de fabricação ainda está sendo aprimorado e testado. Por esse m
 # Desenvolvimento do Softwarer
 
 <p align="center">
-    <img src="Imagens/evse_fluxograma%20tipo%202.png">
+    <img src="Imagens/evse_fluxograma.png">
 </p>
 
 
