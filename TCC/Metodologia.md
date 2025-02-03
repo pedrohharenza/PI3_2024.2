@@ -8,7 +8,7 @@ O desenvolvimento do hardware foi subdividido nas seguintes etapas:
 
 a) Desenvolvimento do esquemático: A partir das soluções teóricas estudadas, foi elaborado o esquemático, que define a interligação dos componentes do sistema, incluindo os sensores de corrente e tensão, bem como o circuito de alimentação e proteção.
 
-b) Seleção de componentes: Realizou-se a escolha dos componentes eletrônicos mais adequados para a aplicação, levando em consideração aspectos como a precisão das medições, a resistência a interferências e a compatibilidade com as demais partes do sistema.
+b) Seleção de componentes: Realizou-se a escolha dos componentes eletrônicos mais adequados para a aplicação, levando em consideração aspectos como a precisão das medições, a resistência a interferências, a compatibilidade com as demais partes do sistema e a disponibilidade.
 
 c) Projeto da placa de circuito impresso (PCI): Com base no esquemático, foi projetada a placa de circuito impresso, considerando aspectos como otimização do espaço, minimização de ruídos e a viabilidade de montagem.
 
