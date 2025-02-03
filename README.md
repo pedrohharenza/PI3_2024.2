@@ -9,9 +9,6 @@ Este projeto tem como objetivo desenvolver e implementar uma estação de recarg
 - **Microcontrolador**: STM32 para controle e monitoramento.
 - **Proteções**: Circuito de proteção de pico de tensão e filtro EMI
 
-## Testador de Estação de Recarga
-Para garantir a confiabilidade e o desempenho do carregador, será desenvolvido um **Testador de Estação de Recarga**. Este dispositivo simulará condições reais de carregamento e verificará o correto funcionamento da estação antes de ser utilizado em um veículo.
-
 ## Etapas do Projeto
 - [**Etapa 1**](Etapa%201/): [Definição dos parâmetros de funcionamento](Etapa%201/Definição%20dos%20parâmetros%20de%20funcionamento.md) e apresentar uma [simulação simplificada](Etapa%201/Simulação%20simplificada.md) para validação dos circuitos que serão utilizados.
 - [**Etapa 2**](Etapa%202/): Desenvolvimento do [esquemático](Etapa%202/Esquemático.md) de cada circuito que abrange os funcionamentos do carregador.
