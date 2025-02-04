@@ -45,6 +45,10 @@ Os estados D e E foram desconsiderados no funcionamento da estação de recarga,
     <img src="Imagens/evse_fluxograma_2.jpg">
 </p>
 
+<p align="center">
+    <img src="Imagens/evse_state_diagram_1.jpg">
+</p>
+
 
 
 
