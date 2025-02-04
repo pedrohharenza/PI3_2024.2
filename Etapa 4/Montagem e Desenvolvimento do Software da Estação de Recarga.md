@@ -41,7 +41,7 @@ Esse processo de fabricação ainda está sendo aprimorado e testado. Por esse m
 Os estados D e E foram desconsiderados no funcionamento da estação de recarga, pois o estado D não é comumente utilizado, enquanto o estado E pode ser substituído pelo estado F, sem comprometer o desempenho básico do sistema. Como discutido na Etapa 1, o estado D é similar ao estado C, mas com a diferença de que o veículo informa à estação a necessidade de ventilação. Por outro lado, o estado E representa um erro conhecido, mas todos os erros serão agora tratados no estado F. A lógica de transição entre os estados é ilustrada no fluxograma abaixo:
 
 <p align="center">
-    <img src="Imagens/evse_fluxograma.jpg">
+    <img src="Imagens/evse_fluxograma_1.jpg">
 </p>
 
 
