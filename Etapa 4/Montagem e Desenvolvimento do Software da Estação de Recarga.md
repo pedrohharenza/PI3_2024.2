@@ -38,7 +38,7 @@ Esse processo de fabricação ainda está sendo aprimorado e testado. Por esse m
 
 # Desenvolvimento do Softwarer
 
-Para o funcionamento da estação de recarga, os estados D e E foram desconsiderados, pois não são comumente utilizados. A lógica da mudança de estados pode ser representada pelo fluxograma abaixo:
+Os estados D e E foram desconsiderados no funcionamento da estação de recarga, pois não são frequentemente utilizados e não afetam o desempenho básico do sistema. A lógica de transição entre os estados pode ser representada pelo fluxograma abaixo:
 
 <p align="center">
     <img src="Imagens/evse_fluxograma.jpg">
