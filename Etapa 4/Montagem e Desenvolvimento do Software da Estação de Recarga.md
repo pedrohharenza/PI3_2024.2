@@ -1,12 +1,13 @@
 # Montagem prática
 
-Para facilitar o desenvolvimento prático do projeto foi seguido os seguintes passos:
+Para facilitar o desenvolvimento prático do projeto, seguiu-se a seguinte metodologia, com os seguintes passos:
 
 - Construção da PCB
+- Programação do micrcontrolador
+- Desenho 3D do gabinete
+- Impressão 3D do gabinete
 - Montagem da PCB em partes
-- Programação do micrcontroladore
 - Testes finais
-
   
 # Construção da PCB
 
