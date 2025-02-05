@@ -37,6 +37,9 @@ A última etapa para finalizar a fabricação da PCB é a furação, que pode se
 
 Esse processo de fabricação ainda está sendo aprimorado e testado. Por esse motivo, o resultado obtido não foi satisfatório, o que levou à decisão de solicitar a fabricação da PCB na JLCPCB. Com mais testes e ajustes nas configurações, há grande confiança de que será possível fabricar placas de circuito impresso de alta qualidade em pouco tempo, utilizando apenas uma impressora 3D e um módulo a laser. Além disso, será estudado formas de realizar furos metalizados e aplicar serigrafia utilizando esse método de fabricação. A inspiração desse método foi tirada do canal do youtube ForOuerOwnGood.
 
+# Modelagem 3D do Gabinete
+A modelagem 3D do gabinete foi realizada utilizando o Onshape, um software gratuito e online. Para garantir as dimensões corretas, utilizei o modelo 3D da placa com seus componentes, gerado pelo KiCad. Isso permitiu dimensionar o gabinete de maneira precisa, assegurando que todas as partes se encaixassem corretamente. O material escolhido para a impressão foi o PETG, devido à sua maior resistência mecânica e térmica em comparação ao PLA. A parte transparente, utilizada como difusor para os LEDs, foi impressa com o material Tritan. A impressão foi feita em duas partes: a tampa superior, em preto, e a tampa inferior, em branco.
+
 # Desenvolvimento do Softwarer
 
 Os estados D e E foram desconsiderados no funcionamento da estação de recarga, pois o estado D não é comumente utilizado, enquanto o estado E pode ser substituído pelo estado F, sem comprometer o desempenho básico do sistema. Como discutido na Etapa 1, o estado D é similar ao estado C, mas com a diferença de que o veículo informa à estação a necessidade de ventilação. Por outro lado, o estado E representa um erro conhecido, mas todos os erros serão agora tratados no estado F. A lógica de transição entre os estados é ilustrada no fluxograma abaixo:
@@ -48,7 +51,6 @@ Os estados D e E foram desconsiderados no funcionamento da estação de recarga,
 <p align="center">
     <img src="Imagens/evse_state_diagram_1.jpg">
 </p>
-
 
 
 
