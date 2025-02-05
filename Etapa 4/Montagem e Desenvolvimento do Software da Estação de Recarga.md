@@ -71,7 +71,7 @@ void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado
 
 Em cada estadao é realizado as devidas ações de cada estado
 
-ESTADO A
+#Estado A
 ```c
 void estado_a(char corrente){
 	if(estado_atual != estado_anterior){
@@ -93,3 +93,159 @@ void estado_a(char corrente){
 	evse_state_logic_transition();
 }
 ```
+No estado A é desligado o PWM, configurado os leds para cor branco e garantido que os relés não estarão ativo.
+
+#Estado B
+```c
+void estado_b(char corrente){
+	if(estado_atual != estado_anterior){
+		TIM1->CCR3 = (TIM1->ARR);
+		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 0);
+	}
+	estado_anterior = estado_atual;
+	printf(BOLD YELLOW "ESTADO B" ANSI_RESET "\r\n");
+	if(carregado_flag){
+		set_led(0, 0, 20, 0);
+		set_led(1, 0, 20, 0);
+		set_led(2, 0, 20, 0);
+		set_led(3, 0, 20, 0);
+		set_led(4, 0, 20, 0);
+		set_led(5, 0, 20, 0);
+		set_led(6, 0, 20, 0);
+		set_led(7, 0, 20, 0);
+		set_led(8, 0, 20, 0);
+		WS2812_Send();
+	} else {
+		set_led(0, 20, 20, 0);
+		set_led(1, 20, 20, 0);
+		set_led(2, 20, 20, 0);
+		set_led(3, 20, 20, 0);
+		set_led(4, 20, 20, 0);
+		set_led(5, 20, 20, 0);
+		set_led(6, 20, 20, 0);
+		set_led(7, 20, 20, 0);
+		set_led(8, 20, 20, 0);
+		WS2812_Send();
+	}
+	evse_state_logic_transition();
+}
+```
+
+No estado B é iniciado o PWM, configurado os leds para cor verde no caso de a recarga ter finalizado ou amarelo no caso de estar iniciando uma recarga e também garantido que os relés não estarão ativo
+
+Estado C
+```
+void estado_c(char corrente){
+	if(estado_atual != estado_anterior){
+		TIM1->CCR3 = (TIM1->ARR)*0.4;
+		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 1);
+	}
+	estado_anterior = estado_atual;
+	printf(BOLD GREEN "ESTADO C" ANSI_RESET "\r\n");
+	//green_effect();
+	evse_state_logic_transition();
+}
+
+void estado_e(char corrente){
+	if(estado_atual != estado_anterior){
+		TIM1->CCR3 = (TIM1->ARR)*0.2;
+		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 0);
+	}
+	estado_anterior = estado_atual;
+	printf(BOLD RED "ESTADO E" ANSI_RESET "\r\n");
+}
+```
+No estado C é mantido o PWM, acionado os relés, ativa a animação dos LEDs RGBs para indicar o carregamento.
+
+#Estado F
+```
+void estado_f(char corrente){
+	if(estado_atual != estado_anterior){
+		TIM1->CCR3 = (TIM1->ARR)*0.1;
+		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 0);
+	}
+	estado_anterior = estado_atual;
+	printf(BOLD RED "ESTADO F" ANSI_RESET "\r\n");
+	set_led(0, 20, 0, 0);
+	set_led(1, 20, 0, 0);
+	set_led(2, 20, 0, 0);
+	set_led(3, 20, 0, 0);
+	set_led(4, 20, 0, 0);
+	set_led(5, 20, 0, 0);
+	set_led(6, 20, 0, 0);
+	set_led(7, 20, 0, 0);
+	set_led(8, 20, 0, 0);
+	WS2812_Send();
+}
+```
+
+No estado F, é garantido que os relés estão desativado, o PWM é dasbilitado e os LEDs são configurados para cor vermelha para indicar falha no sistema.
+
+Para tratar a lógica da máquina de estados é chamado a função `evse_state_logic_transition()` no final dos `estado_a, estado_b, estado_c` em `estado_f` é preciso reniciar o sistema para voltar ao funcionamento normal.
+
+```c
+void evse_state_logic_transition(){
+	medida = read_pilot();
+	switch (estado_atual) {
+		case ESTADO_A:
+			if((medida >= CP_READ_ESTADO_A - TOLERANCE) & (medida <= CP_READ_ESTADO_A + TOLERANCE)){
+				//esatdo_atual = ESTADO_A;
+			} else {
+				if(((medida >= CP_READ_ESTADO_B - TOLERANCE) & (medida <= CP_READ_ESTADO_B + TOLERANCE))
+				|| ((medida >= CP_READ_ESTADO_C - TOLERANCE) & (medida <= CP_READ_ESTADO_C + TOLERANCE))){
+					estado_atual = ESTADO_B;
+				}
+				//estado_atual = ESTADO_F;
+			}
+			break;
+
+		case ESTADO_B:
+			if((medida >= CP_READ_ESTADO_B - TOLERANCE) & (medida <= CP_READ_ESTADO_B + TOLERANCE)){
+				//esatdo_atual = ESTADO_B;
+			} else {
+				if((medida >= CP_READ_ESTADO_A - TOLERANCE) & (medida <= CP_READ_ESTADO_A + TOLERANCE)){
+					estado_atual = ESTADO_A;
+					if(carregado_flag){
+						carregado_flag = 0;
+					}
+				} else {
+					if((medida >= CP_READ_ESTADO_C - TOLERANCE) & (medida <= CP_READ_ESTADO_C + TOLERANCE)){
+						estado_atual = ESTADO_C;
+						if(carregado_flag){
+							carregado_flag = 0;
+						}
+					} else {
+//						estado_atual = ESTADO_F;
+//						if(carregado_flag){
+//							carregado_flag = 0;
+//						}
+					}
+				}
+			}
+			break;
+		case ESTADO_C:
+			if((medida >= CP_READ_ESTADO_C - TOLERANCE) & (medida <= CP_READ_ESTADO_C + TOLERANCE)){
+				//esatdo_atual = ESTADO_C;
+			} else {
+				if((medida >= CP_READ_ESTADO_A - TOLERANCE) & (medida <= CP_READ_ESTADO_A + TOLERANCE)){
+					estado_atual = ESTADO_A;
+				} else {
+					if((medida >= CP_READ_ESTADO_B - TOLERANCE) & (medida <= CP_READ_ESTADO_B + TOLERANCE)){
+						estado_atual = ESTADO_B;
+						carregado_flag = 1;
+					} else {
+						//estado_atual = ESTADO_F;
+					}
+				}
+			}
+
+			break;
+		case ESTADO_E:
+
+			break;
+		case ESTADO_F:
+			break;
+	}
+}
+```
+
