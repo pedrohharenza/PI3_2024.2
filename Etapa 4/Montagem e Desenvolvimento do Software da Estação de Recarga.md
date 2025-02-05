@@ -58,9 +58,4 @@ No desenvolvimento da máquina de estados da estação de recarga, utilizamos o 
 
 ```c
 void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado_f};
-
-
-
-
-
-  
+```
