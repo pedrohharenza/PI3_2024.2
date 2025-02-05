@@ -26,7 +26,9 @@ Os conectores de entrada e saída selecionados foram o modelo [691219610002](htt
 
 ## Relés
 
-Os relés selecionados foram o [HF161F](https://source.hongfa.com//pdf/web/viewer.html?file=/Uploads/Product/PDF/HF161F_en.pdf?timestamp=1733333696) da Hongfa, com capacidade para suportar até 20A em 250VAC e corrente de acionamento de 75mA, atendendo assim a todos os requisitos necessários para a aplicação.
+Os relés selecionados foram o [HF161F](https://source.hongfa.com//pdf/web/viewer.html?file=/Uploads/Product/PDF/HF161F_en.pdf?timestamp=1733333696) da Hongfa, com capacidade para suportar até 20A em 250VAC e corrente de acionamento de 75mA, atendendo assim a todos os requisitos necessários para a aplicação. 
+A escolha de utilizar relés em uma estação de recarga monofásica é justificada principalmente pelo custo reduzido, simplicidade de implementação e adequação ao controle de cargas de baixa potência. Relés são mais econômicos e eficientes para sistemas com correntes menores, como os de uma estação que está sendo desenvolvida nesse trabalho, sem a necessidade de componentes mais caros e robustos como os contactores. Além disso, eles oferecem menor consumo de energia e aquecimento, são compactos e exigem menos manutenção, o que os torna ideais para esse tipo de aplicação. Dessa forma, os relés garantem uma solução prática, econômica e confiável para a aplicação.
+
 
 
 
@@ -68,7 +70,6 @@ A imagem a seguir é o modelo 3D de como será a placa com todos os componetes, 
 <p align="center">
     <img src="Imagens/3d_bottom.jpg">
 </p>
-
 
 
 
