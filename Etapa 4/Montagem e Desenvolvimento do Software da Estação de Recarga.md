@@ -53,19 +53,43 @@ Os estados D e E foram desconsiderados no funcionamento da estação de recarga,
 </p>
 
 Antes de iniciar a máquina de estados, o sistema é configurado pela função `evse_config()`.
-
 ```c
 void evse_config(){
 	printf(MAGENTA "----INICIALIZNADO SISTEMA----" ANSI_RESET "\n");
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-	TIM1->CCR3 = (TIM1->ARR)*0.5;
+	TIM1->CCR3 = (TIM1->ARR);
 	read_pilot();
 }
 ```
-Para implementar máquina de estados da estação de recarga, foi utilizado o conceito de ponteiro de funções para gerenciar e transitar entre diferentes estados. A linha de código a seguir foi usada para criar uma tabela (vetor) de ponteiros para funções, onde cada elemento do vetor aponta para uma função que representa um estado específico da máquina de estados:
+Essa função inicializa o PWM responsável pelo controle do sinal Control Pilot, configurando com razão cíclica de 100%.
+
+Para implementar máquina de estados, foi utilizado o conceito de ponteiro de funções para gerenciar e transitar entre diferentes estados. A linha de código a seguir foi usada para criar uma tabela (vetor) de ponteiros para funções, onde cada elemento do vetor aponta para uma função que representa um estado específico da máquina de estados:
 
 ```c
 void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado_f};
 ```
 
 Em cada estadao é realizado as devidas ações de cada estado
+
+ESTADO A
+```c
+void estado_a(char corrente){
+	if(estado_atual != estado_anterior){
+		TIM1->CCR3 = (TIM1->ARR)*0.8;
+		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 0);
+	}
+	estado_anterior = estado_atual;
+	printf(BOLD "ESTADO A" ANSI_RESET "\r\n");
+	set_led(0, 20, 20, 20);
+	set_led(1, 20, 20, 20);
+	set_led(2, 20, 20, 20);
+	set_led(3, 20, 20, 20);
+	set_led(4, 20, 20, 20);
+	set_led(5, 20, 20, 20);
+	set_led(6, 20, 20, 20);
+	set_led(7, 20, 20, 20);
+	set_led(8, 20, 20, 20);
+	WS2812_Send();
+	evse_state_logic_transition();
+}
+```
