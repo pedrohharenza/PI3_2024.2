@@ -52,8 +52,20 @@ Os estados D e E foram desconsiderados no funcionamento da estação de recarga,
     <img src="Imagens/evse_state_diagram_1.jpg">
 </p>
 
+Antes de iniciar a máquina de estados, o sistema é configurado pela função `evse_config()`.
+
+```c
+void evse_config(){
+	printf(MAGENTA "----INICIALIZNADO SISTEMA----" ANSI_RESET "\n");
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+	TIM1->CCR3 = (TIM1->ARR)*0.5;
+	read_pilot();
+}
+```
 Para implementar máquina de estados da estação de recarga, foi utilizado o conceito de ponteiro de funções para gerenciar e transitar entre diferentes estados. A linha de código a seguir foi usada para criar uma tabela (vetor) de ponteiros para funções, onde cada elemento do vetor aponta para uma função que representa um estado específico da máquina de estados:
 
 ```c
 void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado_f};
 ```
+
+Em cada estadao é realizado as devidas ações de cada estado
