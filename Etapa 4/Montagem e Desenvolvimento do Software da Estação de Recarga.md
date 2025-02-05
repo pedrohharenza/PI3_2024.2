@@ -42,7 +42,7 @@ A modelagem 3D do gabinete foi realizada utilizando o Onshape, um software gratu
 
 # Desenvolvimento do Softwarer
 
-Os estados D e E foram desconsiderados no funcionamento da estação de recarga, pois o estado D não é comumente utilizado, enquanto o estado E pode ser substituído pelo estado F, sem comprometer o desempenho básico do sistema. Como discutido na Etapa 1, o estado D é similar ao estado C, mas com a diferença de que o veículo informa à estação a necessidade de ventilação. Por outro lado, o estado E representa um erro conhecido, mas todos os erros serão agora tratados no estado F. A lógica de transição entre os estados é ilustrada no fluxograma abaixo:
+Os estados D e E foram desconsiderados no funcionamento da estação de recarga, pois o estado D não é comumente utilizado, enquanto o estado E pode ser substituído pelo estado F, sem comprometer o desempenho básico do sistema. Como discutido na Etapa 1, o estado D é similar ao estado C, mas com a diferença de que o veículo informa à estação a necessidade de ventilação. Por outro lado, o estado E representa um erro conhecido, mas todos os erros serão tratados no estado F. A lógica de transição entre os estados é ilustrada nas fogiras abaixo:
 
 <p align="center">
     <img src="Imagens/evse_fluxograma_2.jpg">
@@ -51,6 +51,13 @@ Os estados D e E foram desconsiderados no funcionamento da estação de recarga,
 <p align="center">
     <img src="Imagens/evse_state_diagram_1.jpg">
 </p>
+
+# Explicação do uso de ponteiros de funções na máquina de estados da estação de recarga
+
+No desenvolvimento da máquina de estados da estação de recarga, utilizamos o conceito de ponteiro de funções para gerenciar e transitar entre diferentes estados de forma eficiente. A linha de código a seguir foi usada para criar uma tabela (vetor) de ponteiros para funções, onde cada elemento do vetor aponta para uma função que representa um estado específico da máquina de estados:
+
+```c
+void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado_f};
 
 
 
