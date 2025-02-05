@@ -52,9 +52,7 @@ Os estados D e E foram desconsiderados no funcionamento da estação de recarga,
     <img src="Imagens/evse_state_diagram_1.jpg">
 </p>
 
-# Explicação do uso de ponteiros de funções na máquina de estados da estação de recarga
-
-No desenvolvimento da máquina de estados da estação de recarga, utilizamos o conceito de ponteiro de funções para gerenciar e transitar entre diferentes estados de forma eficiente. A linha de código a seguir foi usada para criar uma tabela (vetor) de ponteiros para funções, onde cada elemento do vetor aponta para uma função que representa um estado específico da máquina de estados:
+Para implementar máquina de estados da estação de recarga, foi utilizado o conceito de ponteiro de funções para gerenciar e transitar entre diferentes estados. A linha de código a seguir foi usada para criar uma tabela (vetor) de ponteiros para funções, onde cada elemento do vetor aponta para uma função que representa um estado específico da máquina de estados:
 
 ```c
 void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado_f};
