@@ -134,7 +134,7 @@ void estado_b(char corrente){
 No estado B é iniciado o PWM, configurado os leds para cor verde no caso de a recarga ter finalizado ou amarelo no caso de estar iniciando uma recarga e também garantido que os relés não estarão ativo
 
 Estado C
-```
+```c
 void estado_c(char corrente){
 	if(estado_atual != estado_anterior){
 		TIM1->CCR3 = (TIM1->ARR)*0.4;
@@ -246,6 +246,39 @@ void evse_state_logic_transition(){
 		case ESTADO_F:
 			break;
 	}
+}
+```
+Essa função determina o estado atual com base na medida realiza pela função `read_pilot()` que representa a tensão no sinal Control Pilot.
+
+`read_pilot()` precisa medir o sinal Control Pilot, que em determinados momentos pode ser um PWM on um sinal constante. Para isso é feito 500 medidas seguidas e somado os valores a cima de 1.2V, em seguida é tirado a média dos valores somados. Esse valor é possui uma relação com o valor de Control Pilot, essa relação pode ser calculada pelo ciruito apresentado na Etapa 2, obtendo os valores de `CP_READ_ESTADO_A, CP_READ_ESTADO_B, CP_READ_ESTADO_C`.
+
+```c
+#define CP_READ_ESTADO_A	3230 //mV
+#define CP_READ_ESTADO_B	2831 //mV
+#define CP_READ_ESTADO_C	2432 //mV
+#define CP_READ_ESTADO_E	1636 //mV
+```
+
+```c
+uint16_t read_pilot(){
+	int adc_sample = 0;
+	int average = 0;
+	int n = 0;
+	ADC_Select_CH9();
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 1);
+	for(int i=0; i <= 500; i++){
+		HAL_ADC_Start(&hadc);
+		HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
+		if(HAL_ADC_GetValue(&hadc) > 1200){
+			adc_sample += HAL_ADC_GetValue(&hadc);
+			n++;
+		}
+	}
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 0);
+	if(adc_sample){
+		average = (adc_sample/n)*0.8057;
+	}
+	return average;
 }
 ```
 
