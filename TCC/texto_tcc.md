@@ -17,3 +17,12 @@ Idealmente, as medições devem ser tanto exatas quanto precisas. Um sistema que
 No caso da estação de recarga de nível 1 AC, é essencial que os instrumentos de medição utilizados para monitorar o consumo de energia apresentem tanto exatidão quanto precisão para garantir que os usuários recebam informações corretas e consistentes sobre o consumo de energia durante o processo de recarga. Isso não apenas melhora a transparência para os usuários, mas também assegura que o sistema esteja em conformidade com as regulamentações e padrões de medição de energia.
 
 # Funcionamento de uma estação de recarga
+
+Detalhar os principais componentes da estação de recarga, explicando sua função e como interagem para fornecer energia ao veículo.
+**Entrada de Energia:** Como a energia é fornecida à estação (geralmente uma conexão de corrente alternada de 110V ou 220V).
+**Conversor AC-DC:** Como a energia de corrente alternada (AC) é convertida em corrente contínua (DC) para carregar a bateria do veículo (falar sobre OBCs).
+**Cabos e Conectores:** Tipo de cabos e conectores utilizados para a conexão com o veículo (Ex.: tipo de plugue, padrões utilizados como o Tipo 1 ou Tipo 2).
+**Sistema de Segurança:** Dispositivos que protegem contra sobrecargas, curto-circuitos, e outros riscos elétricos
+Processo de Recarga
+
+
