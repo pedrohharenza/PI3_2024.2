@@ -257,7 +257,7 @@ Essa função determina o estado atual com base na medida realiza pela função 
 </p>
 
 $$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\frac{CP-CP_{read}}{R_2}+\frac{3,3-CP_{read}}{R_3}-\frac{CP_{read}}{R_4}=0
 $$
 
 ```c
