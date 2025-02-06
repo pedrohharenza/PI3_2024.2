@@ -69,7 +69,7 @@ Para implementar máquina de estados, foi utilizado o conceito de ponteiro de fu
 void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado_f};
 ```
 
-Em cada estadao é realizado as devidas ações de cada estado
+Em cada função é feito as ações de cada estado.
 
 #Estado A
 ```c
@@ -248,9 +248,9 @@ void evse_state_logic_transition(){
 	}
 }
 ```
-Essa função determina o estado atual com base na medida realiza pela função `read_pilot()` que representa a tensão no sinal Control Pilot.
+Essa função determina o estado atual com base na medida realiza pela função `read_pilot()` que representa um tensão que possui uma relação com sinal Control Pilot.
 
-`read_pilot()` precisa medir o sinal Control Pilot, que em determinados momentos pode ser um PWM on um sinal constante. Para isso é feito 500 medidas seguidas e somado os valores a cima de 1.2V, em seguida é tirado a média dos valores somados. Esse valor é possui uma relação com o valor de Control Pilot, essa relação pode ser calculada pelo ciruito apresentado na Etapa 2, obtendo os valores de `CP_READ_ESTADO_A, CP_READ_ESTADO_B, CP_READ_ESTADO_C`.
+`read_pilot()` precisa medir o sinal CP_READ, que dependendo do estado atual pode ser um sinal PWM on um sinal constante. Para isso é feito 500 medidas seguidas, e somado os valores medidos a cima de 1.2V, em seguida é tirado a média dos valores somados para evitar que medidas que apresentem ruído causem um comportamento indesejado. O valor de CP_READ possui uma relação com o valor de Control Pilot, essa relação pode ser calculada pelo ciruito apresentado na Etapa 2, obtendo os valores de `CP_READ_ESTADO_A, CP_READ_ESTADO_B, CP_READ_ESTADO_C`.
 
 ```c
 #define CP_READ_ESTADO_A	3230 //mV
