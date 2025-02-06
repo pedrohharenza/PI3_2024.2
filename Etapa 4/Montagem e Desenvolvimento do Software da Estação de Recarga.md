@@ -308,5 +308,40 @@ Os bits são transmitidos a cada 1,25 microssegundos, o que corresponde a uma fr
     <img src="Imagens/led_data_1.jpg">
 </p>
 
-Para realizar essa comunicação, utilizou-se o DMA para transferir as diferentes larguras de pulso para o temporizador, que, gera um sinal PWM com os dados definidos.
+Para realizar essa comunicação, utilizou-se o DMA para transferir as diferentes larguras de pulso para o temporizador, que, gera um sinal PWM com os dados definidos. A função `set_led()` configura a posição do led, e os dados de cores de 0 a 255.
+
+```c
+void set_led(int LEDnum, int red, int green, int blue){
+	LED_Data[LEDnum][0] = LEDnum;
+	LED_Data[LEDnum][1] = green;
+	LED_Data[LEDnum][2] = red;
+	LED_Data[LEDnum][3] = blue;
+}
+```
+
+Para enviar os dados é feito uma verredura em todos os LEDs configurados e feito shift lógico para enviar os dados de cores verde, vermelho e azul nessa ordem. `pwmData` posui a informação da largura de pulso de cada bit que será enviado e mais 50 valores `0` que são referentes ao `Treset` e devem estar presente no final de toda comunicação. Em seguida é transmitido via DMA os dados para o PWM pela chamada da função `HAL_TIM_PWM_Start_DMA`.
+
+```c
+void WS2812_Send(void) {
+    uint32_t color;
+    uint16_t indx = 0;
+
+    for (int i = 0; i < NUM_LEDS; i++) {
+        color = ((LED_Data[i][1] << 16) | (LED_Data[i][2] << 8) | (LED_Data[i][3]));
+
+        for (int bit = 23; bit >= 0; bit--) {
+            pwmData[indx++] = (color & (1 << bit)) ? 60 : 30;
+        }
+    }
+
+    for (int i = 0; i < 50; i++) {
+        pwmData[indx++] = 0;
+    }
+
+    HAL_TIM_PWM_Start_DMA(&htim16, TIM_CHANNEL_1, (uint32_t *)pwmData, indx);
+
+    while (!datasentflag) {}
+    datasentflag = 0;
+}
+```
 
