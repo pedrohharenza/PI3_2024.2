@@ -302,7 +302,7 @@ Para controlar as cores dos LEDs RGB, é utilizado a função `set_led()` para s
 
 A comunicação é feita pelo envio de 24 bits, sendo dividido em 8 bits para cor verde, 8 bits para a cor vermelha e 8 bits para o azul.
 
-Os bits são transmitidos a cada 1,25 microssegundos, o que corresponde a uma frequência de 800 KHz. Para enviar o bit `1`, o sinal de comunicação deve permanecer em nível alto por aproximadamente dois terços do tempo e em nível baixo por um terço do tempo. Já para enviar o bit `0`, o sinal deve permanecer em nível alto por cerca de um terço do tempo e em nível baixo por dois terços do tempo.
+Os bits são transmitidos a cada 1,25 microssegundos, o que corresponde a uma frequência de 800 KHz. Para enviar o bit `1`, o sinal de comunicação deve permanecer em nível alto por aproximadamente dois terços do tempo `T1H` e em nível baixo por um terço do tempo `T1L`. Já para enviar o bit `0`, o sinal deve permanecer em nível alto por cerca de um terço do tempo `T0H` e em nível baixo por dois terços do tempo `T0L`. Após o envio dos dados é preciso manter o sinal em baixo por 50 microsegundos `Treset`.
 
 <p align="center">
     <img src="Imagens/led_data_1.jpg">
