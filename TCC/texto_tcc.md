@@ -18,6 +18,8 @@ No caso da estação de recarga de nível 1 AC, é essencial que os instrumentos
 
 # Funcionamento de uma estação de recarga
 
+## Componentes Principais de uma Estação de Recarga
+
 Detalhar os principais componentes da estação de recarga, explicando sua função e como interagem para fornecer energia ao veículo.
 
 **Entrada de Energia:** Como a energia é fornecida à estação (geralmente uma conexão de corrente alternada de 110V ou 220V).
@@ -27,6 +29,69 @@ Detalhar os principais componentes da estação de recarga, explicando sua funç
 **Cabos e Conectores:** Tipo de cabos e conectores utilizados para a conexão com o veículo (Ex.: tipo de plugue, padrões utilizados como o Tipo 1 ou Tipo 2).
 
 **Sistema de Segurança:** Dispositivos que protegem contra sobrecargas, curto-circuitos, e outros riscos elétricos
-Processo de Recarga
+
+## Processo de funcionamento
+
+Explicar, passo a passo, como funciona a recarga do veículo elétrico, desde a conexão até a finalização da carga.
+
+**Explicar os estados** Explicar pra que serve cada estado.
+
+**Início da Carga:** Como a estação inicia a recarga, fornecendo a quantidade adequada de energia.
+
+**Finalização da Carga:** Como o processo de recarga é finalizado e como o usuário é informado (mensagem no display, notificação no aplicativo, etc.).
+
+## Segurança e Proteção na Estação de Recarga
+
+Explicar as medidas de segurança para garantir que o processo de recarga seja seguro tanto para o usuário quanto para o veículo.
+
+**Proteção contra Sobrecarga e Curto-Circuito:** Dispositivos que protegem a estação e o veículo de falhas elétricas.
+
+**Isolamento e Aterramento:** Garantias de segurança elétrica e prevenção de choques.
+
+**Desconexão de Emergência:** Mecanismos para interromper a recarga em caso de falha ou emergência.
 
 
+
+
+Funcionamento da Estação de Recarga com Base nos Estados
+O funcionamento de uma estação de recarga para veículos elétricos (VEs) é regido por um conjunto de estados definidos pela norma ABNT NBR IEC 61851-1. Esses estados representam diferentes condições no processo de recarga e são fundamentais para garantir a segurança e eficiência do sistema. Cada estado indica uma etapa distinta na comunicação e no fornecimento de energia entre a estação de recarga e o veículo elétrico.
+
+A norma descreve os estados com as letras A, B, C, D, E e F, com subdivisões que indicam variações ou condições específicas. Vamos explorar cada um desses estados e suas implicações para o funcionamento da estação de recarga.
+
+Estado A: Sem Conexão
+O Estado A ocorre quando não há conexão entre o veículo elétrico e a estação de recarga. Nesse estado, o circuito piloto da estação de recarga está operando a 12V, indicando que o sistema está inativo e aguardando a conexão do cabo de recarga. Este é o estado inicial, onde ainda não houve qualquer interação entre a estação e o veículo.
+
+Estado B: Conexão Estabelecida
+O Estado B é alcançado quando o cabo de recarga é conectado entre o veículo e a estação de recarga. Esse estado é subdividido em duas condições principais:
+
+B1: Neste subestado, o circuito piloto está em 9V e não há comunicação ativa (seja por LIN ou por modulação por largura de pulso (PWM)). Isso indica que a estação está aguardando a sinalização do veículo para poder iniciar a carga.
+
+B2: Quando o circuito piloto ainda está em 9V, mas agora com a modulação por largura de pulso (PWM) ativa, a estação de recarga está pronta para fornecer energia, e o processo de carregamento pode começar assim que o veículo autorizar.
+
+Estado C: Alimentação Disponível
+O Estado C indica que a alimentação elétrica está disponível, ou seja, a estação de recarga pode fornecer energia ao veículo elétrico. O circuito piloto está operando a 6V, sinalizando que a recarga pode ser iniciada. Esse estado também é subdividido em duas variações:
+
+C1: O circuito piloto está em 6V e o veículo não requer ventilação adicional na área de recarga. Isso significa que as condições de segurança do carregamento estão sendo atendidas e o VE está pronto para receber energia sem nenhuma necessidade extra.
+
+C2: O circuito piloto está em 6V PWM, o que indica que a estação está ativa e pronta para iniciar a carga de forma dinâmica, regulando a entrega de energia conforme a necessidade do veículo.
+
+Estado D: Alimentação Disponível com Requisitos de Ventilação
+O Estado D é similar ao Estado C, mas com a diferença de que o veículo exige ventilação adicional no processo de recarga devido ao calor gerado durante o carregamento. O circuito piloto estará operando a 3V, indicando que o sistema está em uma condição de recarga que exige controle térmico adequado. Esse estado também possui variações:
+
+D1: O circuito piloto está em 3V e a ventilação é necessária para evitar o superaquecimento durante a recarga.
+
+D2: O circuito piloto está em 3V PWM e, assim como no estado C2, a alimentação está pronta, com a modulação para controlar o fornecimento de energia.
+
+Estado E: Sem Alimentação Disponível
+O Estado E indica que não há alimentação disponível para o veículo. Nesse estado, o circuito piloto está a 0V, sinalizando uma falha no fornecimento de energia ou uma condição de emergência. Esse estado é ativado quando o sistema de alimentação para o VE não pode fornecer energia e pode indicar uma situação de falta de energia, onde o dispositivo de manobra do sistema precisa abrir para garantir a segurança.
+
+Estado F: Falha no Sistema
+O Estado F representa uma falha no sistema de alimentação da estação de recarga. O circuito piloto estará operando a -12V, sinalizando que há um problema crítico no sistema que requer manutenção. Quando o sistema entra nesse estado, ele deve destravar a tomada do veículo em até 30 segundos, garantindo a segurança do usuário e evitando danos maiores ao sistema de recarga. O Estado F é um estado de erro que exige a intervenção de manutenção para resolver o problema.
+
+Transições Entre os Estados
+As transições entre os estados A, B, C, D e E geralmente são causadas por ações do veículo elétrico ou do usuário, como conectar ou desconectar o cabo de recarga, iniciar ou interromper a carga, ou atender a uma solicitação de ventilação.
+
+Por outro lado, as transições entre os subestados x1 e x2 (como B1 para B2, ou C1 para C2) são determinadas pelo sistema de alimentação para o VE, que gerencia a disponibilidade de energia e a comunicação com o veículo. A transição para o Estado F ou para o Estado E pode ocorrer automaticamente em caso de falhas ou quando há uma condição de falta de energia, exigindo uma resposta imediata para garantir a segurança do sistema.
+
+Conclusão
+Os diferentes estados e suas transições são fundamentais para garantir que o funcionamento de uma estação de recarga seja seguro e eficiente. Cada estado e subestado tem um papel específico no processo de recarga, desde a conexão inicial do veículo até a conclusão do carregamento, e cada transição é cuidadosamente controlada para responder a mudanças nas condições de operação. Compreender esses estados é essencial para o desenvolvimento e operação adequados de estações de recarga, garantindo não apenas a eficiência energética, mas também a segurança dos usuários e a confiabilidade do sistema.
