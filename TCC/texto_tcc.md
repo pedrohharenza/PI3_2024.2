@@ -51,7 +51,7 @@ Explicar as medidas de segurança para garantir que o processo de recarga seja s
 **Desconexão de Emergência:** Mecanismos para interromper a recarga em caso de falha ou emergência.
 
 
-
+## Texto
 
 Funcionamento da Estação de Recarga com Base nos Estados
 O funcionamento de uma estação de recarga para veículos elétricos (VEs) é regido por um conjunto de estados definidos pela norma ABNT NBR IEC 61851-1. Esses estados representam diferentes condições no processo de recarga e são fundamentais para garantir a segurança e eficiência do sistema. Cada estado indica uma etapa distinta na comunicação e no fornecimento de energia entre a estação de recarga e o veículo elétrico.
