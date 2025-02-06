@@ -259,6 +259,10 @@ Essa função determina o estado atual com base na medida realiza pela função 
 $$
 \frac{CP-CP_{read}}{R_2}+\frac{3,3-CP_{read}}{R_3}-\frac{CP_{read}}{R_4}=0
 $$
+isolando CP_READ temos
+$$
+CP_{read}=\frac{CP\cdot R_3\cdot R_4+3,3\cdot R_2\cdot R_4}{R_2\cdot R_4 + R_2\cdot R_3 + R_3\cdot R_4}
+$$
 
 ```c
 #define CP_READ_ESTADO_A	3230 //mV
