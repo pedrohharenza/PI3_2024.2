@@ -252,6 +252,10 @@ Essa função determina o estado atual com base na medida realiza pela função 
 
 `read_pilot()` precisa medir o sinal CP_READ, que dependendo do estado atual pode ser um sinal PWM on um sinal constante. Para isso é feito 500 medidas seguidas, e somado os valores medidos a cima de 1.2V, em seguida é tirado a média dos valores somados para evitar que medidas que apresentem ruído causem um comportamento indesejado. O valor de CP_READ possui uma relação com o valor de Control Pilot, essa relação pode ser calculada pelo ciruito apresentado na Etapa 2, obtendo os valores de `CP_READ_ESTADO_A, CP_READ_ESTADO_B, CP_READ_ESTADO_C`.
 
+<p align="center">
+    <img src="Etapa 2/Imagens/CP_circuito.png">
+</p>
+
 ```c
 #define CP_READ_ESTADO_A	3230 //mV
 #define CP_READ_ESTADO_B	2831 //mV
