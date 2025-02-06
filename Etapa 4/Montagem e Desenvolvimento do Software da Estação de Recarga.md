@@ -256,6 +256,10 @@ Essa função determina o estado atual com base na medida realiza pela função 
     <img src="../Etapa%202/Imagens/CP_circuito.png">
 </p>
 
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
 ```c
 #define CP_READ_ESTADO_A	3230 //mV
 #define CP_READ_ESTADO_B	2831 //mV
