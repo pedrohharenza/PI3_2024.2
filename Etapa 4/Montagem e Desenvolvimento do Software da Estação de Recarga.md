@@ -259,10 +259,13 @@ Essa função determina o estado atual com base na medida realiza pela função 
 $$
 \frac{CP-CP_{read}}{R_2}+\frac{3,3-CP_{read}}{R_3}-\frac{CP_{read}}{R_4}=0
 $$
+
 Isolando CP_READ temos:
+
 $$
 CP_{read}=\frac{CP\cdot R_3\cdot R_4+3,3\cdot R_2\cdot R_4}{R_2\cdot R_4 + R_2\cdot R_3 + R_3\cdot R_4}
 $$
+
 Com essa equação encontramos o valor de CP_READ que representa 12V, 9V, 6V, 0V e -12V no sinal Control Pilot.
 
 ```c
