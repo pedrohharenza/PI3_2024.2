@@ -349,7 +349,6 @@ Efeito verde otimizado
 Opção 1
 ```c
 uint8_t green_effect() {
-    static uint16_t effStep = 0;  // Passo do efeito (agora local e static)
     static const uint8_t color_table[3][3] = {
         {0, 255, 0},   // Verde máximo
         {0, 15, 0},    // Verde médio
@@ -393,7 +392,6 @@ uint8_t green_effect() {
 Opção 2
 ```c
 void green_effect() {
-    static uint16_t effStep = 0;  // Passo do efeito (agora local e static)
     static const uint8_t green_values[3] = {255, 15, 15};  // Valores de verde
 
     uint16_t ind;
