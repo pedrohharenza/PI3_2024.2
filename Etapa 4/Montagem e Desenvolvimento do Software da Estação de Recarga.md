@@ -394,11 +394,7 @@ Opção 2
 ```c
 void green_effect() {
     static uint16_t effStep = 0;  // Passo do efeito (agora local e static)
-    static const uint8_t color_table[3][3] = {
-        {0, 255, 0},   // Verde máximo
-        {0, 15, 0},    // Verde médio
-        {0, 15, 0}     // Verde médio
-    };
+    static const uint8_t green_values[3] = {255, 15, 15};  // Valores de verde
 
     uint16_t ind;
     uint8_t color_index;
@@ -412,8 +408,10 @@ void green_effect() {
         factor1 = 255 - ((ind % 3) * 85);  // 85 = 255 / 3
         factor2 = (ind % 3) * 85;
 
-        uint8_t green = (color_table[color_index][1] * factor1 + color_table[(color_index + 1) % 3][1] * factor2) >> 8;
+        // Interpolação apenas para o canal verde
+        uint8_t green = (green_values[color_index] * factor1 + green_values[(color_index + 1) % 3] * factor2) >> 8;
 
+        // Define a cor do LED (red e blue sempre 0)
         set_led(j, 0, green, 0);
     }
 
