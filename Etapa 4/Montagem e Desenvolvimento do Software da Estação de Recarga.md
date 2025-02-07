@@ -346,6 +346,7 @@ void WS2812_Send(void) {
 ```
 
 Efeito verde otimizado
+Opção 1
 ```c
 uint8_t green_effect() {
     static uint16_t effStep = 0;  // Passo do efeito (agora local e static)
@@ -385,6 +386,45 @@ uint8_t green_effect() {
     } else {
         effStep++;
         return 0x01;  // Efeito em andamento
+    }
+}
+```
+
+Opção 2
+```c
+void green_effect() {
+    static uint16_t effStep = 0;  // Passo do efeito (agora local e static)
+    static const uint8_t color_table[3][3] = {
+        {0, 255, 0},   // Verde máximo
+        {0, 15, 0},    // Verde médio
+        {0, 15, 0}     // Verde médio
+    };
+
+    uint16_t ind;
+    uint8_t color_index;
+    uint8_t factor1, factor2;
+
+    for (uint16_t j = 0; j < 9; j++) {
+        ind = effStep + j;
+        color_index = (ind % 9) / 3;  // Determina o índice da cor (0, 1 ou 2)
+
+        // Calcula os fatores de interpolação (0 a 255, em vez de 0.0 a 1.0)
+        factor1 = 255 - ((ind % 3) * 85);  // 85 = 255 / 3
+        factor2 = (ind % 3) * 85;
+
+        uint8_t green = (color_table[color_index][1] * factor1 + color_table[(color_index + 1) % 3][1] * factor2) >> 8;
+
+        set_led(j, 0, green, 0);
+    }
+
+    // Envia os dados para a fita de LED
+    WS2812_Send();
+
+    // Atualiza o passo do efeito
+    if (effStep >= 62) {
+        effStep = 0;
+    } else {
+        effStep++;
     }
 }
 ```
