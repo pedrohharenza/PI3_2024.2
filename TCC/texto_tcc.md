@@ -1,12 +1,12 @@
 # Exatidão e Precisão nas Medições de Consumo de Energia
-No contexto do desenvolvimento de uma estação de recarga de energia, é essencial compreender os conceitos de exatidão e precisão, que são fundamentais para garantir a confiabilidade das medições do consumo de energia. Embora esses termos sejam frequentemente usados de forma intercambiável, eles se referem a aspectos distintos da qualidade das medições.
+No contexto do desenvolvimento de uma estação de recarga com capacidade de medir o consumo de energia, é essencial compreender os conceitos de exatidão e precisão, que são fundamentais para garantir a confiabilidade das medições do consumo de energia. Embora esses termos sejam frequentemente usados de forma intercambiável, eles se referem a aspectos distintos da qualidade das medições.
 
-Exatidão
+## Exatidão
 A exatidão de uma medição refere-se à proximidade entre o valor medido e o valor verdadeiro ou referência. Em outras palavras, uma medição é considerada exata quando o valor obtido pelo instrumento de medição está muito próximo ao valor real do consumo de energia, que pode ser determinado por um padrão de referência ou calculado com base em modelos precisos. No caso de uma estação de recarga, a exatidão é crítica, pois ela assegura que os dados fornecidos ao usuário, como o consumo de energia durante o processo de recarga, sejam representativos e confiáveis.
 
 Por exemplo, se uma estação de recarga indicar que 10 kWh foram consumidos durante uma recarga, mas o valor real medido por um sistema de referência for 9,8 kWh, a exatidão do medidor da estação de recarga pode ser questionada, pois ele apresenta uma discrepância de 0,2 kWh em relação ao valor real.
 
-Precisão
+## Precisão
 Por outro lado, a precisão refere-se à capacidade de um instrumento de medição de fornecer resultados consistentes ao realizar medições repetidas sob as mesmas condições. Em termos práticos, um instrumento preciso sempre fornecerá os mesmos resultados quando medindo a mesma quantidade, mesmo que esses resultados não sejam exatos. A precisão é importante para garantir que as leituras do consumo de energia não variem significativamente entre medições sucessivas, o que poderia levar a interpretações errôneas dos dados.
 
 No contexto de uma estação de recarga, se a medição de consumo de energia for repetida várias vezes e sempre resultar em valores semelhantes, mas não necessariamente no valor exato, o sistema será considerado preciso, mas não necessariamente exato. No entanto, um sistema altamente preciso pode ser ajustado ou calibrado para melhorar sua exatidão.
