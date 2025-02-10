@@ -85,5 +85,7 @@ A estação de recarga monitora a parte inferior do sinal PWM, que deve atingir 
 
 O circuito que exemplificar a conexão do sinal Control Pilot da estação de recarga e um VE pode ser ilustrado pela figura x.
 
-
+<p align="center">
+    <img src="Imagens/Circuito%20Control%20Pilot.jpg">
+</p>
 
