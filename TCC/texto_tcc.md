@@ -86,6 +86,4 @@ O veículo elétrico também monitora a frequência do sinal PWM, que deve estar
 
 A estação de recarga monitora a parte inferior do sinal PWM, que deve atingir -12 V quando não estiver conectada ao veículo. Esse controle é essencial para verificar a presença de um diodo no circuito, que é responsável por garantir a integridade do sinal. Quando o diodo está presente, a parte inferior do sinal PWM deve apresentar 0 V, indicando que o circuito está funcionando corretamente e que a alimentação pode ser acionada com segurança.
 
-Em resumo, a comunicação por PWM é um mecanismo fundamental para o funcionamento seguro e eficiente das estações de recarga de veículos elétricos. Através da modulação da largura do pulso, é possível transmitir informações críticas sobre a corrente disponível, enquanto o monitoramento da frequência e da tensão garante que o processo de carregamento ocorra dentro dos limites estabelecidos pelas normas técnicas.
-
 
