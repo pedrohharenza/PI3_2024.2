@@ -143,7 +143,7 @@ void estado_c(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHA
 No estado C é mantido o PWM com 27% de razzão cíclica, acionado os relés e ativada a animação dos LEDs RGBs para indicar o carregamento.
 
 ## Estado F
-```
+```c
 void estado_f(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
 #ifndef debug
