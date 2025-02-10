@@ -349,7 +349,7 @@ void WS2812_Send(TIM_HandleTypeDef *htim, uint8_t TIM_CHANNEL) {
     datasentflag = 0;
 }
 ```
-Ao enviar os dados como explicado anteriormente, foi possível perceber que o segundo bit apresentava um comportamento inesperando 
+Ao enviar os dados como explicado anteriormente, foi possível perceber que o segundo bit apresentava um comportamento inesperando, fazendo o primeiro led piscar verde aleatóriamente, para solucionar essa problema foi preciso enviar dois valores nulos `pwmData[0] = 0;` e `pwmData[1] = 0;` pelo DMA antes de enviar o dasdos como descrito anteriormente.
 
 Efeito verde otimizado
 
