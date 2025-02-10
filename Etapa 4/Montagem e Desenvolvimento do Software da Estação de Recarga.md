@@ -41,7 +41,7 @@ Esse processo de fabricação ainda está sendo aprimorado e testado. Por esse m
 A modelagem 3D do gabinete foi realizada utilizando o software online Oshape. Para garantir as dimensões corretas, foi utilizado o modelo 3D da placa, gerado pelo KiCad, facilitando o dimensionamento do gabinete, assegurando que todas as partes teriam o encaixe correto. O material escolhido para a impressão foi o PETG, devido à sua maior resistência mecânica e térmica em comparação ao PLA. A parte transparente, utilizada como difusor para os LEDs, foi impressa com o material Tritan. A impressão foi feita em 3 partes: a tampa superior, em preto, e a tampa inferior, em branco e o difusor em material transparente.
 
 # Desenvolvimento do Softwarer
-
+## Máquina de Estados
 Os estados D e E foram desconsiderados no funcionamento da estação de recarga, pois o estado D não é comumente utilizado e apresenta o mesmo comportamento que o estado C, enquanto o estado E pode ser substituído pelo estado F, sem comprometer o desempenho básico do sistema. Como discutido na Etapa 1, o estado D é similar ao estado C, mas com a diferença de que o veículo informa à estação a necessidade de ventilação por conta de aquecimento durante o processo de recarga. Por outro lado, o estado E representa um erro conhecido, mas todos os erros serão tratados no estado F. A lógica de transição entre os estados é ilustrada nas fogiras abaixo:
 
 <p align="center">
