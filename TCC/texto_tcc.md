@@ -67,7 +67,19 @@ O sistema de alimentação da estação de recarga gera um sinal PWM com uma fre
 Modificação da Razão Cíclica
 O sistema de recarga pode modificar dinamicamente a razão cíclica do sinal PWM para se adaptar a condições de gestão de carga ou limitações de potência. Assim, a razão cíclica pode ser ajustada em tempo real, indicando ao veículo a corrente disponível naquele momento específico.
 
-O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva à meia onda positiva do circuito-piloto de comando, que é responsável pela comunicação com a estação de recarga.
+O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva à meia onda positiva do sinal Control Pilot, que é responsável pela comunicação com a estação de recarga. Essa carga resistiva gera uma queda de tensão que determina os estados da estação de recarga, e pode ser resumida pela Tabela 1.
+
+| Estado | Descrição                                      | Tensão no Control Pilot |
+|--------|------------------------------------------------|-------------------------|
+| A      | Sem Conexão                                     | +12 V                   |
+| B1     | Conexão Estabelecida (sem PWM)                 | +9 V                    |
+| B2     | Conexão Estabelecida (com PWM)                 | +9 V (PWM ativo)        |
+| C1     | Alimentação Disponível (sem PWM)               | +6 V                    |
+| C2     | Alimentação Disponível (com PWM)               | +6 V (PWM ativo)        |
+| D1     | Alimentação com Requisitos de Ventilação (sem PWM) | +3 V                    |
+| D2     | Alimentação com Requisitos de Ventilação (com PWM) | +3 V (PWM ativo)        |
+| E      | Sem Alimentação Disponível                      | 0 V                     |
+| F      | Falha no Sistema                                | -12 V                   |
 
 O VE também monitora a frequência do sinal PWM, que deve estar dentro da faixa de 1 ± 5% kHz. Caso o sinal esteja fora dessa faixa, o veículo não deve iniciar a recarga.
 
