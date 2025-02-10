@@ -52,18 +52,18 @@ Os estados D e E foram desconsiderados no funcionamento da estação de recarga,
     <img src="Imagens/evse_state_diagram_2.jpg">
 </p>
 
-Antes de iniciar a máquina de estados, o sistema é configurado pela função `evse_config()`.
+Antes de iniciar a máquina de estados, o sistema é configurado.
 ```c
-void evse_config(){
-	printf(MAGENTA "----INICIALIZNADO SISTEMA----" ANSI_RESET "\n");
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-	TIM1->CCR3 = (TIM1->ARR);
-	read_pilot();
-}
+  HAL_ADCEx_Calibration_Start(&hadc);			//Calibração do ADC
+  HAL_TIM_Base_Start_IT(&htim1);			//Inicialização do temporizador do timer 1 com interrupção
+  HAL_TIM_Base_Start(&htim3);				//Inicialização do temporizador do timer 3
+  HAL_UART_Receive_IT(&huart1, rx_buffer, 2);		//Inicialização da UART
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);		//Inicialização do PWM do timer 1 canal 3
+  TIM1->CCR3 = (TIM1->ARR);				//Configurado a razão cíclica para 100%
 ```
-Essa função inicializa o PWM responsável pelo controle do sinal Control Pilot, configurando com razão cíclica de 100%.
+Inicializando os periféricos e configurando o PWM com razão cíclica de 100%.
 
-Para implementar máquina de estados, foi utilizado o conceito de ponteiro de funções para gerenciar e transitar entre diferentes estados. A linha de código a seguir foi usada para criar uma tabela (vetor) de ponteiros para funções, onde cada elemento do vetor aponta para uma função que representa um estado específico da máquina de estados:
+A implementação da máquina de estados foi realizada por meio de um vetor de ponteiros de função, onde cada posição do vetor corresponde a um estado específico. Cada função encapsula a lógica de um estado e sua possível transição.
 
 ```c
 void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado_f};
