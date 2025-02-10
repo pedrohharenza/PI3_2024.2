@@ -14,7 +14,7 @@ No contexto de uma estação de recarga, se a medição de consumo de energia fo
 Relação entre Exatidão e Precisão
 Idealmente, as medições devem ser tanto exatas quanto precisas. Um sistema que seja exato, mas não preciso, indicará corretamente o valor médio do consumo de energia, mas poderá apresentar flutuações em medições repetidas, dificultando a interpretação dos dados. Por outro lado, um sistema preciso, mas não exato, poderá fornecer medições consistentes, mas distorcidas em relação ao valor real, o que afetaria a confiabilidade dos dados.
 
-No caso da estação de recarga de nível 1 AC, é essencial que os instrumentos de medição utilizados para monitorar o consumo de energia apresentem tanto exatidão quanto precisão para garantir que os usuários recebam informações corretas e consistentes sobre o consumo de energia durante o processo de recarga. Isso não apenas melhora a transparência para os usuários, mas também assegura que o sistema esteja em conformidade com as regulamentações e padrões de medição de energia.
+No caso da estação de recarga de nível 1 AC, é essencial que os instrumentos de medição utilizados para monitorar o consumo de energia apresentem tanto exatidão quanto precisão para garantir que os usuários recebam informações corretas e consistentes sobre o consumo de energia durante o processo de recarga. Isso melhora a transparência para os usuários, e assegura que o usuário estará sendo cobrado pelo que realmente foi consumido.
 
 # Funcionamento de uma estação de recarga
 
