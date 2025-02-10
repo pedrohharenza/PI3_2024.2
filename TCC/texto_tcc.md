@@ -56,18 +56,19 @@ Transições Entre os Estados
 As transições entre os estados A, B, C, D e E depender da amplitude positiva do sinal Control Pilot
 
 ## Comunicação por Largura de Pulso (PWM) no Funcionamento da Estação de Recarga
-A comunicação por largura de pulso (PWM) desempenha um papel fundamental na interação entre a estação de recarga e o veículo elétrico (VE). A principal função da modulação por largura de pulso é transmitir a corrente máxima que o VE pode consumir com segurança. Isso é realizado por meio de um sinal de onda quadrada, no qual a largura do pulso (tempo em que o sinal está em nível alto) é modulada, enquanto a frequência permanece constante. A variação da largura do pulso é convertida em informações sobre a capacidade de corrente disponível para o carregamento do veículo. A relação entre a largura de pulso e a corrente que pode ser consumida pode ser dada por:
+A comunicação por largura de pulso (PWM, do inglês Pulse Width Modulation) desempenha um papel importante na interação entre a estação de recarga e o veículo elétrico (VE). Sua principal função é transmitir, a informação de corrente máxima que o VE pode consumir durante o processo de carregamento. Essa comunicação é realizada por meio de um sinal de onda quadrada, em que a largura do pulso é modulada enquanto a frequência permanece constante. A largura do pulso é convertida em informações sobre a capacidade de corrente disponível para o carregamento do veículo. Essa relação entre a largura do pulso e a corrente pode ser expressa pela equação: X:
 
 $$
 I=60*D
 $$
 
-O sistema de alimentação da estação de recarga gera um sinal PWM com uma frequência fixa de 1 kHz, sendo a tensão do sinal variando entre ±12 V.
+onde I representa a corrente máxima em ampères (A) e D é a razão cíclica do sinal PWM, expressa em porcentagem.
 
-Modificação da Razão Cíclica
-O sistema de recarga pode modificar dinamicamente a razão cíclica do sinal PWM para se adaptar a condições de gestão de carga ou limitações de potência. Assim, a razão cíclica pode ser ajustada em tempo real, indicando ao veículo a corrente disponível naquele momento específico.
+O sistema de alimentação da estação de recarga gera um sinal PWM com uma frequência de 1 kHz, e a amplitude do sinal varia entre ±12 V. Essa modulação permite que a estação de recarga e o VE se comuniquem, garantindo que o carregamento ocorra dentro dos limites seguros de corrente.
 
-O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva à meia onda positiva do sinal Control Pilot, que é responsável pela comunicação com a estação de recarga. Essa carga resistiva gera uma queda de tensão que determina os estados da estação de recarga, e pode ser resumida pela Tabela 1.
+A razão cíclica do sinal PWM pode ser ajustada dinamicamente pelo sistema de recarga para se adaptar a diferentes condições operacionais, como gestão de carga ou limitações de potência da rede elétrica. Esse ajuste em tempo real permite que a estação de recarga informe ao veículo a corrente disponível em cada momento, otimizando o processo de carregamento e evitando sobrecargas.
+
+O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva ao sinal Control Pilot, que é o responsável pela comunicação com a estação de recarga. Essa carga resistiva gera uma queda de tensão que determina os estados da estação de recarga, conforme detalhado na Tabela 1. Cada estado corresponde a uma condição específica do processo de carregamento, como a conexão do veículo, a disponibilidade de alimentação e a necessidade de ventilação, entre outros. 
 
 | Estado | Descrição                                      | Tensão no Control Pilot |
 |--------|------------------------------------------------|-------------------------|
@@ -81,8 +82,10 @@ O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva à meia
 | E      | Sem Alimentação Disponível                      | 0 V                     |
 | F      | Falha no Sistema                                | -12 V                   |
 
-O VE também monitora a frequência do sinal PWM, que deve estar dentro da faixa de 1 ± 5% kHz. Caso o sinal esteja fora dessa faixa, o veículo não deve iniciar a recarga.
+O veículo elétrico também monitora a frequência do sinal PWM, que deve estar dentro da faixa de 1 kHz ± 5%. Caso o sinal esteja fora dessa faixa, o veículo não deve iniciar o processo de recarga, garantindo que a comunicação entre os dispositivos ocorra dentro dos parâmetros seguros e estabelecidos pela norma.
 
-A estação de recarga também monitora a parte inferior do sinal PWM, que deve atingir -12V quando não estiver conectado ao veículo. Esse controle serve para verificar a presença de diodo antes de permitir o acionamento da alimentação. Na presença do diodo o sinal PWM deve apresentar 0 V na sua parte baixa do sinal.
+A estação de recarga monitora a parte inferior do sinal PWM, que deve atingir -12 V quando não estiver conectada ao veículo. Esse controle é essencial para verificar a presença de um diodo no circuito, que é responsável por garantir a integridade do sinal. Quando o diodo está presente, a parte inferior do sinal PWM deve apresentar 0 V, indicando que o circuito está funcionando corretamente e que a alimentação pode ser acionada com segurança.
+
+Em resumo, a comunicação por PWM é um mecanismo fundamental para o funcionamento seguro e eficiente das estações de recarga de veículos elétricos. Através da modulação da largura do pulso, é possível transmitir informações críticas sobre a corrente disponível, enquanto o monitoramento da frequência e da tensão garante que o processo de carregamento ocorra dentro dos limites estabelecidos pelas normas técnicas.
 
 
