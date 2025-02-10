@@ -20,7 +20,7 @@ No caso da estação de recarga de nível 1 AC, é essencial que os instrumentos
 
 O funcionamento de uma estação de recarga para veículos elétricos (VEs) é regido por um conjunto de estados definidos pela norma ABNT NBR IEC 61851-1. Esses estados representam diferentes condições no processo de recarga. Cada estado indica uma etapa distinta na comunicação e no fornecimento de energia entre a estação de recarga e o veículo elétrico.
 
-A norma descreve os estados com as letras A, B, C, D, E e F, com subdivisões que indicam variações ou condições específicas. A lógica de transição entre cada estádo depende do sinal de comunicação entre a estação de recarga e o carro. Esse sinal é chamado de Control Pilot. A seguir, detalha-se cada um desses estados e suas implicações para o funcionamento da estação de recarga.
+A norma descreve os estados com as letras A, B, C, D, E e F, com subdivisões que indicam variações ou condições específicas. A lógica de transição entre cada estádo depende do sinal de comunicação entre a estação de recarga e o VE. Esse sinal é chamado de Control Pilot. A seguir, detalha-se cada um desses estados e suas implicações para o funcionamento da estação de recarga.
 
 Estado A: Sem Conexão
 No Estado A, não há conexão entre o veículo elétrico e a estação de recarga. Nesse estado, o Control Pilot da estação de recarga está operando com 12V, indicando que o sistema está inativo e aguardando a conexão do cabo de recarga. Deve-se considerar que este é o estado inicial, onde ainda não houve qualquer interação entre a estação e o veículo.
@@ -52,9 +52,6 @@ O Estado E indica que não há alimentação disponível para o veículo. Nesse 
 Estado F: Falha no Sistema
 O Estado F representa uma falha no sistema de alimentação da estação de recarga. O circuito piloto estará operando a -12V, sinalizando que há um problema crítico no sistema que requer manutenção. Quando o sistema entra nesse estado, deve-se destravar a tomada do veículo em até 30 segundos, garantindo a segurança do usuário e evitando danos maiores ao sistema de recarga. O Estado F é um estado de erro que exige a intervenção de manutenção para resolver o problema.
 
-Transições Entre os Estados
-As transições entre os estados A, B, C, D e E depender da amplitude positiva do sinal Control Pilot
-
 ## Comunicação por Largura de Pulso (PWM) no Funcionamento da Estação de Recarga
 A comunicação por largura de pulso (PWM, do inglês Pulse Width Modulation) desempenha um papel importante na interação entre a estação de recarga e o veículo elétrico (VE). Sua principal função é transmitir, a informação de corrente máxima que o VE pode consumir durante o processo de carregamento. Essa comunicação é realizada por meio de um sinal de onda quadrada, em que a largura do pulso é modulada enquanto a frequência permanece constante. A largura do pulso é convertida em informações sobre a capacidade de corrente disponível para o carregamento do veículo. Essa relação entre a largura do pulso e a corrente pode ser expressa pela equação: X:
 
@@ -68,7 +65,7 @@ O sistema de alimentação da estação de recarga gera um sinal PWM com uma fre
 
 A razão cíclica do sinal PWM pode ser ajustada dinamicamente pelo sistema de recarga para se adaptar a diferentes condições operacionais, como gestão de carga ou limitações de potência da rede elétrica. Esse ajuste em tempo real permite que a estação de recarga informe ao veículo a corrente disponível em cada momento, otimizando o processo de carregamento e evitando sobrecargas.
 
-O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva ao sinal Control Pilot, que é o responsável pela comunicação com a estação de recarga. Essa carga resistiva gera uma queda de tensão que determina os estados da estação de recarga, conforme detalhado na Tabela 1. Cada estado corresponde a uma condição específica do processo de carregamento, como a conexão do veículo, a disponibilidade de alimentação e a necessidade de ventilação, entre outros. 
+O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva ao sinal Control Pilot, que é o responsável pela comunicação com a estação de recarga. Essa carga resistiva gera uma queda de tensão que determina os estados da estação de recarga, conforme detalhado na Tabela 1. Cada estado corresponde a uma condição específica do processo de carregamento, como explicado anteriormente. 
 
 | Estado | Descrição                                      | Tensão no Control Pilot |
 |--------|------------------------------------------------|-------------------------|
