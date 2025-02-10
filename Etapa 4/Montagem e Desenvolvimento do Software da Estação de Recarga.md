@@ -349,6 +349,7 @@ void WS2812_Send(TIM_HandleTypeDef *htim, uint8_t TIM_CHANNEL) {
     datasentflag = 0;
 }
 ```
+Ao enviar os dados como explicado anteriormente, foi possível perceber que o segundo bit apresentava um comportamento inesperando 
 
 Efeito verde otimizado
 
