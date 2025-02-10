@@ -53,10 +53,7 @@ Estado F: Falha no Sistema
 O Estado F representa uma falha no sistema de alimentação da estação de recarga. O circuito piloto estará operando a -12V, sinalizando que há um problema crítico no sistema que requer manutenção. Quando o sistema entra nesse estado, deve-se destravar a tomada do veículo em até 30 segundos, garantindo a segurança do usuário e evitando danos maiores ao sistema de recarga. O Estado F é um estado de erro que exige a intervenção de manutenção para resolver o problema.
 
 Transições Entre os Estados
-As transições entre os estados A, B, C, D e E geralmente são causadas por ações do veículo elétrico ou do usuário, como conectar ou desconectar o cabo de recarga, iniciar ou interromper a carga, ou atender a uma solicitação de ventilação.
-
-Por outro lado, as transições entre os subestados x1 e x2 (como B1 para B2, ou C1 para C2) são determinadas pelo sistema de alimentação para o VE, que gerencia a disponibilidade de energia e a comunicação com o veículo. Deve-se considerar que a transição para o Estado F ou para o Estado E pode ocorrer automaticamente em caso de falhas ou quando há uma condição de falta de energia, exigindo uma resposta imediata para garantir a segurança do sistema.
-
+As transições entre os estados A, B, C, D e E depender da amplitude positiva do sinal Control Pilot
 
 ## Comunicação por Largura de Pulso (PWM) no Funcionamento da Estação de Recarga
 A comunicação por largura de pulso (PWM) desempenha um papel fundamental na interação entre a estação de recarga e o veículo elétrico (VE). A principal função da modulação por largura de pulso é transmitir a corrente máxima que o VE pode consumir com segurança. Isso é realizado por meio de um sinal de onda quadrada, no qual a largura do pulso (tempo em que o sinal está em nível alto) é modulada, enquanto a frequência permanece constante. A variação da largura do pulso é convertida em informações sobre a capacidade de corrente disponível para o carregamento do veículo. A relação entre a largura de pulso e a corrente que pode ser consumida pode ser dada por:
@@ -65,44 +62,15 @@ $$
 I=60*D
 $$
 
-Geração e Função do Sinal PWM
-Geração do Sinal PWM: O sistema de alimentação da estação de recarga gera um sinal PWM com uma frequência fixa de 1 kHz, sendo a tensão do sinal variando entre ±12 V.
-
-Função Principal: O principal objetivo do sinal PWM é informar ao veículo elétrico a corrente máxima que ele pode consumir com segurança durante o processo de recarga. Isso é feito ajustando a razão cíclica do sinal, ou seja, a proporção entre o tempo em que o sinal está em nível alto e o período total do sinal. Por exemplo, uma razão cíclica de 10% corresponde a 6A de corrente, enquanto uma razão cíclica de 85% corresponde a 51A de corrente (85% x 0.6 = 51).
+O sistema de alimentação da estação de recarga gera um sinal PWM com uma frequência fixa de 1 kHz, sendo a tensão do sinal variando entre ±12 V.
 
 Modificação da Razão Cíclica
 O sistema de recarga pode modificar dinamicamente a razão cíclica do sinal PWM para se adaptar a condições de gestão de carga ou limitações de potência. Assim, a razão cíclica pode ser ajustada em tempo real, indicando ao veículo a corrente disponível naquele momento específico.
-Resposta do Veículo Elétrico
+
 O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva à meia onda positiva do circuito-piloto de comando, que é responsável pela comunicação com a estação de recarga.
 
 O VE também monitora a frequência do sinal PWM, que deve estar dentro da faixa de 1 ± 5% kHz. Caso o sinal esteja fora dessa faixa, o veículo não deve iniciar a recarga.
 
-Estados e Comunicação PWM
-Os estados B2, C2 e D2 fazem uso da comunicação PWM para informar ao VE a corrente máxima disponível:
-
-Estado B2: Neste estado, a estação de recarga está pronta para fornecer energia, e o sinal PWM indica a corrente máxima disponível com base na razão cíclica.
-
-Estado C2: Aqui, o sistema de alimentação também está pronto para fornecer energia, utilizando a modulação PWM para sinalizar a corrente máxima disponível.
-
-Estado D2: Similar ao C2, mas no estado D2, a ventilação é necessária para garantir a segurança durante o carregamento. O sinal PWM ainda informa a corrente máxima, com a diferença de que a ventilação deve ser considerada.
-
-Comunicação Digital vs. PWM
-Embora a comunicação PWM seja utilizada nos Modos 2 e 3, o Modo 4 de recarga requer a comunicação digital adicional (LIN-CP). Em sistemas de recarga que implementam tanto PWM-CP quanto LIN-CP, o protocolo PWM é utilizado inicialmente. Se o veículo responder com sinais LIN válidos, a comunicação pode mudar para LIN-CP. Caso o veículo não responda com sinais LIN, a estação de recarga continuará utilizando a comunicação PWM.
-
-Tabelas de Referência e Relação entre Razão Cíclica e Corrente Máxima
-As tabelas A.7 e A.8 da norma fornecem uma referência para a razão cíclica do PWM e a corrente máxima permitida:
-
-Uma razão cíclica de 0% indica que o sistema de alimentação para o VE não está disponível (estado F).
-
-Uma razão cíclica de 100% significa que não há corrente disponível (estado x1).
-
-Uma razão cíclica de 5% indica que a comunicação digital é necessária antes de ativar a alimentação.
-
-Além disso, se a razão cíclica estiver entre 8% e 97%, com comunicação digital estabelecida, a corrente máxima não pode exceder o valor indicado nem pelo PWM nem pela comunicação digital.
-
-Sinal de -12V e Segurança
-O sistema de alimentação também monitora a parte inferior do sinal PWM, que deve atingir -12V. Esse controle serve para verificar a presença de diodo antes de permitir o fechamento do dispositivo de manobra de alimentação, garantindo que o sistema de recarga funcione de forma segura.
-
-
+A estação de recarga também monitora a parte inferior do sinal PWM, que deve atingir -12V quando não estiver conectado ao veículo. Esse controle serve para verificar a presença de diodo antes de permitir o acionamento da alimentação. Na presença do diodo o sinal PWM deve apresentar 0 V na sua parte baixa do sinal.
 
 
