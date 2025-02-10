@@ -49,7 +49,7 @@ Os estados D e E foram desconsiderados no funcionamento da estação de recarga,
 </p>
 
 <p align="center">
-    <img src="Imagens/evse_state_diagram_1.jpg">
+    <img src="Imagens/evse_state_diagram_2.jpg">
 </p>
 
 Antes de iniciar a máquina de estados, o sistema é configurado pela função `evse_config()`.
