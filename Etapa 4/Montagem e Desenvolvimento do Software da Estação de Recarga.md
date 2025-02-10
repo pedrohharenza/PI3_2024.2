@@ -98,7 +98,7 @@ void estado_a(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHA
 	evse_state_logic_transition();
 }
 ```
-No estado A é desligado o PWM, configurado os leds para cor branco e garantido que os relés não estarão ativo.
+No estado A é mantido o PWM em 100%, configurado os leds para cor branco e garantido que os relés não estarão ativo.
 
 #Estado B
 ```c
@@ -122,7 +122,7 @@ void estado_b(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHA
 }
 ```
 
-No estado B é iniciado o PWM, configurado os leds para cor verde no caso de a recarga ter finalizado ou amarelo no caso de estar iniciando uma recarga e também garantido que os relés não estarão ativo
+No estado B é iniciado o PWM co razão cíclica de 27%, configurado os leds para cor verde no caso de a recarga ter finalizado ou amarelo no caso de estar iniciando uma recarga, e também garantido que os relés não estarão ativo
 
 Estado C
 ```c
@@ -140,7 +140,7 @@ void estado_c(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHA
 	evse_state_logic_transition();
 }
 ```
-No estado C é mantido o PWM, acionado os relés, ativa a animação dos LEDs RGBs para indicar o carregamento.
+No estado C é mantido o PWM com 27% de razzão cíclica, acionado os relés e ativada a animação dos LEDs RGBs para indicar o carregamento.
 
 #Estado F
 ```
@@ -168,73 +168,76 @@ No estado F, é garantido que os relés estão desativado, o PWM é dasbilitado 
 Para tratar a lógica da máquina de estados é chamado a função `evse_state_logic_transition()` no final dos `estado_a, estado_b, estado_c` em `estado_f` é preciso reniciar o sistema para voltar ao funcionamento normal.
 
 ```c
-void evse_state_logic_transition(){
-	medida = read_pilot();
-	switch (estado_atual) {
-		case ESTADO_A:
-			if((medida >= CP_READ_ESTADO_A - TOLERANCE) & (medida <= CP_READ_ESTADO_A + TOLERANCE)){
-				//esatdo_atual = ESTADO_A;
-			} else {
-				if(((medida >= CP_READ_ESTADO_B - TOLERANCE) & (medida <= CP_READ_ESTADO_B + TOLERANCE))
-				|| ((medida >= CP_READ_ESTADO_C - TOLERANCE) & (medida <= CP_READ_ESTADO_C + TOLERANCE))){
-					estado_atual = ESTADO_B;
-				}
-				//estado_atual = ESTADO_F;
-			}
-			break;
+void evse_state_logic_transition() {
+    int medida = read_pilot(); // Lê o valor do piloto (em mV)
+#ifdef debug
+    printf("%d""\r\n", medida);
+#endif
 
-		case ESTADO_B:
-			if((medida >= CP_READ_ESTADO_B - TOLERANCE) & (medida <= CP_READ_ESTADO_B + TOLERANCE)){
-				//esatdo_atual = ESTADO_B;
-			} else {
-				if((medida >= CP_READ_ESTADO_A - TOLERANCE) & (medida <= CP_READ_ESTADO_A + TOLERANCE)){
-					estado_atual = ESTADO_A;
-					if(carregado_flag){
-						carregado_flag = 0;
-					}
-				} else {
-					if((medida >= CP_READ_ESTADO_C - TOLERANCE) & (medida <= CP_READ_ESTADO_C + TOLERANCE)){
-						estado_atual = ESTADO_C;
-						if(carregado_flag){
-							carregado_flag = 0;
-						}
-					} else {
-//						estado_atual = ESTADO_F;
-//						if(carregado_flag){
-//							carregado_flag = 0;
-//						}
-					}
-				}
-			}
-			break;
-		case ESTADO_C:
-			if((medida >= CP_READ_ESTADO_C - TOLERANCE) & (medida <= CP_READ_ESTADO_C + TOLERANCE)){
-				//esatdo_atual = ESTADO_C;
-			} else {
-				if((medida >= CP_READ_ESTADO_A - TOLERANCE) & (medida <= CP_READ_ESTADO_A + TOLERANCE)){
-					estado_atual = ESTADO_A;
-				} else {
-					if((medida >= CP_READ_ESTADO_B - TOLERANCE) & (medida <= CP_READ_ESTADO_B + TOLERANCE)){
-						estado_atual = ESTADO_B;
-						carregado_flag = 1;
-					} else {
-						//estado_atual = ESTADO_F;
-					}
-				}
-			}
+    switch (estado_atual) {
+        case ESTADO_A:
+            if (medida >= 3070 && medida <= 3390) { // 3230 ± 160
+                // Permanece no ESTADO_A
+            } else if (medida >= 2671 && medida <= 2991) { // 2831 ± 160
+                estado_atual = ESTADO_B;
+            } else if (medida >= 2272 && medida <= 2592) { // 2432 ± 160
+                estado_atual = ESTADO_B;
+            } else {
+                estado_atual = ESTADO_F;
+            }
+            break;
 
-			break;
-		case ESTADO_E:
+        case ESTADO_B:
+            if (medida >= 2671 && medida <= 2991) { // 2831 ± 160
+                // Permanece no ESTADO_B
+            } else if (medida >= 3070 && medida <= 3390) { // 3230 ± 160
+                estado_atual = ESTADO_A;
+                carregado_flag = 0;
+            } else if (medida >= 2272 && medida <= 2592) { // 2432 ± 160
+                estado_atual = ESTADO_C;
+                carregado_flag = 0;
+            } else {
+                estado_atual = ESTADO_F;
+                carregado_flag = 0;
+            }
+            break;
 
-			break;
-		case ESTADO_F:
-			break;
-	}
+        case ESTADO_C:
+            if (medida >= 2272 && medida <= 2592) { // 2432 ± 160
+                // Permanece no ESTADO_C
+            } else if (medida >= 3070 && medida <= 3390) { // 3230 ± 160
+                estado_atual = ESTADO_A;
+            } else if (medida >= 2671 && medida <= 2991) { // 2831 ± 160
+                estado_atual = ESTADO_B;
+                carregado_flag = 1;
+            } else {
+            	estado_atual = ESTADO_F;
+            }
+            break;
+
+        case ESTADO_E:
+            if (medida >= 1476 && medida <= 1796) { // 1636 ± 160
+                // Permanece no ESTADO_E
+            }
+            break;
+
+        case ESTADO_F:
+#ifdef debug
+            if (medida >= 3070 && medida <= 3390) { // 3230 ± 160
+                estado_atual = ESTADO_A;
+            } else if (medida >= 2671 && medida <= 2991) { // 2831 ± 160
+                estado_atual = ESTADO_B;
+            } else if (medida >= 2272 && medida <= 2592) { // 2432 ± 160
+                estado_atual = ESTADO_C;
+            }
+#endif
+            break;
+    }
 }
 ```
-Essa função determina o estado atual com base na medida realiza pela função `read_pilot()` que representa um tensão que possui uma relação com sinal Control Pilot.
+Essa função determina o estado atual com base na medida realiza pela função `read_pilot()` que representa uma tensão, que possui uma relação com sinal Control Pilot, também é considerado uma tolerância de ±160 mV, essa tolerância corresponde a aproximadamente ±0,6 V no sinal Control Pilot.
 
-`read_pilot()` precisa medir o sinal CP_READ, que dependendo do estado atual pode ser um sinal PWM on um sinal constante. Para isso é feito 500 medidas seguidas, e somado os valores medidos a cima de 1.2V, em seguida é tirado a média dos valores somados para evitar que medidas que apresentem ruído causem um comportamento indesejado. O valor de CP_READ possui uma relação com o valor de Control Pilot, essa relação pode ser calculada pelo ciruito apresentado na Etapa 2, obtendo os valores de `CP_READ_ESTADO_A, CP_READ_ESTADO_B, CP_READ_ESTADO_C`.
+`read_pilot()` precisa medir o sinal CP_READ, que dependendo do estado atual pode ser um sinal PWM on um sinal constante. Quando o sinal for um PWM é preciso realizar a medida da parte alta do sinal. Para isso é feito 100 medidas seguidas, que garante medidas em mais de um período do sinal, e somado os valores medidos a cima de 1 V, em seguida é tirado a média dos valores somados para evitar que medidas ruidosas causem um comportamento indesejado. O valor de CP_READ possui uma relação com o valor de Control Pilot, essa relação pode ser calculada pelo ciruito apresentado na Etapa 2, obtendo os valores de `CP_READ_ESTADO_A, CP_READ_ESTADO_B, CP_READ_ESTADO_C`.
 
 <p align="center">
     <img src="../Etapa%202/Imagens/CP_circuito.png">
@@ -260,33 +263,48 @@ Com essa equação encontramos o valor de CP_READ que representa 12V, 9V, 6V, 0V
 ```
 
 ```c
+uint16_t adc_sample[100] = {0};
+int average = 0;
+int sum = 0;
+int n = 0;
 uint16_t read_pilot(){
-	int adc_sample = 0;
-	int average = 0;
-	int n = 0;
-	ADC_Select_CH9();
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 1);
-	for(int i=0; i <= 500; i++){
+//	int adc_sample = 0;
+//	int average = 0;
+//	int n = 0;
+	//adc_sample = {0};
+	average = 0;
+	n = 0;
+	sum = 0;
+	//ADC_Select_CH9();
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 1);
+	for(int i=0; i <= 100; i++){
 		HAL_ADC_Start(&hadc);
 		HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
-		if(HAL_ADC_GetValue(&hadc) > 1200){
-			adc_sample += HAL_ADC_GetValue(&hadc);
+		adc_sample[i] = (HAL_ADC_GetValue(&hadc)*3300)/4095;
+		if(adc_sample[i]>1000){
+			sum += adc_sample[i];
 			n++;
 		}
+//		if(HAL_ADC_GetValue(&hadc) > 1200){
+//			adc_sample += HAL_ADC_GetValue(&hadc);
+//			n++;
+//		}
 	}
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 0);
-	if(adc_sample){
-		average = (adc_sample/n)*0.8057;
-	}
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0);
+	average = sum/n;
 	return average;
+//	if(adc_sample){
+//		average = ((adc_sample/n)*3300)/4096;
+//	}
+//	return average;
 }
 ```
 
 Para controlar as cores dos LEDs RGB, é utilizado a função `set_led()` para selecionar a cor e o led e `WS2812_Send()` para enviar os dados.
 
-A comunicação é feita pelo envio de 24 bits, sendo dividido em 8 bits para cor verde, 8 bits para a cor vermelha e 8 bits para o azul.
+A comunicação é feita pelo envio de 24 bits para cada led, sendo dividido em 8 bits para cor verde, 8 bits para a cor vermelha e 8 bits para o azul.
 
-Os bits são transmitidos a cada 1,25 microssegundos, o que corresponde a uma frequência de 800 KHz. Para enviar o bit `1`, o sinal de comunicação deve permanecer em nível alto por aproximadamente dois terços do tempo `T1H` e em nível baixo por um terço do tempo `T1L`. Já para enviar o bit `0`, o sinal deve permanecer em nível alto por cerca de um terço do tempo `T0H` e em nível baixo por dois terços do tempo `T0L`. Após o envio dos dados é preciso manter o sinal em baixo por 50 microsegundos `Treset`.
+Os bits são transmitidos a cada 1,25 microssegundos, o que corresponde a uma frequência de 800 KHz. Para enviar o bit `1`, o sinal de comunicação deve permanecer em nível alto por aproximadamente dois terços do tempo `T1H` e em nível baixo por um terço do tempo `T1L`. Já para enviar o bit `0`, o sinal deve permanecer em nível alto por cerca de um terço do tempo `T0H` e em nível baixo por dois terços do tempo `T0L`. Após o envio dos dados é preciso manter o sinal em baixo por 50 microsegundos `Treset` para indicar a finalização da comunicação.
 
 <p align="center">
     <img src="Imagens/led_data_1.jpg">
@@ -303,18 +321,21 @@ void set_led(int LEDnum, int red, int green, int blue){
 }
 ```
 
-Para enviar os dados é feito uma verredura em todos os LEDs configurados e feito shift lógico para enviar os dados de cores verde, vermelho e azul nessa ordem. `pwmData` posui a informação da largura de pulso de cada bit que será enviado e mais 50 valores `0` que são referentes ao `Treset` e devem estar presente no final de toda comunicação. Em seguida é transmitido via DMA os dados para o PWM pela chamada da função `HAL_TIM_PWM_Start_DMA`.
+Para enviar os dados é feito uma verredura em todos os LEDs configurados e feito shift lógico para enviar os dados de cores verde, vermelho e azul nessa ordem. `pwmData` posui a informação da largura de pulso de cada bit que será enviado, e mais 50 valores `0` que são referentes ao `Treset` e devem estar presente no final de toda comunicação, em seguida é transmitido via DMA os dados para o PWM pela chamada da função `HAL_TIM_PWM_Start_DMA`. O timer do PWM está configurado para contar até 60, com uma frequência de 48 Mhz, o que corresponde aos 800 kHz exigidos pela comunicação. Para configurar um bit `1` é configurado a razção cíclica pela comparação do valor do timer com o valor 40 que correponde a 2 terços do tempo em alto. Para o bit `0` é comparado o valor do timer com o valor 20, que corresponde a 1 terço do tempo em baixo.
 
 ```c
-void WS2812_Send(void) {
+void WS2812_Send(TIM_HandleTypeDef *htim, uint8_t TIM_CHANNEL) {
     uint32_t color;
-    uint16_t indx = 0;
+    uint16_t indx = 2;
+
+    pwmData[0] = 0;
+    pwmData[1] = 0;
 
     for (int i = 0; i < NUM_LEDS; i++) {
         color = ((LED_Data[i][1] << 16) | (LED_Data[i][2] << 8) | (LED_Data[i][3]));
 
         for (int bit = 23; bit >= 0; bit--) {
-            pwmData[indx++] = (color & (1 << bit)) ? 60 : 30;
+            pwmData[indx++] = (color & (1 << bit)) ? 40 : 20;
         }
     }
 
@@ -322,7 +343,7 @@ void WS2812_Send(void) {
         pwmData[indx++] = 0;
     }
 
-    HAL_TIM_PWM_Start_DMA(&htim16, TIM_CHANNEL_1, (uint32_t *)pwmData, indx);
+    HAL_TIM_PWM_Start_DMA(htim, TIM_CHANNEL, (uint32_t *)pwmData, indx);
 
     while (!datasentflag) {}
     datasentflag = 0;
@@ -330,50 +351,7 @@ void WS2812_Send(void) {
 ```
 
 Efeito verde otimizado
-Opção 1
-```c
-uint8_t green_effect() {
-    static const uint8_t color_table[3][3] = {
-        {0, 255, 0},   // Verde máximo
-        {0, 15, 0},    // Verde médio
-        {0, 15, 0}     // Verde médio
-    };
 
-    uint16_t ind;
-    uint8_t color_index;
-    uint8_t factor1, factor2;
-
-    for (uint16_t j = 0; j < 9; j++) {
-        ind = effStep + j;
-        color_index = (ind % 9) / 3;  // Determina o índice da cor (0, 1 ou 2)
-
-        // Calcula os fatores de interpolação (0 a 255, em vez de 0.0 a 1.0)
-        factor1 = 255 - ((ind % 3) * 85);  // 85 = 255 / 3
-        factor2 = (ind % 3) * 85;
-
-        // Interpolação de cores usando inteiros
-        uint8_t red = (color_table[color_index][0] * factor1 + color_table[(color_index + 1) % 3][0] * factor2) >> 8;
-        uint8_t green = (color_table[color_index][1] * factor1 + color_table[(color_index + 1) % 3][1] * factor2) >> 8;
-        uint8_t blue = (color_table[color_index][2] * factor1 + color_table[(color_index + 1) % 3][2] * factor2) >> 8;
-
-        set_led(j, red, green, blue);
-    }
-
-    // Envia os dados para a fita de LED
-    WS2812_Send();
-
-    // Atualiza o passo do efeito
-    if (effStep >= 62) {
-        effStep = 0;
-        return 0x03;  // Efeito terminado
-    } else {
-        effStep++;
-        return 0x01;  // Efeito em andamento
-    }
-}
-```
-
-Opção 2
 ```c
 void green_effect() {
     static const uint8_t green_values[3] = {255, 15, 15};  // Valores de verde
