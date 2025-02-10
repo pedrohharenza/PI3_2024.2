@@ -60,36 +60,41 @@ Antes de iniciar a máquina de estados, o sistema é configurado.
   HAL_UART_Receive_IT(&huart1, rx_buffer, 2);		//Inicialização da UART
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);		//Inicialização do PWM do timer 1 canal 3
   TIM1->CCR3 = (TIM1->ARR);				//Configurado a razão cíclica para 100%
+
+  EVSE_Parametros params = {				//Configura os parâmetros da máquina de estads
+		  .corrente = 16,
+		  .canal_timer_led = TIM_CHANNEL_1,
+		  .timer_pwm = &htim1,
+		  .timer_led = &htim3
+  };
 ```
 Inicializando os periféricos e configurando o PWM com razão cíclica de 100%.
 
-A implementação da máquina de estados foi realizada por meio de um vetor de ponteiros de função, onde cada posição do vetor corresponde a um estado específico. Cada função encapsula a lógica de um estado e sua possível transição.
+A implementação da máquina de estados foi realizada por meio de um vetor de ponteiros de função, onde cada posição do vetor corresponde a um estado específico. Cada função encapsula a lógica de um estado e sua possível transição. No código fornecido, a função `EVSE_ExecutarEstado` é responsável por executar a lógica do estado atual. Ela recebe um ponteiro para uma estrutura `EVSE_Parametros`, que contém os parâmetros necessários para a execução do estado.
+
+Dentro da função, o estado atual é acessado por meio do vetor `tabela_estados`, que armazena as funções correspondentes a cada estado. O índice estado_atual define qual função será executada, e os parâmetros `params->corrente`, `params->timer_led` e `params->canal_timer_led` são passados para a função correspondente. Essa abordagem permite que a máquina de estados seja modular e flexível, já que a lógica de cada estado é encapsulada em uma função separada. Para realizar a transição entre estado, basta atualizar o valor de `estado_atual` para mudar o comportamento do sistema.
 
 ```c
-void (*tabela_estados[])(char) = {estado_a, estado_b, estado_c, estado_e, estado_f};
+void EVSE_ExecutarEstado(EVSE_Parametros *params) {
+	tabela_estados[estado_atual](params->corrente, params->timer_led, params->canal_timer_led);
+}
 ```
 
-Em cada função é feito as ações de cada estado.
+Em cada função chamada pela `tabela_estados` é feito as ações de cada estado.
 
 #Estado A
 ```c
-void estado_a(char corrente){
+void estado_a(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
-		TIM1->CCR3 = (TIM1->ARR)*0.8;
+		TIM1->CCR3 = (TIM1->ARR);
 		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 0);
 	}
 	estado_anterior = estado_atual;
+#ifdef debug
 	printf(BOLD "ESTADO A" ANSI_RESET "\r\n");
-	set_led(0, 20, 20, 20);
-	set_led(1, 20, 20, 20);
-	set_led(2, 20, 20, 20);
-	set_led(3, 20, 20, 20);
-	set_led(4, 20, 20, 20);
-	set_led(5, 20, 20, 20);
-	set_led(6, 20, 20, 20);
-	set_led(7, 20, 20, 20);
-	set_led(8, 20, 20, 20);
-	WS2812_Send();
+#endif
+	setAllLEDsToColor(255, 255, 255);
+	WS2812_Send(htim_led, LED_TIM_CHANNEL);
 	evse_state_logic_transition();
 }
 ```
@@ -97,35 +102,21 @@ No estado A é desligado o PWM, configurado os leds para cor branco e garantido 
 
 #Estado B
 ```c
-void estado_b(char corrente){
+void estado_b(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
-		TIM1->CCR3 = (TIM1->ARR);
+		TIM1->CCR3 = (TIM1->ARR)*27/100;
 		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 0);
 	}
 	estado_anterior = estado_atual;
+#ifdef debug
 	printf(BOLD YELLOW "ESTADO B" ANSI_RESET "\r\n");
+#endif
 	if(carregado_flag){
-		set_led(0, 0, 20, 0);
-		set_led(1, 0, 20, 0);
-		set_led(2, 0, 20, 0);
-		set_led(3, 0, 20, 0);
-		set_led(4, 0, 20, 0);
-		set_led(5, 0, 20, 0);
-		set_led(6, 0, 20, 0);
-		set_led(7, 0, 20, 0);
-		set_led(8, 0, 20, 0);
-		WS2812_Send();
+		setAllLEDsToColor(0, 255, 0);
+		WS2812_Send(htim_led, LED_TIM_CHANNEL);
 	} else {
-		set_led(0, 20, 20, 0);
-		set_led(1, 20, 20, 0);
-		set_led(2, 20, 20, 0);
-		set_led(3, 20, 20, 0);
-		set_led(4, 20, 20, 0);
-		set_led(5, 20, 20, 0);
-		set_led(6, 20, 20, 0);
-		set_led(7, 20, 20, 0);
-		set_led(8, 20, 20, 0);
-		WS2812_Send();
+		setAllLEDsToColor(255, 255, 0);
+		WS2812_Send(htim_led, LED_TIM_CHANNEL);
 	}
 	evse_state_logic_transition();
 }
@@ -135,47 +126,40 @@ No estado B é iniciado o PWM, configurado os leds para cor verde no caso de a r
 
 Estado C
 ```c
-void estado_c(char corrente){
+void estado_c(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
-		TIM1->CCR3 = (TIM1->ARR)*0.4;
+		TIM1->CCR3 = (TIM1->ARR)*27/100;
 		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 1);
 	}
 	estado_anterior = estado_atual;
+#ifdef debug
 	printf(BOLD GREEN "ESTADO C" ANSI_RESET "\r\n");
-	//green_effect();
-	evse_state_logic_transition();
-}
+#endif
 
-void estado_e(char corrente){
-	if(estado_atual != estado_anterior){
-		TIM1->CCR3 = (TIM1->ARR)*0.2;
-		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 0);
-	}
-	estado_anterior = estado_atual;
-	printf(BOLD RED "ESTADO E" ANSI_RESET "\r\n");
+	green_effect(htim_led, LED_TIM_CHANNEL);
+	evse_state_logic_transition();
 }
 ```
 No estado C é mantido o PWM, acionado os relés, ativa a animação dos LEDs RGBs para indicar o carregamento.
 
 #Estado F
 ```
-void estado_f(char corrente){
+void estado_f(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
-		TIM1->CCR3 = (TIM1->ARR)*0.1;
+#ifndef debug
+		TIM1->CCR3 = 0;
+#endif
 		HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, 0);
 	}
 	estado_anterior = estado_atual;
+#ifdef debug
 	printf(BOLD RED "ESTADO F" ANSI_RESET "\r\n");
-	set_led(0, 20, 0, 0);
-	set_led(1, 20, 0, 0);
-	set_led(2, 20, 0, 0);
-	set_led(3, 20, 0, 0);
-	set_led(4, 20, 0, 0);
-	set_led(5, 20, 0, 0);
-	set_led(6, 20, 0, 0);
-	set_led(7, 20, 0, 0);
-	set_led(8, 20, 0, 0);
-	WS2812_Send();
+#endif
+	setAllLEDsToColor(255, 0, 0);
+	WS2812_Send(htim_led, LED_TIM_CHANNEL);
+#ifdef debug
+	evse_state_logic_transition();
+#endif
 }
 ```
 
