@@ -82,7 +82,7 @@ void EVSE_ExecutarEstado(EVSE_Parametros *params) {
 
 Em cada função chamada pela `tabela_estados` é feito as ações de cada estado.
 
-#Estado A
+# Estado A
 ```c
 void estado_a(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
@@ -100,7 +100,7 @@ void estado_a(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHA
 ```
 No estado A é mantido o PWM em 100%, configurado os leds para cor branco e garantido que os relés não estarão ativo.
 
-#Estado B
+# Estado B
 ```c
 void estado_b(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
@@ -124,7 +124,7 @@ void estado_b(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHA
 
 No estado B é iniciado o PWM co razão cíclica de 27%, configurado os leds para cor verde no caso de a recarga ter finalizado ou amarelo no caso de estar iniciando uma recarga, e também garantido que os relés não estarão ativo
 
-Estado C
+# Estado C
 ```c
 void estado_c(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
@@ -142,7 +142,7 @@ void estado_c(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHA
 ```
 No estado C é mantido o PWM com 27% de razzão cíclica, acionado os relés e ativada a animação dos LEDs RGBs para indicar o carregamento.
 
-#Estado F
+# Estado F
 ```
 void estado_f(uint8_t corrente, TIM_HandleTypeDef *htim_led, uint8_t LED_TIM_CHANNEL){
 	if(estado_atual != estado_anterior){
