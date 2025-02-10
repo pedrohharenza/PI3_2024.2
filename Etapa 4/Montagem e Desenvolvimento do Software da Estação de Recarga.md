@@ -301,6 +301,7 @@ uint16_t read_pilot(){
 //	return average;
 }
 ```
+## Comunicação Com Os LEDs RGB
 
 Para controlar as cores dos LEDs RGB, é utilizado a função `set_led()` para selecionar a cor e o led e `WS2812_Send()` para enviar os dados.
 
