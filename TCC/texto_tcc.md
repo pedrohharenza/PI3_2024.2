@@ -63,10 +63,6 @@ A comunicação por largura de pulso (PWM) desempenha um papel fundamental na in
 
 $$
 I=60*D
-
-onde
-I = Corrente
-D = Razão cíclica
 $$
 
 Geração e Função do Sinal PWM
