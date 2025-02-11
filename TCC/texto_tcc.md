@@ -16,6 +16,10 @@ Idealmente, as medições devem ser tanto exatas quanto precisas. Um sistema que
 
 No caso da estação de recarga de nível 1 AC, é essencial que os instrumentos de medição utilizados para monitorar o consumo de energia apresentem tanto exatidão quanto precisão para garantir que os usuários recebam informações corretas e consistentes sobre o consumo de energia durante o processo de recarga. Isso melhora a transparência para os usuários, e assegura que o usuário estará sendo cobrado pelo que realmente foi consumido.
 
+
+
+
+
 # Funcionamento de uma estação de recarga
 
 O funcionamento de uma estação de recarga para veículos elétricos (VEs) é regido por um conjunto de estados definidos pela norma ABNT NBR IEC 61851-1. Esses estados representam diferentes condições no processo de recarga. Cada estado indica uma etapa distinta na comunicação e no fornecimento de energia entre a estação de recarga e o veículo elétrico.
@@ -67,17 +71,17 @@ A razão cíclica do sinal PWM pode ser ajustada dinamicamente pelo sistema de r
 
 O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva ao sinal Control Pilot, que é o responsável pela comunicação com a estação de recarga. Essa carga resistiva gera uma queda de tensão que determina os estados da estação de recarga, conforme detalhado na Tabela 1. Cada estado corresponde a uma condição específica do processo de carregamento, como explicado anteriormente. 
 
-| Estado | Descrição                                          | Control Pilot (V)     | Tolerância de Tensão (V) |
-|--------|----------------------------------------------------|-------------------------|----------------------|
-| A      | Sem Conexão                                       | +12 V                   | 11,4 a 12,6 V        |
-| B1     | Conexão Estabelecida (sem PWM)                    | +9 V                    | 8,37 a 9,59 V        |
-| B2     | Conexão Estabelecida (com PWM)                    | +9 V (PWM ativo)        | 8,37 a 9,59 V        |
-| C1     | Alimentação Disponível (sem PWM)                  | +6 V                    | 5,47 a 6,53 V        |
-| C2     | Alimentação Disponível (com PWM)                  | +6 V (PWM ativo)        | 5,47 a 6,53 V        |
-| D1     | Alimentação com Requisitos de Ventilação (sem PWM) | +3 V                    | 2,59 a 3,28 V        |
-| D2     | Alimentação com Requisitos de Ventilação (com PWM) | +3 V (PWM ativo)        | 2,59 a 3,28 V        |
-| E      | Sem Alimentação Disponível                        | 0 V                     | Não especificado     |
-| F      | Falha no Sistema                                  | -12 V                   | Não especificado     |
+| Estado | Descrição                                          | Control Pilot (V)       | Faixa de Tolerância (V) |
+|--------|----------------------------------------------------|-------------------------|-------------------------|
+| A      | Sem Conexão                                        | +12 V                   | 11,4 a 12,6 V           |
+| B1     | Conexão Estabelecida (sem PWM)                     | +9 V                    | 8,37 a 9,59 V           |
+| B2     | Conexão Estabelecida (com PWM)                     | +9 V (PWM ativo)        | 8,37 a 9,59 V           |
+| C1     | Alimentação Disponível (sem PWM)                   | +6 V                    | 5,47 a 6,53 V           |
+| C2     | Alimentação Disponível (com PWM)                   | +6 V (PWM ativo)        | 5,47 a 6,53 V           |
+| D1     | Alimentação com Requisitos de Ventilação (sem PWM) | +3 V                    | 2,59 a 3,28 V           |
+| D2     | Alimentação com Requisitos de Ventilação (com PWM) | +3 V (PWM ativo)        | 2,59 a 3,28 V           |
+| E      | Sem Alimentação Disponível                         | 0 V                     | Não especificado        |
+| F      | Falha no Sistema                                   | -12 V                   | Não especificado        |
 
 
 O veículo elétrico também monitora a frequência do sinal PWM, que deve estar dentro da faixa de 1 kHz ± 5%. Caso o sinal esteja fora dessa faixa, o veículo não deve iniciar o processo de recarga, garantindo que a comunicação entre os dispositivos ocorra dentro dos parâmetros seguros e estabelecidos pela norma.
@@ -89,4 +93,7 @@ O circuito que exemplificar a conexão do sinal Control Pilot da estação de re
 <p align="center">
     <img src="Imagens/Circuito%20Control%20Pilot.jpg">
 </p>
+
+## Proteções
+
 
