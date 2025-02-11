@@ -3,7 +3,7 @@
 Este projeto tem como objetivo desenvolver e implementar uma estação de recarga portátil para veículos elétricos monofásica de 16A 220VAC Nível 1. O projeto abrange desde a seleção dos componentes, projeto dos circuitos com simulações, até a implementação prática em uma placa de circuito impresso (PCB).
 
 ## Características do Projeto
-- **Corrente Máxima**: 1AA em 220VAC.
+- **Corrente Máxima**: 16A em 220VAC.
 - **Case**: Produzido com impressora 3D.
 - **Interface de Usuário**: LEDs RGB para indicar estados (Idle, Pronto, Carregando, Erro).
 - **Microcontrolador**: STM32 para controle e monitoramento.
