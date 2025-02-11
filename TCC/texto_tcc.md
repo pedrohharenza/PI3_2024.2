@@ -67,17 +67,18 @@ A razão cíclica do sinal PWM pode ser ajustada dinamicamente pelo sistema de r
 
 O veículo elétrico responde ao sinal PWM aplicando uma carga resistiva ao sinal Control Pilot, que é o responsável pela comunicação com a estação de recarga. Essa carga resistiva gera uma queda de tensão que determina os estados da estação de recarga, conforme detalhado na Tabela 1. Cada estado corresponde a uma condição específica do processo de carregamento, como explicado anteriormente. 
 
-| Estado | Descrição                                      | Tensão no Control Pilot |
-|--------|------------------------------------------------|-------------------------|
-| A      | Sem Conexão                                     | +12 V                   |
-| B1     | Conexão Estabelecida (sem PWM)                 | +9 V                    |
-| B2     | Conexão Estabelecida (com PWM)                 | +9 V (PWM ativo)        |
-| C1     | Alimentação Disponível (sem PWM)               | +6 V                    |
-| C2     | Alimentação Disponível (com PWM)               | +6 V (PWM ativo)        |
-| D1     | Alimentação com Requisitos de Ventilação (sem PWM) | +3 V                    |
-| D2     | Alimentação com Requisitos de Ventilação (com PWM) | +3 V (PWM ativo)        |
-| E      | Sem Alimentação Disponível                      | 0 V                     |
-| F      | Falha no Sistema                                | -12 V                   |
+| Estado | Descrição                                          | Control Pilot (V)     | Tolerância de Tensão (V) |
+|--------|----------------------------------------------------|-------------------------|----------------------|
+| A      | Sem Conexão                                       | +12 V                   | 11,4 a 12,6 V        |
+| B1     | Conexão Estabelecida (sem PWM)                    | +9 V                    | 8,37 a 9,59 V        |
+| B2     | Conexão Estabelecida (com PWM)                    | +9 V (PWM ativo)        | 8,37 a 9,59 V        |
+| C1     | Alimentação Disponível (sem PWM)                  | +6 V                    | 5,47 a 6,53 V        |
+| C2     | Alimentação Disponível (com PWM)                  | +6 V (PWM ativo)        | 5,47 a 6,53 V        |
+| D1     | Alimentação com Requisitos de Ventilação (sem PWM) | +3 V                    | 2,59 a 3,28 V        |
+| D2     | Alimentação com Requisitos de Ventilação (com PWM) | +3 V (PWM ativo)        | 2,59 a 3,28 V        |
+| E      | Sem Alimentação Disponível                        | 0 V                     | Não especificado     |
+| F      | Falha no Sistema                                  | -12 V                   | Não especificado     |
+
 
 O veículo elétrico também monitora a frequência do sinal PWM, que deve estar dentro da faixa de 1 kHz ± 5%. Caso o sinal esteja fora dessa faixa, o veículo não deve iniciar o processo de recarga, garantindo que a comunicação entre os dispositivos ocorra dentro dos parâmetros seguros e estabelecidos pela norma.
 
