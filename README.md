@@ -1,9 +1,9 @@
 # Estação de Recarga de Veículos Elétricos PI3 2024.2
 
-Este projeto tem como objetivo desenvolver e implementar uma estação de recarga portátil para veículos elétricos monofásica de 12A 220VAC Nível 1, com uma potência de 2,64 kW. O projeto abrange desde a seleção dos componentes, projeto dos circuitos com simulações, até a implementação prática em uma placa de circuito impresso (PCB). Para validar a funcionalidade e garantir a segurança da estação de recarga, será também desenvolvido um **Testador de Estação de Recarga**.
+Este projeto tem como objetivo desenvolver e implementar uma estação de recarga portátil para veículos elétricos monofásica de 16A 220VAC Nível 1. O projeto abrange desde a seleção dos componentes, projeto dos circuitos com simulações, até a implementação prática em uma placa de circuito impresso (PCB).
 
 ## Características do Projeto
-- **Corrente Máxima**: 12A em 220VAC (2,64 kW).
+- **Corrente Máxima**: 1AA em 220VAC.
 - **Case**: Produzido com impressora 3D.
 - **Interface de Usuário**: LEDs RGB para indicar estados (Idle, Pronto, Carregando, Erro).
 - **Microcontrolador**: STM32 para controle e monitoramento.
