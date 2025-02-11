@@ -19,7 +19,6 @@ No caso da estação de recarga de nível 1 AC, é essencial que os instrumentos
 
 
 
-
 # Funcionamento de uma estação de recarga
 
 O funcionamento de uma estação de recarga para veículos elétricos (VEs) é regido por um conjunto de estados definidos pela norma ABNT NBR IEC 61851-1. Esses estados representam diferentes condições no processo de recarga. Cada estado indica uma etapa distinta na comunicação e no fornecimento de energia entre a estação de recarga e o veículo elétrico.
@@ -99,3 +98,7 @@ O circuito que exemplificar a conexão do sinal Control Pilot da estação de re
 A norma estabelece diversas exigências relacionadas às proteções, com destaque para a preocupação com as fugas de corrente em corrente alternada (CA) e corrente contínua (CC). Em relação à proteção contra correntes diferenciais, é fundamental que os pontos de conexão sejam protegidos por Dispositivos de Proteção à Corrente Diferencial Residual (DDR) com uma corrente residual de funcionamento não superior a 30 mA. Os DDRs devem ser do tipo A ou superior e atender às normas IEC 61008-1, IEC 61009-1, ABNT NBR IEC 60947-2 e ABNT NBR IEC 62423.
 
 Adicionalmente, em instalações que utilizam DDRs do tipo AC, o sistema de alimentação para veículos elétricos (VE) deve incluir um meio de proteção contra corrente de falta com desempenho igual ou superior ao de um DDR tipo A. Também deve ser implementado um dispositivo que desconecte a alimentação caso a corrente de falta em corrente contínua (CC) ultrapasse 6 mA. A norma ainda exige que, em caso de falhas, todos os condutores ativos sejam desconectados e que sejam adotadas medidas de proteção adequadas para correntes de falta em corrente contínua.
+
+## Conectores
+
+Existem diversos padrões de conectores utilizados em estações de recarga para veículos elétricos, cada um com características específicas de design e funcionalidade. No entanto, o conector Tipo 2 se destaca como o mais utilizado no Brasil e na Europa, sendo amplamente adotado em sistemas de recarga devido à sua versatilidade e à compatibilidade com a maioria dos veículos elétricos disponíveis no mercado.
