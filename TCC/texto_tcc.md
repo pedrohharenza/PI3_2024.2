@@ -101,4 +101,6 @@ Adicionalmente, em instalações que utilizam DDRs do tipo AC, o sistema de alim
 
 ## Conectores
 
-Existem diversos padrões de conectores utilizados em estações de recarga para veículos elétricos, cada um com características específicas de design e funcionalidade. No entanto, o conector Tipo 2 se destaca como o mais utilizado no Brasil e na Europa, sendo amplamente adotado em sistemas de recarga devido à sua versatilidade e à compatibilidade com a maioria dos veículos elétricos disponíveis no mercado.
+Existem diversos padrões de conectores utilizados em estações de recarga para veículos elétricos, cada um com características específicas de design e funcionalidade. No entanto, o conector Tipo 2 se destaca como o mais utilizado no Brasil e na Europa, sendo amplamente adotado em sistemas de recarga devido à sua versatilidade e à compatibilidade com a maioria dos veículos elétricos disponíveis no mercado. A Figura x ilustra a configuração de pinos do conector Tipo 2.
+
+
