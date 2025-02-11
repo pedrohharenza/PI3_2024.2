@@ -4,10 +4,10 @@ Este projeto tem como objetivo desenvolver e implementar uma estação de recarg
 
 ## Características do Projeto
 - **Corrente Máxima**: 16A em 220VAC.
-- **Case**: Produzido com impressora 3D.
+- **Gabinete**: Produzido em impressão 3D.
 - **Interface de Usuário**: LEDs RGB para indicar estados (Idle, Pronto, Carregando, Erro).
-- **Microcontrolador**: STM32 para controle e monitoramento.
-- **Proteções**: Circuito de proteção de pico de tensão e filtro EMI
+- **Microcontrolador**: STM32 para controle e monitoramento de consumo de energia.
+- **Proteções**: Circuito de proteção gerais.
 
 ## Etapas do Projeto
 - [**Etapa 1**](Etapa%201/): [Definição dos parâmetros de funcionamento](Etapa%201/Definição%20dos%20parâmetros%20de%20funcionamento.md) e apresentar uma [simulação simplificada](Etapa%201/Simulação%20simplificada.md) para validação dos circuitos que serão utilizados.
