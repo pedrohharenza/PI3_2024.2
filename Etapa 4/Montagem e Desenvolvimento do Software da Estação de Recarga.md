@@ -41,19 +41,19 @@ Esse processo de fabricação ainda está sendo aprimorado e testado. Por esse m
 A modelagem 3D do gabinete foi realizada utilizando o software online Oshape. Para garantir as dimensões corretas, foi utilizado o modelo 3D da placa, gerado pelo KiCad, facilitando o dimensionamento do gabinete, assegurando que todas as partes teriam o encaixe correto. O material escolhido para a impressão foi o PETG, devido à sua maior resistência mecânica e térmica em comparação ao PLA. A parte transparente, utilizada como difusor para os LEDs, foi impressa com o material Tritan. A impressão foi feita em 3 partes: a tampa superior, em preto, e a tampa inferior, em branco e o difusor em material transparente.
 
 <p align="center">
-    <img src="Imagens/evse_imagem_1.jpg">
+    <img src="Imagens/evse_imagem_1.png">
 </p>
 
 <p align="center">
-    <img src="Imagens/evse_imagem_2.jpg">
+    <img src="Imagens/evse_imagem_2.png">
 </p>
 
 <p align="center">
-    <img src="Imagens/evse_imagem_3.jpg">
+    <img src="Imagens/evse_imagem_3.png">
 </p>
 
 <p align="center">
-    <img src="Imagens/evse_imagem_4.jpg">
+    <img src="Imagens/evse_imagem_4.png">
 </p>
 
 # Desenvolvimento do Softwarer
