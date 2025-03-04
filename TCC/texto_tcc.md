@@ -75,3 +75,8 @@ Em resumo, as harmônicas ímpares são mais estudadas e consideradas em sistema
 NBR17019 DE 04/2022 - Instalações elétricas de baixa tensão - Requisitos para instalações em locais especiais - Alimentação de veículos elétricos
 
 https://www.chip37.com/PDF/STM32F373VCH6%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C.pdf
+
+
+
+
+# Desenvolvimento do Hardware
