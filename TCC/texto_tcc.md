@@ -93,4 +93,6 @@ Para atender ao funcionamento da estação de recarga, foram utilizados dois mó
 
 Para proteção do sistema, foram utilizados um fusível e um varistor, que garantem a segurança contra sobrecorrentes e surtos de tensão elétrica. Esses componentes foram estrategicamente posicionados para proteger tanto a parte isolada quanto a não isolada do circuito, garantindo a integridade do sistema como um todo.
 
+O circuito responsável pelo controle do sinal Control Pilot foi projetado utilizando um amplificador operacional TLV1805, com alimentação simétrica de +12V e -12V, configurado em modo de comparação. Essa configuração permite o controle do sinal via microcontrolador. Para que a estação de recarga consiga interpretar o estado atual determinado pelo VE, foi necessário condicionar o sinal Control Pilot de modo que fosse compatível com os níveis de tensão do STM32F0. Para isso, foram utilizados os resistores Rx, Ry e Rz, que garantem o ajuste adequado do sinal. A Figura X ilustra como o circuito de controle do sinal de comunicação foi implementado.
+
 
