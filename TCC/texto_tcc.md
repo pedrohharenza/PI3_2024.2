@@ -106,7 +106,20 @@ Para a comunicação entre os dois microcontroladores, foi configurada a interfa
 
 ## Desenvolvimento do Firmware Dedicado a Medida de Energia
 
-Para o desenvolvimento do firmware dedicado a medida de energia no STM32F373, primeiramente foi configurado o ADC sigma-delta para aquisição das medidas de corrente e tensão elétrica em modo diferencial, utilizando DMA para enviar os dados para um buffer circular. O buffer circular é uma estrutura de dados utilizada para armazenar temporariamente informações em um ciclo contínuo, onde, ao atingir o final do espaço alocado, ele volta ao início, sobrescrevendo os dados mais antigos. A frequência de amostragem do ADC sigma-delta precisa atender ao mínimo necessário para considerar as harmônicas desejadas, nesse caso foi considerado uma frequência de amostragem de X KHz garantindo que harmônicas até a décima quinta ordem seriam levadas em consideração.
+Para o desenvolvimento do firmware dedicado à medida de energia no STM32F373, primeiramente foi configurado o ADC sigma-delta para aquisição das medidas de corrente e tensão elétrica em modo diferencial, utilizando DMA para enviar os dados para um buffer circular. O buffer circular é uma estrutura de dados utilizada para armazenar temporariamente informações em um ciclo contínuo, onde, ao atingir o final do espaço alocado, ele volta ao início, sobrescrevendo os dados mais antigos. As medições de corrente e tensão elétrica são realizadas simultaneamente, garantindo a sincronia entre as duas variáveis. Em medidores de energia, é fundamental amostrar a tensão e a corrente elétrica ao mesmo tempo, pois isso assegura que a medição da potência instantânea seja exata. A potência instantânea é dada pelo produto da tensão elétrica e da corrente elétrica. Se as duas grandezas forem amostradas em momentos diferentes, pode haver um descompasso entre elas, resultando em cálculos incorretos da potência. A amostragem simultânea garante que a relação entre a tensão e a corrente seja capturada corretamente, permitindo um cálculo mais exato da potência consumida. 
+
+A frequência de amostragem do ADC sigma-delta foi ajustada para garantir que as harmônicas até a décima quinta ordem fossem consideradas. Para isso, foi definida uma frequência mínima de amostragem de X kHz, assegurando que as componentes harmônicas relevantes fossem incluídas na análise e contribuindo para que a medida energia consumida atenda ao nível de erros estabelecido.
+
+Em seguida, assim como no firmware da estação de recarga, foi configurado a interface serial UART, seguindo o mesmo protocólo baseado em confirmação. As instruções que pode ser enviadas para o STM32F373 são:
+a) Iniciar medida
+b) Parar medida
+
+
+Quando a instrução de iniciar a medida de energia é recebedi e o ACK é retornado, o STM32F373 inicia o processamento dos dados amostrados de tensão e corrente.
+
+
+
+
 
 
 
