@@ -111,6 +111,7 @@ Para o desenvolvimento do firmware dedicado à medida de energia no STM32F373, p
 A frequência de amostragem do ADC sigma-delta foi ajustada para garantir que as harmônicas até a décima quinta ordem fossem consideradas. Para isso, foi definida uma frequência mínima de amostragem de X kHz, assegurando que as componentes harmônicas relevantes fossem incluídas na análise e contribuindo para que a medida energia consumida atenda ao nível de erros estabelecido.
 
 Em seguida, assim como no firmware da estação de recarga, foi configurado a interface serial UART, seguindo o mesmo protocólo baseado em confirmação. As instruções que pode ser enviadas para o STM32F373 são:
+
 a) Iniciar medida
 b) Finalizar medida
 
