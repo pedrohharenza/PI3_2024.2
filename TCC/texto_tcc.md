@@ -106,7 +106,7 @@ Para a comunicação entre os dois microcontroladores, foi configurada a interfa
 
 ## Desenvolvimento do Firmware Dedicado a Medida de Energia
 
-Para o desenvolvimento do firmware dedicado a medida de energia no STM32F373, primeiramente foi configurado o ADC sigma-delta para aquisição das medidas de corrente e tensão elétrica em modo diferencial, utilizando DMA para enviar os dados para um buffer circular. O buffer circular é uma estrutura de dados utilizada para armazenar temporariamente informações em um ciclo contínuo, onde, ao atingir o final do espaço alocado, ele volta ao início, sobrescrevendo os dados mais antigos.
+Para o desenvolvimento do firmware dedicado a medida de energia no STM32F373, primeiramente foi configurado o ADC sigma-delta para aquisição das medidas de corrente e tensão elétrica em modo diferencial, utilizando DMA para enviar os dados para um buffer circular. O buffer circular é uma estrutura de dados utilizada para armazenar temporariamente informações em um ciclo contínuo, onde, ao atingir o final do espaço alocado, ele volta ao início, sobrescrevendo os dados mais antigos. A frequência de amostragem do ADC sigma-delta precisa atender ao mínimo necessário para considerar as harmônicas desejadas, nesse caso foi considerado uma frequência de amostragem de X KHz garantindo que harmônicas até a décima quinta ordem seriam levadas em consideração.
 
 
 
