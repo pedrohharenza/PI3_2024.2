@@ -138,9 +138,9 @@ A frequência de amostragem do ADC sigma-delta foi cuidadosamente ajustada para 
 
 Assim como no firmware da estação de recarga, também foi configurada a interface serial UART para comunicação com o STM32F0 utilizando o protocolo baseado em confirmação (ACK/NACK), onde cada comando enviado ao microcontrolador é validado antes da execução. As principais instruções que podem ser recebidas são:
 
-Iniciar Medida: Quando recebida, o STM32F373 inicia o processamento das amostras de tensão e corrente elétrica para calcular a energia consumida.
+- Iniciar Medida: Quando recebida, o STM32F373 inicia o processamento das amostras de tensão e corrente elétrica para calcular a energia consumida.
 
-Finalizar Medida: Interrompe o processo de medição e envia o valor final da energia consumida via UART.
+- Finalizar Medida: Interrompe o processo de medição e envia o valor final da energia consumida via UART.
 
 ### Processamento das Amostras e Cálculo de Energia
 
