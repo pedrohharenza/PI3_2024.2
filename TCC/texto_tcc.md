@@ -120,6 +120,39 @@ Quando a instrução para iniciar a medição de energia é recebida e o ACK é 
 
 
 
+## Desenvolvimento do Firmware Dedicado à Medida de Energia
+
+O desenvolvimento do firmware dedicado à medida de energia no STM32F373 foi realizado com foco em atender ao requisito de precisão, garantindo um erro inferior a 1%. O microcontrolador foi configurado para utilizar o ADC sigma-delta, um conversor analógico-digital de 16 bits, que permite a aquisição de medidas de corrente e tensão elétrica em modo diferencial. Essa configuração é essencial para garantir medições precisas, especialmente em aplicações que exigem alta confiabilidade, como medidores de energia.
+
+O ADC sigma-delta foi configurado para operar em conjunto com acesso diereto a memória (DMA), que permite o envio contínuo das amostras de corrente e tensão para um buffer circular. Esse buffer é uma estrutura de dados que armazena temporariamente as informações em um ciclo contínuo, sobrescrevendo os dados mais antigos ao atingir o final do espaço alocado. Essa abordagem garante que as medições sejam realizadas de forma contínua e sem perda de dados, mesmo em cenários de alta taxa de amostragem.
+
+### Aquisição de Dados com ADC Sigma-Delta e DMA
+
+A aquisição das medidas de corrente e tensão elétrica é feita de forma simultânea, um requisito fundamental para o cálculo da potência instantânea. A potência instantânea é obtida pelo produto da tensão e da corrente elétrica no mesmo instante de tempo. Se as duas grandezas fossem amostradas em momentos diferentes, poderia ocorrer um descompasso entre elas, resultando em erros significativos no cálculo da potência. A amostragem simultânea garante que a relação entre tensão e corrente seja capturada corretamente, assegurando a exatidão dos cálculos de energia.
+
+### Frequência de Amostragem e Harmônicas
+
+A frequência de amostragem do ADC sigma-delta foi cuidadosamente ajustada para garantir que as harmônicas até a décima quinta ordem fossem consideradas. Para capturar essas distorções, foi definida uma frequência mínima de amostragem de X kHz, que permite a inclusão das componentes harmônicas relevantes na análise. Essa configuração contribui para que a medida da energia consumida atenda ao nível de erro estabelecido, garantindo a conformidade com normas técnicas e a confiabilidade do sistema.
+
+Interface Serial UART e Protocolo de Comunicação
+Assim como no firmware da estação de recarga, foi configurada a interface serial UART para comunicação com o STM32F373. O protocolo utilizado é baseado em confirmação (ACK/NACK), onde cada comando enviado ao microcontrolador é validado antes da execução. As principais instruções suportadas são:
+
+Iniciar Medida: Quando recebida, o STM32F373 inicia o processamento das amostras de tensão e corrente para calcular a energia consumida.
+
+Finalizar Medida: Interrompe o processo de medição e envia o valor final da energia consumida via UART.
+
+Processamento das Amostras e Cálculo de Energia
+Após o recebimento da instrução para iniciar a medição, o STM32F373 começa a processar as amostras de tensão e corrente em grupos de amostras adquiridas ao longo de 833 µs. Esse intervalo foi escolhido para otimizar o desempenho de processamento, garantindo que o sistema opere de forma eficiente sem sobrecarregar o microcontrolador.
+
+Para minimizar a influência de ruídos nas medições, foi implementado um filtro de média móvel sobre as amostras. Esse filtro suaviza as variações abruptas nos dados, garantindo a qualidade e a confiabilidade das medições. O cálculo da energia consumida é realizado com base nas amostras filtradas, assegurando que os valores finais sejam precisos e consistentes.
+
+Monitoramento Contínuo do Consumo de Energia
+Além de calcular o valor final da energia consumida, o sistema foi configurado para permitir o monitoramento contínuo durante a recarga. A cada 1 segundo, o valor atual do consumo de energia é transmitido via UART, proporcionando um acompanhamento em tempo real do processo de recarga. Essa funcionalidade é especialmente útil para aplicações que exigem transparência e controle sobre o consumo de energia, como em estações de recarga de veículos elétricos.
+
+
+
+
+
 
 
 
