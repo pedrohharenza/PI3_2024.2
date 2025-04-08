@@ -155,10 +155,6 @@ Além de calcular o valor final da energia consumida, o sistema foi configurado 
 
 
 
-O circuito equivalente que pode exemplificar o comportamento do sinal de
-comunicação quando conectado a um VE pode ser representado pela Figura 8:
-
-
 ### Estação de Recarga Com Medidor de Energia da Empresa Pionix
 
 Além da análise de medidores de energia, também foi estudado o projeto aberto de uma estação de recarga trifásica de veículos elétricos desenvolvida pela Pionix, que inclui a capacidade de medir o consumo de energia de forma confiável. A Figura 13 ilustra o modelo 3D da estação de recarga analisada.
@@ -166,5 +162,9 @@ Além da análise de medidores de energia, também foi estudado o projeto aberto
 A solução apresentada pela Pionix, diferente dos medidores de energia analisados anteriormente, utiliza o ADE7978ACPZ-RL, um circuito integrado da fabricante Analog Devices, dedicado à medição de energia. Este componente foi projetado para medir com precisão parâmetros de tensão elétrica, corrente elétrica, potência ativa e reativa, fator de potência e frequência. As aquisições das medidas são feitas pelo ADC externo ADE7932ARIZ que possui isolamento galvânico na sua aquisição. A comunicação entre a estação de recarga e o ADE7978ACPZ-RL é realizada por meio de uma interface SPI.
 
 A principal vantagem de usar um circuito integrado dedicado à medição de energia é a simplicidade na implementação. Com isso, não é necessário o desenvolvimento do firmware para a aquisição de amostras e processamento do sinal. Além disso, essa solução oferece isolamento galvânico, proporcionando maior segurança ao manuseio do equipamento e proteção contra variações de alta tensão na rede elétrica. Em contrapartida o ADE7978ACPZ-RL apresenta um custo elevado, podendo tornar o seu uso inviável. A Figura 14 ilustra um diagrama de blocos de como a solução é implementada na estação de recarga.
+
+
+
+O circuito equivalente que pode exemplificar o comportamento do sinal de comunicação quando conectado a um VE pode ser representado pela Figura 8:
 
 
