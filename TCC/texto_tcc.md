@@ -154,7 +154,7 @@ Além de calcular o valor final da energia consumida, o sistema foi configurado 
 
 
 
-
+ORIGINAL
 ### Estação de Recarga Com Medidor de Energia da Empresa Pionix
 
 Além da análise de medidores de energia, também foi estudado o projeto aberto de uma estação de recarga trifásica de veículos elétricos desenvolvida pela Pionix, que inclui a capacidade de medir o consumo de energia de forma confiável. A Figura 13 ilustra o modelo 3D da estação de recarga analisada.
@@ -164,7 +164,29 @@ A solução apresentada pela Pionix, diferente dos medidores de energia analisad
 A principal vantagem de usar um circuito integrado dedicado à medição de energia é a simplicidade na implementação. Com isso, não é necessário o desenvolvimento do firmware para a aquisição de amostras e processamento do sinal. Além disso, essa solução oferece isolamento galvânico, proporcionando maior segurança ao manuseio do equipamento e proteção contra variações de alta tensão na rede elétrica. Em contrapartida o ADE7978ACPZ-RL apresenta um custo elevado, podendo tornar o seu uso inviável. A Figura 14 ilustra um diagrama de blocos de como a solução é implementada na estação de recarga.
 
 
+CORRIGIDO
+## Solução Para Medidores de Energia Desenvolvida Pela Fabricante Analog Devices
 
-O circuito equivalente que pode exemplificar o comportamento do sinal de comunicação quando conectado a um VE pode ser representado pela Figura 8:
+Outra solução estudada foi o circuito integrado ADE7978ACPZ-RL desenvolvido pela fabricante Analog Devices, projetado para realizar o monitoramento de energia em sistemas trifasicos, comumente utilizado em aplicações como medidores de energia e sistemas de gerenciamento de energia. Este componente foi projetado para medir com precisão parâmetros de tensão elétrica, corrente elétrica, potência ativa e reativa, fator de potência e frequência. As aquisições das medidas são feitas pelo ADC externo ADE7932ARIZ que possui isolamento galvânico na sua aquisição. A comunicação entre a estação de recarga e o ADE7978ACPZ-RL é realizada por meio de uma interface SPI. A Figura 14 ilustra um diagrama de blocos de como a solução pode ser implementada.
+
+A principal vantagem de usar um circuito integrado dedicado à medição de energia é a simplicidade na implementação. Com isso, não é necessário o desenvolvimento do firmware para a aquisição de amostras e processamento do sinal. Além disso, essa solução oferece isolamento galvânico, proporcionando maior segurança ao manuseio do equipamento e proteção contra choques provenientes da rede elétrica. Em contrapartida o ADE7978ACPZ-RL apresenta um custo elevado quando comparado a soluções apresentadas anteriormente.
+
+Está solução também é encontrada na estação de recarga Pionix que é um projeto aberto que também foi estudao para o desenvolvimento desse trabalho, a Figura 13 ilustra o modelo 3D da estação de recarga analisada.
+
+
+CORRIGIDO DEEPSEEK
+## Solução Para Medidores de Energia Desenvolvida Pela Fabricante Analog Devices
+
+Outra solução estudada foi o circuito integrado ADE7978ACPZ-RL, desenvolvido pela Analog Devices, projetado para monitoramento de energia em sistemas trifásicos. Esse componente é amplamente utilizado em medidores de energia inteligentes e sistemas de gerenciamento de energia, sendo capaz de medir com alta precisão parâmetros como tensão, corrente, potência ativa e reativa, fator de potência e frequência.
+
+Para a aquisição das medidas, o circuito integrado utiliza um ADC externo, o ADE7932ARIZ, que incorpora isolamento galvânico, garantindo maior segurança na medição. A comunicação entre a estação de recarga e o ADE7978ACPZ-RL ocorre por meio de uma interface SPI, proporcionando integração simplificada com microcontroladores. A Figura 14 ilustra um diagrama de blocos dessa implementação.
+
+A principal vantagem dessa abordagem é a facilidade de implementação, uma vez que o circuito integrado elimina a necessidade de desenvolver um firmware para aquisição e processamento de sinais. Além disso, o isolamento galvânico assegura maior segurança operacional, protegendo os usuários contra choques elétricos provenientes da rede de alimentação.
+
+Por outro lado, o ADE7978ACPZ-RL apresenta um custo mais elevado em comparação com outras soluções discutidas anteriormente. Essa mesma solução foi identificada na estação de recarga Pionix, um projeto aberto que também foi analisado durante este trabalho. A Figura 13 exibe o modelo 3D da estação de recarga analisada.
+
+
+
+O circuito equivalente que pode exemplificar o comportamento do sinal de comunicação quando conectado a um VE pode ser representado pela Figura 8. Na parte esquerda temos circtuio que representa a estação de recarga, gernado o sinal fixo em 12V ou PWM que varia de +12V a -12V, seguido de um resistor de 1 KΩ, o sinal Control Pilot é medido após o resistor de 1 KΩ, na perte da direita temos o circtio que representa o comportamento do VE do ponto de vista da estação, esse circuito apresenta um dido e as cargas resistivas aplicadas ao sinal CP, o diodo é resposável por manter a parte baixa do sinal PWM em -12V e não variar junto a carga resistiva aplicada, as cargas resistivas são controladas pelo VE para determinar o estado de operação da estação de recarga, com o resistor de 1 KΩ e a carga resistiva aplicada a amplitude positiva do sinal pode ser determinada pelo divisor resistivo entre o resistor de 1 KΩ e a carga aplicada.
 
 
